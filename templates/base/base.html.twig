@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}UDL - Mattevideoer, helt gratis!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
+        {% endblock %}
+    </head>
+    <body>
+        {% block navbar %}{% include 'base/navbar.html.twig' %}{% endblock %}
+        <main role="main">{% block content %}{% endblock %}</main>
+
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>
