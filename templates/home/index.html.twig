@@ -1,19 +1,25 @@
 {% extends "base/base.html.twig" %}
 
+{% import "common/macros/buttons.html.twig" as buttons %}
+
 {% block content %}
-    <div class="jumbotron">
+    <div class="jumbotron-fluid page-header">
         <div class="row">
-            <div class="col-md-3"><img src="{{ asset('img/udl_logo.png') }}" alt="UDL.no" width="75%" height="90%"></div>
-            <div class="col-md-6 page-header"><h1>UDL - Gratis mattevideoer og leksehjelp</h1></div>
+            <div class="col-md-3">
+                <img src="{{ asset('img/udl_logo.png') }}" alt="UDL.no" width="80%" height="100%" />
+            </div>
+
+            <div class="col-md-6 hero-text">
+                <h1>UDL - Gratis mattevideoer og leksehjelp</h1>
+            </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             {% for discipline in disciplines %}
-                <div class="col-md-4">
-                    <h2>{{ discipline.getName }}</h2>
-                    <p>{{ discipline.getShortDescription | raw }}</p>
+                <div class="col-md-4 card">
+                    <a href="#"><h5 class="card-header">{{ discipline.getName }}</h5></a>
                 </div>
             {% endfor %}
         </div>

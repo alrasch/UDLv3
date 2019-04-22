@@ -2,14 +2,33 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>{% block title %}UDL - Mattevideoer, helt gratis!{% endblock %}</title>
         {% block stylesheets %}
             <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
+            <link href="{{ asset('css/common/common.css') }}" rel="stylesheet"/>
         {% endblock %}
     </head>
     <body>
-        {% block navbar %}{% include 'base/navbar.html.twig' %}{% endblock %}
-        <main role="main">{% block content %}{% endblock %}</main>
+        <main role="main">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="text-muted card">
+            <div class="container">
+                <h4>
+                    Besøk UDL på:
+                    <a href="https://www.facebook.com/UDLno">
+                        <img src="{{ asset('img/facebook.png') }}" alt="UDL.no på Facebook"/>
+                    </a>
+
+                    <a href="https://www.twitter.com/UDLno">
+                        <img src="{{ asset('img/twitter.png') }}" alt="UDL.no på Twitter"/>
+                    </a>
+                </h4>
+            </div>
+        </footer>
 
         {% block javascripts %}
         {% endblock %}

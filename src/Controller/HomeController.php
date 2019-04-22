@@ -11,7 +11,7 @@ class HomeController extends AbstractController
 
     public function indexAction()
     {
-        $disciplines = $this->getDoctrine()->getRepository(Discipline::class)->findAll();
+        $disciplines = $this->getDoctrine()->getRepository(Discipline::class)->findBy([], ['sortWeight' => 'ASC']);
         $data = [
             'disciplines' => $disciplines
         ];
