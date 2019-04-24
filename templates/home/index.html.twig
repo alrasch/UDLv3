@@ -2,24 +2,18 @@
 
 {% import "common/macros/buttons.html.twig" as buttons %}
 
+{% block hero_text %}UDL - Gratis mattevideoer og leksehjelp{% endblock %}
+
 {% block content %}
-    <div class="jumbotron-fluid page-header">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="{{ asset('img/udl_logo.png') }}" alt="UDL.no" width="80%" height="100%" />
-            </div>
-
-            <div class="col-md-6 hero-text">
-                <h1>UDL - Gratis mattevideoer og leksehjelp</h1>
-            </div>
-        </div>
-    </div>
-
     <div class="container-fluid">
         <div class="row">
-            {% for discipline in disciplines %}
+            {% for chunk in disciplines %}
                 <div class="col-md-4 card">
-                    <a href="#"><h5 class="card-header">{{ discipline.getName }}</h5></a>
+                {% for discipline in chunk %}
+                        <a href="{{ path('discipline', { slug: discipline.url_slug}) }}">
+                            <h5 class="card-header">{{ discipline.name }}</h5>
+                        </a>
+                {% endfor %}
                 </div>
             {% endfor %}
         </div>

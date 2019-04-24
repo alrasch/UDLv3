@@ -12,6 +12,20 @@
     </head>
     <body>
         <main role="main">
+            <div class="jumbotron-fluid page-header">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="{{ path('home') }}">
+                            <img src="{{ asset('img/udl_logo.png') }}" alt="UDL.no" width="80%" height="100%"/>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 hero-text">
+                        <h1>{% block hero_text %}{% endblock %}</h1>
+                    </div>
+                </div>
+            </div>
+
             {% block content %}{% endblock %}
         </main>
 
