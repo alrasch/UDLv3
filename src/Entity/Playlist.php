@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * Playlist
@@ -55,6 +56,12 @@ class Playlist
      * @ORM\Column(name="url_slug", type="string", length=100, nullable=false)
      */
     private $urlSlug;
+
+    /**
+     * Many playlists can belong to one discipline.
+     * @ManyToOne(targetEntity="Discipline", inversedBy="playlists")
+     */
+    private $discipline;
 
     public function getId(): ?int
     {

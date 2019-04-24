@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -55,6 +58,18 @@ class Discipline
      * @ORM\Column(name="topic", type="integer", nullable=false, options={"unsigned"=true})
      */
     private $topic = '0';
+
+    /**
+     * One discipline has many playlists.
+     * @OneToMany(targetEntity="Playlist", mappedBy="discipline")
+     * @OrderBy({"sortWeight" = "ASC"})
+     */
+    private $playlists;
+
+    public function __construct()
+    {
+        $this->playlists = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -121,5 +136,16 @@ class Discipline
         return $this;
     }
 
+    public function getPlaylists()
+    {
+        return $this->playlists;
+    }
+
+    public function setPlaylists($playlists): self
+    {
+        $this->playlists = $playlists;
+
+        return $this;
+    }
 
 }
