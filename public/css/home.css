@@ -5,3 +5,7 @@
 .btn-bottom {
     position: absolute;
 }
+
+h5.card-header {
+    color: #00bc8c;
+}
