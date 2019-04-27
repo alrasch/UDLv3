@@ -7,7 +7,10 @@
         {% for chunk in playlists %}
             <div class="col-md-4 card">
                 {% for playlist in chunk %}
-                    <a href="#">
+                    <a href="{{ path('playlist', {
+                        discipline_slug: discipline.url_slug,
+                        playlist_slug: playlist.url_slug
+                    }) }}">
                         <h5 class="card-header">{{ playlist.name }}</h5>
                     </a>
                 {% endfor %}

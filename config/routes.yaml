@@ -5,3 +5,7 @@ home:
 discipline:
     path: /d/{slug}
     controller: App\Controller\DisciplineController::indexAction
+
+playlist:
+    path: /p/{discipline_slug}/{playlist_slug}
+    controller: App\Controller\PlaylistController::indexAction

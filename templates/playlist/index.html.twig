@@ -1,0 +1,17 @@
+{% extends "base/base.html.twig" %}
+
+{% block hero_text %}{{ playlist.name }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for chunk in videos %}
+            <div class="col-md-4 card">
+                {% for video in chunk %}
+                    <a href="#">
+                        <h5 class="card-header">{{ video.name }}</h5>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

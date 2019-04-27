@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * Video
@@ -62,6 +63,28 @@ class Video
      * @ORM\Column(name="youtube_url", type="string", length=255, nullable=true)
      */
     private $youtubeUrl;
+
+    /**
+     * Many videos can belong to one playlist.
+     * @ManyToOne(targetEntity="Playlist", inversedBy="videos")
+     */
+    private $playlist;
+
+    /**
+     * @return mixed
+     */
+    public function getPlaylist()
+    {
+        return $this->playlist;
+    }
+
+    /**
+     * @param mixed $playlist
+     */
+    public function setPlaylist($playlist): void
+    {
+        $this->playlist = $playlist;
+    }
 
     public function getId(): ?int
     {

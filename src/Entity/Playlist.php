@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\OrderBy;
 
 /**
  * Playlist
@@ -62,6 +64,45 @@ class Playlist
      * @ManyToOne(targetEntity="Discipline", inversedBy="playlists")
      */
     private $discipline;
+
+    /**
+     * One playlist has many videos.
+     * @OneToMany(targetEntity="Video", mappedBy="playlist")
+     * @OrderBy({"sortWeight" = "ASC"})
+     */
+    private $videos;
+
+    /**
+     * @return mixed
+     */
+    public function getDiscipline()
+    {
+        return $this->discipline;
+    }
+
+    /**
+     * @param mixed $discipline
+     */
+    public function setDiscipline($discipline): void
+    {
+        $this->discipline = $discipline;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVideos()
+    {
+        return $this->videos;
+    }
+
+    /**
+     * @param mixed $videos
+     */
+    public function setVideos($videos): void
+    {
+        $this->videos = $videos;
+    }
 
     public function getId(): ?int
     {
@@ -127,6 +168,4 @@ class Playlist
 
         return $this;
     }
-
-
 }
