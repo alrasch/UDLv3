@@ -29,3 +29,7 @@ footer {
 a h5.card-header{
     color: #00ffbe;
 }
+
+body {
+    overflow-x: hidden;
+}
