@@ -5,7 +5,7 @@
 {% block content %}
     <div class="row">
         {% for chunk in playlists %}
-            <div class="col-md-4 card">
+            <div class="col-lg-4 card">
                 {% for playlist in chunk %}
                     <a href="{{ path('playlist', {
                         discipline_slug: discipline.url_slug,

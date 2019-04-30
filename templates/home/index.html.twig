@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             {% for chunk in disciplines %}
-                <div class="col-md-4 card">
+                <div class="col-lg-4 card">
                 {% for discipline in chunk %}
                         <a href="{{ path('discipline', { slug: discipline.url_slug}) }}">
                             <h5 class="card-header">{{ discipline.name }}</h5>
