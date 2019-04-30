@@ -9,3 +9,7 @@ discipline:
 playlist:
     path: /p/{discipline_slug}/{playlist_slug}
     controller: App\Controller\PlaylistController::indexAction
+
+video:
+    path: /v/{discipline_slug}/{playlist_slug}/{video_slug}
+    controller: App\Controller\VideoController::indexAction

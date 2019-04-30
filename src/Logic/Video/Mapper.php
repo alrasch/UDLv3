@@ -20,4 +20,15 @@ class Mapper
 
         return array_map($map, $videos);
     }
+
+    public function mapOne(Video $video): array
+    {
+        return [
+            'id' => $video->getId(),
+            'url_slug' => $video->getUrlSlug(),
+            'name' => $video->getName(),
+            'description' => $video->getDescription(),
+            'youtube_url' => $video->getYoutubeUrl()
+        ];
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Playlist;
+use App\Logic\Discipline\Mapper as DisciplineMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Logic\Video\Mapper as VideoMapper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,14 +12,21 @@ class PlaylistController extends AbstractController
 {
     const PLAYLIST_TEMPLATE = 'playlist/index.html.twig';
 
+    /** @var DisciplineMapper $discipline_mapper */
+    private $discipline_mapper;
+
     /** @var PlaylistMapper $playlist_mapper */
     private $playlist_mapper;
 
     /** @var VideoMapper $video_mapper */
     private $video_mapper;
 
-    public function __construct(PlaylistMapper $playlist_mapper, VideoMapper $video_mapper)
-    {
+    public function __construct(
+        DisciplineMapper $discipline_mapper,
+        PlaylistMapper $playlist_mapper,
+        VideoMapper $video_mapper
+    ) {
+        $this->discipline_mapper = $discipline_mapper;
         $this->playlist_mapper = $playlist_mapper;
         $this->video_mapper = $video_mapper;
     }
@@ -34,6 +42,8 @@ class PlaylistController extends AbstractController
             return $this->redirectToRoute('discipline', ['slug' => $discipline_slug]);
         }
 
+        $discipline = $playlist->getDiscipline();
+        $discipline = $this->discipline_mapper->mapOne($discipline);
         $videos = $playlist->getVideos()->getValues();
 
         $playlist = $this->playlist_mapper->mapOneWithRelations($playlist);
@@ -43,6 +53,7 @@ class PlaylistController extends AbstractController
         $videos = array_chunk($videos, ceil($video_count / 3));
 
         $data = [
+            'discipline' => $discipline,
             'playlist' => $playlist,
             'videos' => $videos,
             'count' => $video_count

@@ -7,7 +7,11 @@
         {% for chunk in videos %}
             <div class="col-md-4 card">
                 {% for video in chunk %}
-                    <a href="#">
+                    <a href="{{ path('video', {
+                        video_slug: video.url_slug,
+                        playlist_slug: playlist.url_slug,
+                        discipline_slug: discipline.url_slug
+                    }) }}">
                         <h5 class="card-header">{{ video.name }}</h5>
                     </a>
                 {% endfor %}

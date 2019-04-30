@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
@@ -73,7 +74,7 @@ class Playlist
     private $videos;
 
     /**
-     * @return mixed
+     * @return Discipline
      */
     public function getDiscipline()
     {
@@ -89,7 +90,7 @@ class Playlist
     }
 
     /**
-     * @return mixed
+     * @return ArrayCollection|Video[]
      */
     public function getVideos()
     {

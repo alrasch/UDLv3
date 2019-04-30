@@ -1,0 +1,27 @@
+iframe.video-frame {
+    border: 0;
+}
+
+div.centered-container {
+    text-align: center;
+}
+
+div.video {
+    padding-bottom: 50px;
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+.video iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.video-4x3 {
+    padding-top: 75%;
+}
