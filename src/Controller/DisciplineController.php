@@ -27,6 +27,11 @@ class DisciplineController extends AbstractController
         $discipline_criteria = ['urlSlug' => $slug];
         /** @var Discipline $discipline */
         $discipline = $this->getDoctrine()->getRepository(Discipline::class)->findOneBy($discipline_criteria);
+
+        if ($discipline == null || empty($discipline)) {
+            return $this->redirectToRoute('home');
+        }
+
         $playlists = $discipline->getPlaylists()->getValues();
 
         $discipline = $this->discipline_mapper->mapOne($discipline);

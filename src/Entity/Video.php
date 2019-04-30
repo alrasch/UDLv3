@@ -71,7 +71,7 @@ class Video
     private $playlist;
 
     /**
-     * @return mixed
+     * @return Playlist
      */
     public function getPlaylist()
     {
