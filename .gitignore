@@ -18,5 +18,4 @@
 ###< symfony/web-server-bundle ###
 
 bin/
-.env*
 .idea/
