@@ -9,6 +9,19 @@
             <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
             <link href="{{ asset('css/common/common.css') }}" rel="stylesheet"/>
         {% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" async
+                    src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'>
+            </script>
+
+            <script type="text/javascript">
+                MathJax.Hub.Config({
+                    tex2jax: {
+                        inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+                    }
+                });
+            </script>
+        {% endblock %}
     </head>
     <body>
         <main role="main">
@@ -43,8 +56,5 @@
                 </h4>
             </div>
         </footer>
-
-        {% block javascripts %}
-        {% endblock %}
     </body>
 </html>
