@@ -28,7 +28,8 @@ class Mapper
             'url_slug' => $video->getUrlSlug(),
             'name' => $video->getName(),
             'description' => $video->getDescription(),
-            'youtube_url' => $video->getYoutubeUrl()
+            'youtube_url' => $video->getYoutubeUrl(),
+            'playlist_id' => $video->getPlaylistId()
         ];
     }
 }

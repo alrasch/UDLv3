@@ -25,3 +25,8 @@ div.video {
 .video-4x3 {
     padding-top: 75%;
 }
+
+.prev-next-video {
+    padding-top: 20px;
+    text-align: center;
+}

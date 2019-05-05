@@ -10,11 +10,37 @@
                     <p class="card-text">{{ video.description | nl2br }}</p>
                 </div>
                 <div class="video">
-                    <iframe
-                            src="https://www.youtube.com/embed/{{ youtube_video_url }}"
+                    <iframe src="https://www.youtube.com/embed/{{ youtube_video_url }}"
                             class="video-frame"
                             allowfullscreen>
                     </iframe>
+                </div>
+                <div class="row prev-next-video">
+                    <div class="col-6">
+                        {% if previous_video is not null %}
+                            <a href="{{ path('video', {
+                                discipline_slug: discipline_slug,
+                                playlist_slug: playlist_slug,
+                                video_slug: previous_video.getUrlSlug
+                            }) }}">
+                                <span class="fas fa-arrow-left"></span>
+                                {{ previous_video.name }}
+                            </a>
+                        {% endif %}
+                    </div>
+
+                    <div class="col-6">
+                        {% if next_video is not null %}
+                            <a href="{{ path('video', {
+                                discipline_slug: discipline_slug,
+                                playlist_slug: playlist_slug,
+                                video_slug: next_video.getUrlSlug
+                            }) }}">
+                                {{ next_video.name }}
+                                <span class="fas fa-arrow-right"></span>
+                            </a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,7 +48,6 @@
 
     <div class="row">
     </div>
-
 {% endblock %}
 
 {% block stylesheets %}
