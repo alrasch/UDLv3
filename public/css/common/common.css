@@ -22,6 +22,21 @@ h1.display-5 {
     line-height: 1.2;
 }
 
+/* Extra small devices */
+@media (max-width: 575px) {  }
+
+/* Small devices (tablets) */
+@media (min-width: 576px) {  }
+
+ /* Medium devices (tablets) */
+@media (min-width: 768px) {  }
+
+ /* Large devices (desktops) */
+@media (min-width: 992px) {  }
+
+ /* Extra large devices (large desktops */
+@media (min-width: 1200px) {  }
+
 .hero-text {
     padding-top: 50px;
     text-align: center;
