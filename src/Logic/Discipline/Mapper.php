@@ -31,7 +31,8 @@ class Mapper
         return [
             'playlists' => $discipline->getPlaylists(),
             'name' => $discipline->getName(),
-            'url_slug' => $discipline->getUrlSlug()
+            'url_slug' => $discipline->getUrlSlug(),
+            'description' => $discipline->getShortDescription()
         ];
     }
 }

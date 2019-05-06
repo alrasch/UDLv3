@@ -1,6 +1,8 @@
 {% extends "base/base.html.twig" %}
 
 {% block hero_text %}{{ discipline.name }}{% endblock %}
+{% block subtext %}{{ discipline.description | nl2br }}{% endblock %}
+
 
 {% block content %}
     <div class="row">

@@ -16,7 +16,7 @@
                     </iframe>
                 </div>
                 <div class="row prev-next-video">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         {% if previous_video is not null %}
                             <a href="{{ path('video', {
                                 discipline_slug: discipline_slug,
@@ -29,7 +29,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         {% if next_video is not null %}
                             <a href="{{ path('video', {
                                 discipline_slug: discipline_slug,
