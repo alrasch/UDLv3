@@ -35,7 +35,8 @@ class Mapper
             'url_slug' => $playlist->getUrlSlug(),
             'name' => $playlist->getName(),
             'discipline' => $playlist->getDiscipline(),
-            'videos' => $playlist->getVideos()
+            'videos' => $playlist->getVideos(),
+            'description' => $playlist->getShortDescription(),
         ];
     }
 }

@@ -1,6 +1,7 @@
 {% extends "base/base.html.twig" %}
 
 {% block hero_text %}{{ playlist.name }}{% endblock %}
+{% block subtext %}{{ playlist.description | nl2br }}{% endblock %}
 
 {% block content %}
     <div class="row">
