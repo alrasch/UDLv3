@@ -2,6 +2,8 @@
 
 {% block hero_text %}{{ discipline.name }}{% endblock %}
 {% block subtext %}{{ discipline.description | nl2br }}{% endblock %}
+{% block back_url %}{{ path('home') }}{% endblock %}
+{% block back_title %}<span class="fas fa-arrow-left"></span> Tilbake til forsiden{% endblock %}
 
 {% block content %}
     <div class="row">

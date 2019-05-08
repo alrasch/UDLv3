@@ -41,6 +41,11 @@
                         <h1 class="hero-text display-5">{% block hero_text %}{% endblock %}</h1>
                         <hr>
                         <p class="description">{% block subtext %}{% endblock %}</p>
+                        <a href="{% block back_url %}{% endblock %}">
+                            <h5 class="navigation">
+                                {% block back_title %}{% endblock %}
+                            </h5>
+                        </a>
                     </div>
                 </div>
             </div>
