@@ -53,10 +53,10 @@
             {% block content %}{% endblock %}
         </main>
 
-        <footer class="text-muted card">
-            <div class="container">
-                <h4>
-                    Besøk UDL på:
+        <footer class="text-muted card footer">
+            <div class="container row">
+                <div class="col-12 col-sm-6">
+                    <h4>Besøk UDL på:</h4>
                     <a href="https://www.facebook.com/UDLno">
                         <img src="{{ asset('img/facebook.png') }}" alt="UDL.no på Facebook"/>
                     </a>
@@ -64,7 +64,20 @@
                     <a href="https://www.twitter.com/UDLno">
                         <img src="{{ asset('img/twitter.png') }}" alt="UDL.no på Twitter"/>
                     </a>
-                </h4>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <h4>En donasjon?</h4>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick"/>
+                        <input type="hidden" name="hosted_button_id" value="H6HFMF494GSTW"/>
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+                               border="0"
+                               name="submit" title="PayPal - The safer, easier way to pay online!"
+                               alt="Donate with PayPal button"/>
+                        <img alt="" border="0" src="https://www.paypal.com/en_NO/i/scr/pixel.gif" width="1" height="1"/>
+                    </form>
+                    <p>En liten donasjon hjelper mye!</p>
+                </div>
             </div>
         </footer>
     </body>
