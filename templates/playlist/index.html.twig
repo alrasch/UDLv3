@@ -1,5 +1,6 @@
 {% extends "base/base.html.twig" %}
 
+{% block title %}{{ playlist.name }} | UDL.no{% endblock %}
 {% block hero_text %}{{ playlist.name }}{% endblock %}
 {% block subtext %}{{ playlist.description | nl2br }}{% endblock %}
 {% block back_url %}{{ path('discipline', { slug: discipline.url_slug }) }}{% endblock %}

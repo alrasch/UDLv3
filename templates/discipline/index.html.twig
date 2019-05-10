@@ -1,5 +1,6 @@
 {% extends "base/base.html.twig" %}
 
+{% block title %}{{ discipline.name }} | UDL.no{% endblock %}
 {% block hero_text %}{{ discipline.name }}{% endblock %}
 {% block subtext %}{{ discipline.description | nl2br }}{% endblock %}
 {% block back_url %}{{ path('home') }}{% endblock %}
