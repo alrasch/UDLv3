@@ -4,6 +4,7 @@
 {% block hero_text %}{{ video.name }}{% endblock %}
 {% block meta_description %}{{ video.description }}{% endblock %}
 {% block meta_robots %}index, nofollow{% endblock %}
+{% block back_title %}<span class="fas fa-arrow-left"></span> Tilbake til {{ playlist.name }}{% endblock %}
 
 {% block content %}
     <div class="row">
@@ -23,7 +24,7 @@
                         {% if previous_video is not null %}
                             <a href="{{ path('video', {
                                 discipline_slug: discipline_slug,
-                                playlist_slug: playlist_slug,
+                                playlist_slug: playlist.url_slug,
                                 video_slug: previous_video.getUrlSlug
                             }) }}">
                                 <span class="fas fa-arrow-left"></span>
@@ -36,7 +37,7 @@
                         {% if next_video is not null %}
                             <a href="{{ path('video', {
                                 discipline_slug: discipline_slug,
-                                playlist_slug: playlist_slug,
+                                playlist_slug: playlist.url_slug,
                                 video_slug: next_video.getUrlSlug
                             }) }}">
                                 {{ next_video.name }}
