@@ -5,6 +5,7 @@
 {% block subtext %}{{ playlist.description | nl2br }}{% endblock %}
 {% block back_url %}{{ path('discipline', { slug: discipline.url_slug }) }}{% endblock %}
 {% block back_title %}<span class="fas fa-arrow-left"></span> Tilbake til {{ discipline.name }}{% endblock %}
+{% block meta_description %}{{ playlist.description }}{% endblock %}
 
 {% block content %}
     <div class="row">
