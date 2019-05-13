@@ -23,24 +23,35 @@ h1.display-5 {
 }
 
 /* Extra small devices */
-@media (max-width: 575px) {  }
+@media (max-width: 575px) {
+    .hero-text {
+        padding-top: 10px;
+        text-align: center;
+    }
+}
 
 /* Small devices (tablets) */
-@media (min-width: 576px) {  }
+@media (min-width: 576px) {
+    .hero-text {
+        padding-top: 10px;
+        text-align: center;
+    }
+}
 
  /* Medium devices (tablets) */
-@media (min-width: 768px) {  }
+@media (min-width: 768px) {
+    .hero-text {
+        padding-top: 50px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+}
 
  /* Large devices (desktops) */
 @media (min-width: 992px) {  }
 
  /* Extra large devices (large desktops */
 @media (min-width: 1200px) {  }
-
-.hero-text {
-    padding-top: 20px;
-    text-align: center;
-}
 
 a h5.card-header{
     color: #00ffbe;
