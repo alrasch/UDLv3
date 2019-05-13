@@ -24,6 +24,10 @@ h1.display-5 {
 
 /* Extra small devices */
 @media (max-width: 575px) {
+    .footer-element {
+        padding-bottom: 20px;
+    }
+
     .hero-text {
         padding-top: 10px;
         text-align: center;
@@ -70,6 +74,6 @@ p.description {
     text-align: center;
 }
 
-footer {
+.footer-element {
     text-align: center;
 }

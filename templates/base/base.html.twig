@@ -55,9 +55,9 @@
             {% block content %}{% endblock %}
         </main>
 
-        <footer class="text-muted card footer">
-            <div class="container row">
-                <div class="col-12 col-sm-6">
+        <footer class="text-muted card">
+            <div class="container-fluid row">
+                <div class="col-12 col-sm-4 footer-element">
                     <h4>Besøk UDL på:</h4>
                     <a href="https://www.facebook.com/UDLno">
                         <img src="{{ asset('img/facebook.png') }}" alt="UDL.no på Facebook"/>
@@ -67,7 +67,8 @@
                         <img src="{{ asset('img/twitter.png') }}" alt="UDL.no på Twitter"/>
                     </a>
                 </div>
-                <div class="col-12 col-sm-6">
+
+                <div class="col-12 col-sm-4 footer-element">
                     <h4>En donasjon?</h4>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_s-xclick" />
@@ -77,6 +78,12 @@
                     </form>
 
                     <p>En liten donasjon hjelper mye!</p>
+                </div>
+
+                <div class="col-12 col-sm-4 footer-element">
+                    <h4>Nyeste videoer</h4>
+                    <p><a href="#">Klikk her</a> for å se hvilke videoer som har kommet ut nyligst.</p>
+                    <p>(Kommer snart)</p>
                 </div>
             </div>
         </footer>
