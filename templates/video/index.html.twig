@@ -5,6 +5,13 @@
 {% block meta_description %}{{ video.description }}{% endblock %}
 {% block meta_robots %}index, nofollow{% endblock %}
 {% block back_title %}<span class="fas fa-arrow-left"></span> Tilbake til {{ playlist.name }}{% endblock %}
+{% block back_url %}
+    {{ path('playlist', {
+        discipline_slug: discipline_slug,
+        playlist_slug: playlist.url_slug
+    }) }}
+{% endblock %}
+
 
 {% block content %}
     <div class="row">
