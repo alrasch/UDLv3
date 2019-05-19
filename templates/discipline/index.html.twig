@@ -5,6 +5,7 @@
 {% block subtext %}{{ discipline.description | nl2br }}{% endblock %}
 {% block back_url %}{{ path('home') }}{% endblock %}
 {% block back_title %}<span class="fas fa-arrow-left"></span> Tilbake til forsiden{% endblock %}
+{% block back_label %}Gå tilbake til hovedsiden.{% endblock %}
 {% block meta_description %}{{ discipline.description }}{% endblock %}
 
 {% block content %}
@@ -15,7 +16,8 @@
                     <a href="{{ path('playlist', {
                         discipline_slug: discipline.url_slug,
                         playlist_slug: playlist.url_slug
-                    }) }}">
+                    }) }}"
+                       aria-label="Gå til spilleliste: {{ playlist.name }}">
                         <h5 class="card-header">{{ playlist.name }}</h5>
                     </a>
                 {% endfor %}

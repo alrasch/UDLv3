@@ -10,7 +10,8 @@
             {% for chunk in disciplines %}
                 <div class="col-lg-4 card">
                 {% for discipline in chunk %}
-                        <a href="{{ path('discipline', { slug: discipline.url_slug}) }}">
+                        <a href="{{ path('discipline', { slug: discipline.url_slug}) }}"
+                           aria-label="Gå til {{ discipline.name }}">
                             <h5 class="card-header">{{ discipline.name }}</h5>
                         </a>
                 {% endfor %}

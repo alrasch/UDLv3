@@ -38,7 +38,7 @@
             <div class="jumbotron-fluid container-fluid page-header">
                 <div class="row">
                     <div class="col-12 col-md-3 logo-container">
-                        <a href="{{ path('home') }}">
+                        <a href="{{ path('home') }}" aria-label="Gå tilbake til hovedsiden.">
                             <img class="udl-logo" src="{{ asset('img/udl_logo.png') }}" alt="UDL.no"/>
                         </a>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="col-12 col-md-6 hero-text-container">
                         <h1 class="hero-text display-5">{% block hero_text %}{% endblock %}</h1>
                         <p class="description">{% block subtext %}{% endblock %}</p>
-                        <a href="{% block back_url %}{% endblock %}">
+                        <a href="{% block back_url %}{% endblock %}" aria-label="{% block back_label %}Tilbake{% endblock %}">
                             <h5 class="navigation">
                                 {% block back_title %}{% endblock %}
                             </h5>
@@ -62,11 +62,11 @@
             <div class="container-fluid row">
                 <div class="col-12 col-sm-4 footer-element">
                     <h4>Besøk UDL på:</h4>
-                    <a href="https://www.facebook.com/UDLno">
+                    <a href="https://www.facebook.com/UDLno" aria-label="UDL.no på Facebook">
                         <img src="{{ asset('img/facebook.png') }}" alt="UDL.no på Facebook"/>
                     </a>
 
-                    <a href="https://www.twitter.com/UDLno">
+                    <a href="https://www.twitter.com/UDLno" aria-label="UDL.no på Twitter">
                         <img src="{{ asset('img/twitter.png') }}" alt="UDL.no på Twitter"/>
                     </a>
                 </div>
@@ -85,7 +85,10 @@
 
                 <div class="col-12 col-sm-4 footer-element">
                     <h4>Nyeste videoer</h4>
-                    <p><a href="#">Klikk her</a> for å se hvilke videoer som har kommet ut nyligst.</p>
+                    <p>
+                        <a href="#" aria-label="Se hvilke videoer som har kommet ut nyligst.">Klikk her</a>
+                        for å se hvilke videoer som har kommet ut nyligst.
+                    </p>
                     <p>(Kommer snart)</p>
                 </div>
             </div>

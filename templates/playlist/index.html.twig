@@ -5,6 +5,8 @@
 {% block subtext %}{{ playlist.description | nl2br }}{% endblock %}
 {% block back_url %}{{ path('discipline', { slug: discipline.url_slug }) }}{% endblock %}
 {% block back_title %}<span class="fas fa-arrow-left"></span> Tilbake til {{ discipline.name }}{% endblock %}
+{% block back_label %}Gå tilbake til {{ discipline.name }}.{% endblock %}
+
 {% block meta_description %}{{ playlist.description }}{% endblock %}
 
 {% block content %}
@@ -16,7 +18,8 @@
                         video_slug: video.url_slug,
                         playlist_slug: playlist.url_slug,
                         discipline_slug: discipline.url_slug
-                    }) }}">
+                    }) }}"
+                       aria-label="Se video: {{ video.name }}">
                         <h5 class="card-header">{{ video.name }}</h5>
                     </a>
                 {% endfor %}

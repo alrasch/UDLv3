@@ -7,11 +7,9 @@
 {% block meta_robots %}index, nofollow{% endblock %}
 {% block back_title %}<span class="fas fa-arrow-left"></span> Tilbake til {{ playlist.name }}{% endblock %}
 {% block back_url %}
-    {{ path('playlist', {
-        discipline_slug: discipline_slug,
-        playlist_slug: playlist.url_slug
-    }) }}
+    {{ path('playlist', { discipline_slug: discipline_slug, playlist_slug: playlist.url_slug }) }}
 {% endblock %}
+{% block back_label %}Gå tilbake til {{ playlist.name }}{% endblock %}
 
 
 {% block content %}
@@ -34,7 +32,8 @@
                                 discipline_slug: discipline_slug,
                                 playlist_slug: playlist.url_slug,
                                 video_slug: previous_video.getUrlSlug
-                            }) }}">
+                            }) }}"
+                               aria-label="Gå tilbake til forrige video.">
                                 <span class="fas fa-arrow-left"></span>
                                 {{ previous_video.name }}
                             </a>
@@ -47,7 +46,9 @@
                                 discipline_slug: discipline_slug,
                                 playlist_slug: playlist.url_slug,
                                 video_slug: next_video.getUrlSlug
-                            }) }}">
+                            }) }}"
+                               aria-label="Gå til neste video."
+                            >
                                 {{ next_video.name }}
                                 <span class="fas fa-arrow-right"></span>
                             </a>
