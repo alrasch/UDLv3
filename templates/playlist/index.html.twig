@@ -10,7 +10,7 @@
 {% block meta_description %}{{ playlist.description }}{% endblock %}
 
 {% block content %}
-    <div class="row">
+    <div class="row offset-xl-1 col-xl-10">
         {% for chunk in videos %}
             <div class="col-lg-4 card">
                 {% for video in chunk %}
