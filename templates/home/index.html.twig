@@ -6,14 +6,14 @@
 
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
+        <div class="row col-xxl-6 offset-xxl-3">
             {% for chunk in disciplines %}
                 <div class="col-lg-4 card">
                 {% for discipline in chunk %}
-                        <a href="{{ path('discipline', { slug: discipline.url_slug}) }}"
-                           aria-label="Gå til {{ discipline.name }}">
-                            <h5 class="card-header">{{ discipline.name }}</h5>
-                        </a>
+                    {% set route = path('discipline', { slug: discipline.url_slug}) %}
+                    <a href="{{ route }}" aria-label="Gå til {{ discipline.name }}">
+                        <h5 class="card-header">{{ discipline.name }}</h5>
+                    </a>
                 {% endfor %}
                 </div>
             {% endfor %}
