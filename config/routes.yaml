@@ -13,3 +13,7 @@ playlist:
 video:
     path: /v/{discipline_slug}/{playlist_slug}/{video_slug}
     controller: App\Controller\VideoController::indexAction
+
+sitemap:
+    path: /sitemap
+    controller: App\Controller\SitemapController::sitemapAction
