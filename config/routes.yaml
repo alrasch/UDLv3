@@ -17,3 +17,7 @@ video:
 sitemap:
     path: /sitemap
     controller: App\Controller\SitemapController::sitemapAction
+
+article:
+    path: /artikkel/{topic}
+    controller: App\Controller\ArticleController::indexAction
