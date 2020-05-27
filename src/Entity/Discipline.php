@@ -66,6 +66,13 @@ class Discipline
      */
     private $playlists;
 
+    /**
+     * One discipline has many articles.
+     * @OneToMany(targetEntity="Article", mappedBy="discipline")
+     * @OrderBy({"sortWeight" = "ASC"})
+     */
+    private $articles;
+
     public function __construct()
     {
         $this->playlists = new ArrayCollection();
@@ -146,6 +153,22 @@ class Discipline
         $this->playlists = $playlists;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+    /**
+     * @param mixed $articles
+     */
+    public function setArticles($articles): void
+    {
+        $this->articles = $articles;
     }
 
 }
