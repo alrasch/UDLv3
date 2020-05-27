@@ -50,8 +50,6 @@ class Grouper
             }
         }
 
-        dump($grouped);
-
         return $grouped;
     }
 }
