@@ -49,5 +49,128 @@ class Article
      */
     private $disciplineId;
 
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="sort_weight", type="integer", nullable=true, options={"unsigned"=true})
+     */
+    private $sortWeight;
 
+    /**
+     * Many articles can belong to one discipline.
+     * @ORM\ManyToOne(targetEntity="Discipline", inversedBy="articles")
+     */
+    private $discipline;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
+    }
+
+    /**
+     * @param string|null $shortDescription
+     */
+    public function setShortDescription(?string $shortDescription): void
+    {
+        $this->shortDescription = $shortDescription;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTemplate(): ?string
+    {
+        return $this->template;
+    }
+
+    /**
+     * @param string|null $template
+     */
+    public function setTemplate(?string $template): void
+    {
+        $this->template = $template;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getDisciplineId(): ?int
+    {
+        return $this->disciplineId;
+    }
+
+    /**
+     * @param int|null $disciplineId
+     */
+    public function setDisciplineId(?int $disciplineId): void
+    {
+        $this->disciplineId = $disciplineId;
+    }
+
+    /**
+     * @return Discipline
+     */
+    public function getDiscipline()
+    {
+        return $this->discipline;
+    }
+
+    /**
+     * @param mixed $discipline
+     */
+    public function setDiscipline($discipline): void
+    {
+        $this->discipline = $discipline;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSortWeight(): ?int
+    {
+        return $this->sortWeight;
+    }
+
+    /**
+     * @param int|null $sortWeight
+     */
+    public function setSortWeight(?int $sortWeight): void
+    {
+        $this->sortWeight = $sortWeight;
+    }
 }

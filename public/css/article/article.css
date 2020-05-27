@@ -1,0 +1,37 @@
+div.paragraph {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+td,th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Extra small devices */
+@media (max-width: 575px) {
+    p.lead {
+        font-size: 1rem;
+    }
+}
+
+/* Small devices (tablets) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) {  }
+
+/* Extra large devices (large desktops */
+@media (min-width: 1200px) {  }
+
+@media (min-width: 1600px) {
+    p.lead {
+        font-size: 1.4rem;
+    }
+}

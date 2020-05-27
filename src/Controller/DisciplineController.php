@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller;
 
 use App\Logic\Discipline\Mapper as DisciplineMapper;
