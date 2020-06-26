@@ -43,7 +43,7 @@ CREATE TABLE `article` (
 
 LOCK TABLES `article` WRITE;
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
-INSERT INTO `article` VALUES (1,'Definisjonsmengden til en funksjon','En kort introduksjon til definisjonsmengden til en funksjon, med eksempler.','definisjonsmengde',16),(2,'Verdimengden til en funksjon','En kort introduksjon til verdimengden til en funksjon, med eksempler.','verdimengde',16);
+INSERT INTO `article` VALUES (1,'Definisjonsmengden til en funksjon','En kort introduksjon til definisjonsmengden til en funksjon, med eksempler.','definisjonsmengde',16,1),(2,'Verdimengden til en funksjon','En kort introduksjon til verdimengden til en funksjon, med eksempler.','verdimengde',16,2),(3,'1T Eksamen, Vår 2020, Løsning','Løsningsforslag til 1T Eksamen gitt våren 2020.','1t_eksamen_v_20',6,1);
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 UNLOCK TABLES;
 
