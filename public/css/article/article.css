@@ -4,6 +4,12 @@ div.paragraph {
     margin-bottom: 20px;
 }
 
+div.exam-problem {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: white solid 1px;
+}
+
 td,th {
     text-align: center;
     vertical-align: middle;
