@@ -19,7 +19,7 @@ sitemap:
     controller: App\Controller\SitemapController::sitemapAction
 
 article:
-    path: /artikkel/{topic}
+    path: /artikkel/{discipline_slug}/{topic}
     controller: App\Controller\ArticleController::indexAction
 
 articles:

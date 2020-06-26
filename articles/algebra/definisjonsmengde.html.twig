@@ -1,4 +1,4 @@
-{% extends "base/base.html.twig" %}
+{% extends "article/base.html.twig" %}
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
@@ -10,7 +10,7 @@
     Lær hva definisjonsmengde er, og hvordan vi finner definisjonsmengden til en gitt funksjon.
 {% endblock %}
 
-{% block subtext %}
+{% block article %}
     <p class="lead">Vi ser først på hva definisjonsmengde er.</p>
     <p class="lead">
         Definisjonsmengden til en funksjon er, kort fortalt, mengden av alle verdier du kan
@@ -72,7 +72,7 @@
     </p>
 
     <p class="lead">
-        <a href="{{ path('article', {'topic':'verdimengde'}) }}">Klikk her</a>
+        <a href="{{ path('article', {'discipline_slug': 'algebra', 'topic':'verdimengde'}) }}">Klikk her</a>
         hvis du vil lese videre om verdimengde.
     </p>
 

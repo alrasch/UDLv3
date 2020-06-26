@@ -39,6 +39,7 @@ class Grouper
                 'id' => $discipline->getId(),
                 'name' => $discipline->getName(),
                 'articles' => $discipline->getArticles()->getValues(),
+                'url_slug' => $discipline->getUrlSlug()
             ];
         };
 

@@ -19,8 +19,8 @@ class ArticleController extends AbstractController {
         $this->grouper = $grouper;
     }
 
-    public function indexAction($topic) {
-        $template_path = "@article/{$topic}.html.twig";
+    public function indexAction($discipline_slug, $topic) {
+        $template_path = "@article/{$discipline_slug}/{$topic}.html.twig";
 
         if ($this->loader->exists($template_path)) {
             return $this->render($template_path);
