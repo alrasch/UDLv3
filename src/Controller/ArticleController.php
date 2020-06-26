@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\Discipline;
 use App\Logic\Article\Grouper;
-use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Twig\Environment;
 use Twig\Loader\LoaderInterface;
@@ -32,6 +31,7 @@ class ArticleController extends AbstractController {
     public function listAction() {
         /** @var Article[] $articles */
         $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
+        /** @var Discipline[] $disciplines */
         $disciplines = $this->getDoctrine()->getRepository(Discipline::class)->findAll();
 
         if ($articles === null || empty($articles)) {
