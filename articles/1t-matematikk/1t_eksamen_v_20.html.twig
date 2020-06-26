@@ -1,0 +1,844 @@
+{% extends "article/base.html.twig" %}
+{% block title %}Løsning - 1T Eksamen, Vår 2020 | UDL.no{% endblock %}
+{% block hero_text %}Løsning - 1T Eksamen, Vår 2020{% endblock %}
+{% block meta_description %}
+    Løsningsforslag til 1T Eksamen gitt våren, 2020.
+{% endblock %}
+
+{% block article %}
+    <div class="exam-problem">
+        <h4>Del 1 - Uten hjelpemidler</h4>
+    </div>
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 1 (2 poeng)</p>
+            <p class="lead">
+                Regn ut og skriv svaret på standardform
+
+                $$\frac{5.5 \cdot 10^{-7} + 0.4 \cdot 10^{-6}}{0.005}$$
+            </p>
+        </div>
+
+        <p class="lead">
+            Steg én blir å sørge for at begge tierpotensene i telleren er av samme grad slik at vi kan faktorisere
+            den. Deretter skriver vi nevneren på standardform, som lar oss forkorte tierpotensene.
+        </p>
+
+        <p class="lead">
+            $
+            \begin{align*}
+            &   \frac{5.5 \cdot 10^{-7} + 0.4 \cdot 10^{-6}}{0.005} \\ \\
+            & = \frac{5.5 \cdot 10^{-7} + 4 \cdot 10^{-7}}{5 \cdot 10^{-3}} \\ \\
+            & = \frac{(5.5 + 4)10^{-7}}{5 \cdot 10^{-3}} \\ \\
+            & = \frac{9.5 \cdot 10^{-4}}{5} \\ \\
+            & = \underline{1.9 \cdot 10^{-4}}
+            \end{align*}
+            $
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">
+                Oppgave 2 (2 poeng)
+            </p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/1-2.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde tilhørende oppgave 2 i del 1"/>
+            </p>
+            <p class="lead">
+                Bestem en likning for den rette linjen som er tegnet i koordinatsystemet ovenfor.
+            </p>
+        </div>
+
+        <p class="lead">
+            Vi er ute etter et uttrykk $y = ax + b$, der
+
+            $$a = \frac{\Delta y}{\Delta x} = \frac{0-6}{4-2} = \frac{-6}{2} = -3$$
+
+            Fra punktet $(2, \ 6)$ ser vi at
+
+            $$
+            \begin{align*}
+                y(2) &= 6 \\
+                6 &= -3 \cdot 2 + b \\
+                b &= 12
+            \end{align*}
+            $$
+
+            Likninga til linja er altså $\underline{y = -3x + 12}$.
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 3 (2 poeng)</p>
+            <p class="lead">
+                Løs likningssystemet
+
+                $$
+                \begin{bmatrix}
+                    2x + y &=& 3 \\
+                    8x-2y &=& -12
+                \end{bmatrix}
+                $$
+            </p>
+        </div>
+        <p class="lead">
+            Fra den første likninga får vi $y = 3-2x$, og setter det inn i den andre likninga,
+            som gir $$
+            \begin{align*}
+                8x - 2(3-2x) &= -12 \\
+                12x - 6 &= -12 \\
+                x &= -\frac12
+            \end{align*}
+            $$
+
+            Setter denne $x$-verdien inn i en av likninge for å finne $y$.
+
+            $$
+            \begin{align*}
+            y &= 3-2x \\
+            y &= 3-2(-\frac12) \\
+            y &= 4
+            \end{align*}
+            $$
+
+            Løsning: $\displaystyle \underline{x = -\frac12, \ y = 4}$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 4 (2 poeng)</p>
+            <p class="lead">
+                Trekk sammen og skriv så enkelt som mulig
+
+                $$\frac2{x-2} - \frac{x-4}{x^2 - 5x + 6}$$
+            </p>
+        </div>
+        <p class="lead">
+            Faktoriserer $x^2 - 5x + 6$ ved nullpunktsmetoden og andregradsformelen.
+
+            $$
+            \begin{align*}
+            & x = \frac{5 \pm \sqrt{(-5)^2 - 4 \cdot 1 \cdot 6}}{2 \cdot 1} \\
+            & = \frac{5 \pm 1}{2} \\
+            & \Rightarrow \ x=2 \vee x=3
+            \end{align*}
+            $$
+
+            Så $x^2 - 5x + 6 = (x-2)(x-3)$. Da kan vi utvide den første brøken med $(x-3)$ slik at den også
+            har begge faktorene i nevner.
+
+            $$
+            \begin{align*}
+            & \frac2{x-2} - \frac{x-4}{x^2 - 5x + 6} \\ \\
+            &= \frac{2(x-3)}{(x-2)(x-3)} - \frac{x-4}{(x-2)(x-3)} \\ \\
+            &= \frac{2(x-3)-(x-4)}{(x-2)(x-3)} \\ \\
+            &= \frac{\cancel{x-2}}{\cancel{(x-2)}(x-3)} \\ \\
+            &= \underline{\frac1{(x-3)}}
+            \end{align*}
+            $$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 5 (2 poeng)</p>
+            <p class="lead">
+                Løs ulikheten $$2x^2 + 12x + 18 \leq 0$$
+            </p>
+        </div>
+        <p class="lead">
+            Vi faktoriserer andregradsuttrykket med andregradsformelen, men først deler vi gjennom ulikheten med 2,
+            og får $x^2 + 6x + 9 \leq 0$.
+
+            $$
+            x = \frac{-6 \pm \sqrt{6^2 - 4 \cdot 1 \cdot 9}}{2 \cdot 1} = \frac{-6}{2} = -3
+            $$
+
+            Uttrykket har bare ett nullpunkt, og vi får dermed at
+
+            $$2x^2 + 12x + 18 = 2(x+3)^2$$
+
+            Siden $(x+3)^2$ aldri kan bli negativ, ser vi at uttrykket i sin helhet aldri blir mindre enn 0.
+            Eneste løsning er $\underline{x=-3}$, der uttrykket er nøyaktig $0$, og løser ulikheten.
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 6 (2 poeng)</p>
+            <p class="lead">
+                Skriv så enkelt som mulig $$\frac{\sqrt{45} + \sqrt{80}}{\sqrt{125}}$$
+            </p>
+        </div>
+        <p class="lead">
+            Observerer at
+
+            $$\sqrt{45} = \sqrt{9 \cdot 5} = 3\sqrt5$$
+
+            og at
+
+            $$\sqrt{80} = \sqrt{16\cdot 5} = 4\sqrt4$$
+
+            og til slutt
+
+            $$\sqrt{125} = \sqrt{25\cdot5} = 5\sqrt5$$
+
+            Vi kan dermed forenkle uttrykket
+
+            $$
+            \begin{align*}
+           &\frac{\sqrt{45} + \sqrt{80}}{\sqrt{125}} \\ \\
+           &= \frac{3\sqrt5 + 4\sqrt5}{5\sqrt5} \\ \\
+           &= \frac{7\cancel{\sqrt5}}{5\cancel{\sqrt5}} \\ \\
+           &= \frac75
+            \end{align*}
+            $$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 7 (2 poeng)</p>
+            <p class="lead">
+                Skriv så enkelt som mulig
+
+                $$9^2 \cdot 3^{-3} \cdot 8^{\frac13} \cdot 27^{-\frac23}$$
+            </p>
+        </div>
+        <p class="lead">
+            $$
+            \begin{align*}
+            & 9^2 \cdot 3^{-3} \cdot 8^{\frac13} \cdot 27^{-\frac23} \\ \\
+            &= (3^2)^2 \cdot 3^{-3} \cdot (2^3)^{\frac13} \cdot (3^3)^{-\frac23} \\ \\
+            &= 3^4 \cdot 3^{-3} \cdot 2 \cdot 3^{-2} \\ \\
+            &= 3^{-1} \cdot 2 = \underline{\frac23}
+            \end{align*}
+            $$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 8 (2 poeng)</p>
+            <p class="lead">
+                Skriv så enkelt som mulig
+
+                $$\lg10 + \lg0.1 + \lg \frac1{100} + \lg\sqrt[3]{10}$$
+            </p>
+        </div>
+        <p class="lead">
+            $$
+            \begin{align*}
+            \lg10 + \lg0.1 + \lg \frac1{100} + \lg\sqrt[3]{10}
+            &= \lg10 + \lg10^{-1} + \lg10^{-2} + \lg10^{\frac13} \\ \\
+            &= \cancel{1 -1} - 2 + \frac13 \\ \\
+            &= \underline{-\frac53}
+            \end{align*}
+            $$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 9 (4 poeng)</p>
+            <p class="lead">
+                Løs likningene
+
+                $$
+                \begin{align*}
+                a) & \quad \lg\left(\frac{3x-3}{3}\right) = 3 \\ \\
+                b) & \quad 3^{x^2} \cdot 3^{-4x} = 1
+                \end{align*}
+                $$
+            </p>
+        </div>
+        <p class="lead">
+            $a)$
+            Merk at $3 = \lg(1000)$. Det betyr at likningen kan skrives som
+
+            $$
+            \begin{align*}
+            \lg\left(\frac{3x-3}{3}\right) &= \lg(1000) \\ \\
+            \frac{3x-3}{3} &= 1000 \\ \\
+            x &= 999
+            \end{align*}
+            $$
+
+            $b)$
+
+            $$
+            \begin{align*}
+            3^{x^2} \cdot 3^{-4x} &= 1 \\ \\
+            3^{x^2 - 4x} &= 3^0 \\ \\
+            x^2 - 4x &= 0 \\ \\
+            x(x-4) &= 0 \\ \\
+            x=0 &\vee x = 4
+            \end{align*}
+            $$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 10 (2 poeng)</p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/1-10.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde tilhørende oppgave 10 i del 1"/>
+
+            <p class="lead">
+                Gitt figuren ovenfor. Vis hvordan vi kan bestemme arealet av det skraverte området på
+                to ulike måter. Figuren illustrerer en matematisk setning. Hvilken setning er det?
+            </p>
+        </div>
+        <p class="lead">
+            Det skraverte arealet er et kvadrat med sidelengde $a-b$ og arealet er da $A = (a-b)^2$
+        </p>
+
+        <p class="lead">
+            Alternativt kan vi observere at hele kvadratet har sidelengder $a$, med areal $a^2$. Det består
+            samtidig av flere innvendige firkanter, og kan skrive det totale arealet som summen av de små
+            arealene.
+
+            $$a^2 = b \cdot a + b^2 + (a-b)^2 + a \cdot b$$
+
+            Lar $(a-b)^2$ stå alene på den ene siden og får
+
+            $$(a-b)^2 = a^2 - 2ab + b^2$$
+
+            Dette er andre kvadratsetning!
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 11 (2 poeng)</p>
+            <p class="lead">
+                Du får vite følgende om en trekant $ABC$:
+
+                $$
+                \begin{align*}
+                \angle B &= 90^\circ \\
+                AC &= 4 \text{cm} \\
+                \tan \angle A &= 1
+                \end{align*}
+                $$
+
+                Lag en skisse som viser hvordan trekanten ser ut. Bestem lengden av AB og BC eksakt.
+            </p>
+        </div>
+
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/1-11.png') }}"
+                 class="article-image-half-size"
+                 alt="Skisse av trekanten fra oppgave 11 i del 1."/>
+
+        <p class="lead">
+            Vinkelsummen i en trekant er $180^\circ$, så $\angle C = 45^\circ$. Vi har altså en $45-45-90$-trekant,
+            og vet derfor at katetene $AB$ og $BC$ er like lange. La oss kalle denne lengda $x$. Fra Pytagoras:
+
+            $$
+            \begin{align*}
+            &x^2 + x^2 &= (4 \text{cm})^2 &= 16 \text{cm}^2\\
+            &x^2 &= 8\text{cm}^2 \\
+            &x &= \sqrt8 \text{cm} \\
+            &x &= 2\sqrt2 \text{cm}
+            \end{align*}
+            $$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 12 (2 poeng)</p>
+
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/1-12.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av en hengelås med tre siffer, tilhørende oppgave 12, del 1."/>
+
+            <p class="lead">
+                Maria finner en gammel hengelås. Koden på hengelåsen består av tre tall.
+                Hvert tall kan velges blant de hele tallene fra og med 0 til og med 9.
+                Bestem sannsynligheten for at koden begynner med 2 4 eller 4 2.
+            </p>
+        </div>
+        <p class="lead">
+            $$P(2, \ 4) = \frac1{10} \cdot \frac1{10} = \frac1{100}$$
+            $$P(4, \ 2) = \frac1{10} \cdot \frac1{10} = \frac1{100}$$
+
+            $$P(2, 4 \ \text{eller} \ 4, 2) = \frac{1}{100} + \frac1{100} = \underline{\frac{1}{50}}$$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 13 (4 poeng)</p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/1-13a-trekant.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av en likesidet trekant."/>
+            <p class="lead">
+                $a)$ Bruk $\triangle ABC$ ovenfor til å vise at $\sin30^\circ = \frac12$
+            </p>
+        </div>
+        <p class="lead">
+            $a)$ Markerer midtpunktet på linja $AB$ og kaller det $M$. Deretter kan vi trekke
+            en linje $CM$. Vi får da en rettvinklet trekant $\triangle AMC$ med hypotenus $AC$. Vi kan la $AC = 1$
+            uten tap av generalitet, og $AM = \frac12$. Det vil se slik ut:
+        </p>
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/1-13a-modifisert-trekant.png') }}"
+                 class="article-image-half-size"
+                 alt="Trekanten fra oppgaven med ekstra vertikal linje."/>
+        <p class="lead">
+            Hvis vi tar utgangspunkt i den $30^\circ$ vinkelen i $\angle ACM$, så ser vi at
+            $$
+            \begin{align*}
+            \sin(30^\circ) &= \frac{\text{motstående katet}}{\text{hypotenus}} \\ \\
+            &= \frac{AM}{AC} \\ \\
+            &= \frac{\frac12}{1} \\ \\
+            &= \frac12
+            \end{align*}
+            $$
+            som var det vi ønsket å vise.
+        </p>
+    </div>
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 13b</p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/1-13b-trekant.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av en trekant."/>
+            <p class="lead">
+                $b)$ Bestem lengden av siden $QR$ i $\triangle PQR$ ovenfor.
+            </p>
+        </div>
+        <p class="lead">
+            Fra cosinussetningen:
+
+            $$
+            \begin{align*}
+            (QR)^2 &= 8^2 + 5^2 - 2 \cdot8 \cdot5 \cdot \cos(60^\circ) \\ \\
+            &= 64 + 25 + 80 \cdot \frac12 \\ \\
+            &= 49 \\ \\
+            &\Rightarrow QR = \sqrt{49} = \underline7
+            \end{align*}
+            $$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 14 (4 poeng)</p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/1-14-grafer.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av fire funksjoner."/>
+            <p class="lead">
+                Ovenfor ser du grafene til fire funksjoner, $p, \ q, \ r, \ s$.
+            </p>
+            <p class="lead">Hvilken av grafene nedenfor er grafen til den deriverte av p?</p>
+            <p class="lead">Hvilken av grafene nedenfor er grafen til den deriverte av q?</p>
+            <p class="lead">Hvilken av grafene nedenfor er grafen til den deriverte av r?</p>
+            <p class="lead">Hvilken av grafene nedenfor er grafen til den deriverte av s?</p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/1-14-deriverte.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av seks funksjoner."/>
+        </div>
+        <p class="lead">
+            Grafen til den deriverte av $p$ må være positiv frem til $x \approx 0.5$, negativ frem til $x \approx 1.5$
+            og positiv etter. Graf $2$ er den deriverte av $p$.
+        </p>
+        <p class="lead">
+            $q$ er stigende med konstant vekstfart, som betyr at den deriverte er en konstant funksjon med positiv verdi.
+            Graf $4$ er den deriverte av $q$.
+        </p>
+        <p class="lead">
+            $r$ er synkende når $x<0$ og stigende når $x>0$, og flat når $x=0$.
+            Den deriverte må da være negativ når $x<0$ og positiv når $x>0$, og lik null når $x=0$.
+            Graf $5$ er den deriverte av $r$.
+        </p>
+        <p class="lead">
+            $s$ er synkende overalt, så dens deriverte må være negativ overalt.
+            Graf $3$ er den deriverte av $s$.
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 15 (2 poeng)</p>
+            <p class="lead">
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/1-15-graf.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av grafen til en tredjegradsfunksjon."/>
+            </p>
+            <p class="lead">
+                Ovenfor ser du grafen til en tredjegradsfunksjon $f$.
+            </p>
+            <ul class="lead">
+                <li>Grafen har et terrassepunkt i $(2, 8)$</li>
+                <li>Likningen for tangenten til grafen i punktet $(1, 7)$ er $y = 3x+4$</li>
+                <li>Likningen for tangenten til grafen i punktet $(4, 16)$ er $y = 12x-32$</li>
+            </ul>
+            <p class="lead">
+                Tegn grafen til den deriverte av funksjonen $f$.
+            </p>
+        </div>
+        <p class="lead">
+            Vi observerer at den deriverte må være lik null i terrassepunktet, $x=2$, og videre at $f'(1) = 3$, og $f'(4) = 12$.
+            I tillegg ser vi at bortsett fra terrassepunktet, så er grafen hele tiden stigende, som betyr at den deriverte
+            kun skal ha et nullpunkt i $x=2$, og være positiv ellers.
+        </p>
+        <p class="lead">
+            Merk: Når man blir bedt om å tegne en funksjon for hånd, så er det aldri forventet at den skal være perfekt.
+            Vi tar utgangspunkt i de punktene vi faktisk har verdier for, og fyller inn resten etter skjønn.
+        </p>
+
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/1-15-skisse.png') }}"
+                 class="article-image-half-size"
+                 alt="Bilde av grafen til en tredjegradsfunksjon."/>
+        </p>
+    </div>
+    <div class="exam-problem">
+        <h4>Del 2 - Med hjelpemidler</h4>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 1 (8 poeng)</p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/2-1-smed.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av et metallstykke som bearbeides av en smed."/>
+            </p>
+            <p class="lead">
+                En smed skal bearbeide et metallstykke. Funksjonen $T$ gitt ved
+                $$T(x) = 470 \cdot 0.95^x + 30 \quad , \quad x \in [0, 120]$$
+                viser temperaturen $T(x)$ grader celsius $(^\circ C)$ i metallstykket $x$ minutter etter at smeden
+                har tatt det ut av ovnen.
+            </p>
+            <p class="lead">
+                $a)$ Tegn grafen til T.
+            </p>
+        </div>
+        <p class="lead">
+            Vi tegner funksjonen i Geogebra, og passer på å bruke grensene, siden $x$ kun skal være mellom 0 og 120.
+        </p>
+        <p class="lead">
+            <code>T(x) := Funksjon(470 * 0.95^x + 30, 0, 12)</code>
+        </p>
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-1a-geogebra-graf.png') }}"
+                 class="article-image-half-size"
+                 alt="Bilde av T(x) tegnet i Geogebra."/>
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 1b</p>
+            <p class="lead">
+                $b)$ Hva er temperaturen i metallstykket når smeden tar det ut av ovnen?
+            </p>
+        </div>
+        <p class="lead">
+            Dette vil være tidspunktet der $x=0$. Temperaturen er da $T(0) = 500^\circ C$.
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 1c</p>
+            <p class="lead">
+                Metallet lar seg bare bearbeide når temperaturen er $150^\circ C$ eller høyere.
+            </p>
+            <p class="lead">
+                $c)$ Hvor lang tid har smeden på seg til å bearbeide metallstykket etter at han har tatt det ut av ovnen?
+            </p>
+        </div>
+        <p class="lead">
+            Vi markerer linja $y=150$ og finner ut hvor den skjærer $T(x)$.
+            <p class="lead"><code>y=150</code></p>
+            <p class="lead"><code>Skjæring(T(x), y=150)</code></p>
+        </p>
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-1b-geogebra.png') }}"
+                 class="article-image-half-size"
+                 alt="Bilde av Geogebra med skjæring mellom T(x) og linja y=150"/>
+        </p>
+        <p class="lead">
+            Vi ser at $x \approx 26.62$ er det tidspunktet der temperaturen har gått ned til 150 grader. Altså har
+            smeden ca. 26 og et halvt minutt på seg til å bearbeide metallstykket.
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 1d</p>
+            <p class="lead">
+                Smeden har utført noen beregninger. Se nedenfor.
+            </p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/2-1d-beregninger.png') }}"
+                     class="article-image-half-size"
+                     alt="Smedens beregninger tilhørende oppgave 1d"/>
+            </p>
+            <p class="lead">
+                Hvilke tall skal stå under de svarte sirklene merket A, B, C og D?
+            </p>
+        </div>
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-1d-geogebra-cas.png') }}"
+                 class="article-image-half-size"
+                 alt="Beregninger i CAS tilhørende oppgave 1d"/>
+        </p>
+        <p class="lead">
+            Linjene 2, 3, 4, 5 er løsningene på A, B, C, D respektivt. Merk at jeg bruker engelsk versjon av Geogebra
+            men i norsk versjon trenger du bare å oversette "Function" til "Funksjon", og "NSolve" til "NLøs".
+        </p>
+        <p class="lead">
+            Den lange verdien i linje 5 kan fås enkelt ved å klikke på verdien i linje 4. Merk at alle verdiene er
+            tilnærminger, men hvis man klikker på dem, så får man en mer nøyaktig verdi å bruke i neste linje.
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 2 (4 poeng)</p>
+
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/2-2a-hengelåser.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av hengelåser"/>
+            </p>
+            <p class="lead">
+                En fabrikk produserer hengelåser med to maskiner, maskin A og maskin B.
+            </p>
+            <ul class="lead">
+                <li>Maskin A produserer dobbelt så mange hengelåser som maskin B.</li>
+                <li>Det har vist seg at det er feil ved 5% av hengelåsene fra maskin A, og ved 2% av hengelåsene fra maskin B.</li>
+            </ul>
+            <p class="lead">
+                En dag produserer bedriften 300 hengelåser.
+            </p>
+            <p class="lead">
+                a) Systematiser opplysningene ovenfor i en krysstabell.
+            </p>
+        </div>
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-2a-geogebra-spreadsheet.png') }}"
+                 class="article-image-half-size"
+                 alt="Bilde av hengelåser"/>
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 2b</p>
+            <p class="lead">
+                Tenk deg at du tilfeldig tar en hengelås som er produsert denne dagen
+            </p>
+            <p class="lead">
+                Bestem sannsynligheten for at det er en feil ved hengelåsen.
+            </p>
+        </div>
+        <p class="lead">
+            Fra krysstabellen ser vi at det er totalt 12 hengelåser med feil, av totalt 300 produserte hengelåser.
+
+            $$P(\text{feil}) = \frac{12}{300} = \underline{\frac1{25}}$$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 2c</p>
+            <p class="lead">
+                Det viser seg at det er feil ved hengelåsen du har tatt.
+            </p>
+            <p class="lead">
+                Bestem sannsynligheten for at denne hengelåsen da er produsert av maskin A.
+            </p>
+        </div>
+        <p class="lead">
+            Vi har tatt en av de 12 hengelåsene med feil på. Av dem er 10 produsert av maskin A.
+            $$ P(\text{Maskin A}) = \frac{10}{12} = \underline{\frac56}$$
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 3 (4 poeng)</p>
+            <p class="lead">
+                Funksjonen $f$ er gitt ved $$f(x) = ax^3 - bx - 2$$
+
+                Grafen til $f$ har et toppunkt i $(2, 6)$.
+            </p>
+            <p class="lead">
+                a) Forklar at dette gir de to likningene
+
+                $$
+                \begin{align*}
+                12a - b &= 0 \\
+                8a - 2b - 2 &= 6
+                \end{align*}
+                $$
+            </p>
+        </div>
+        <p class="lead">
+            Punktet forteller oss at
+
+            $$
+            \begin{align*}
+            f(2) &= 6 \\
+            a \cdot 2^3 - 2b - 2 &= 6 \\
+            8a - 2b - 2 &= 6
+            \end{align*}
+            $$
+
+            Dersom $f$ har et toppunkt når $x=2$, så betyr det at den deriverte er null her.
+
+            $$
+            \begin{align*}
+            f'(x) &= 3ax^2 - b \\
+            f'(2) &= 0 \\
+            3a \cdot 2^2 - b &= 0 \\
+            12a - b &= 0
+            \end{align*}
+            $$
+
+            som vi ønsket å vise.
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 3b</p>
+            <p class="lead">
+                Bestem a og b.
+            </p>
+        </div>
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-3b-geogebra.png') }}"
+                 class="article-image-half-size"
+                 alt="Bilde av CAS-løsning i Geogebra for oppgave 3b"/>
+        </p>
+        <p class="lead">
+            Linje 4 viser løsningen: $a = -\frac12, \quad b = -6$.
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 4 (4 poeng)</p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/2-4-trekant.png') }}"
+                     class="article-image-half-size"
+                     alt="Bilde av trekant til oppgave 4 i del 2"/>
+            </p>
+            <p class="lead">
+                Gitt trekanten ovenfor. $AB = 4\sqrt5, \ BC = 10\sqrt2, \ AC = 6\sqrt{10}$. Bestem eksakte verdier for
+                $\cos A$ og $\sin C$.
+            </p>
+        </div>
+        <p class="lead">
+            Vi ser at alle sidene er kjent, og husker at cosinussetningen da kan gi oss en hvilken som helst av vinklene vi ønsker.
+            Velger vinkel A. Den siden som ikke berører denne vinkelen er $10\sqrt2$, som da blir stående alene på den ene siden av likhetstegnet.
+
+            $$\left( 10\sqrt2 \right)^2 = \left( 6\sqrt{10} \right)^2 + \left( 4\sqrt5 \right)^2 - 2\cdot 6\sqrt{10} \cdot 4\sqrt5 \cdot \cos A$$
+
+            Vi setter dette inn i CAS, og lar den løse denne likninga for oss, slik at vi finner ut hva $\cos A$ er. Se linje 1 i CAS-løsning nedenfor.
+            Merk at vi nå har en variabel ved navn "cosA". Dette er ikke et faktisk uttrykk for cosinus-verdien av A. Men i linje 2
+            bruker vi den funne verdien til å løse for A. Vi får to mulige verdier, men vi har ikke negative vinkler i trekanten
+            så vi ser bort fra den.
+        </p>
+        <p class="lead">
+            I linje 3 bruker vi Sinussetningen for å finne $\sin C$ ved hjelp av at vi nå vet at $A=45^\circ$.
+        </p>
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-4-CAS.png') }}"
+                 class="article-image-half-size"
+                 alt="Bilde av løsning i CAS til oppgave 4 i del 2"/>
+        </p>
+    </div>
+
+    <div class="exam-problem">
+        <div class="problem-text">
+            <p class="lead">Oppgave 5 (4 poeng)</p>
+            <p class="lead">
+                Pantheon er et tempel i Roma. En del av tempelet er formet som en sylinder med
+                en halvkule på toppen. Høyden i sylinderen er lik radius i halvsirkelen. Skissen nedenfor
+                viser et tverrsnitt av bygningen.
+            </p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/2-5-pantheon.png') }}"
+                     class="article-image-half-size"
+                     alt="Skisse av Pantheon til oppgave 5 i del 2"/>
+            </p>
+            <p class="lead">
+                Øverst i Pantheon er en sirkelformet åpning som kalles oculus (øye).
+                Oculus har diameter $AB$ og sentrum i $P$.
+                Halvkulen har sentrum i $Q$ og radius $r=QA=QB=21.65\text{cm}$. $\angle PQA = \angle BQP = 12^\circ$.
+            </p>
+            <p class="lead">
+                a) Bruk trigonometriske beregninger til å vise at diameteren til oculus er 9m.
+            </p>
+            <p class="lead">
+                Solstrålene slipper inn gjennom oculus. Se skissen nedenfor.
+            </p>
+            <p class="lead" style="text-align: center;">
+                <img src="{{ asset('img/article/1t-eksamen-v20/2-5-sol.png') }}"
+                     class="article-image-half-size"
+                     alt="Skisse av sollys i Pantheon til oppgave 5 i del 2"/>
+            </p>
+            <p class="lead">
+                b) Bruk trigonometriske beregninger til å bestemme hvor stor vinkelen $v$ minst må være for at solstråler
+                skal treffe gulvet i Pantheon.
+            </p>
+        </div>
+        <p class="lead">
+            a) Vi ser at AP er radien til oculus, og vi kan finne denne ved å bruke definisjonen av sinus i den rettvinklede trekanten $\triangle APQ$.
+            Diameteren AB er da den dobbelte av radien AP.
+        </p>
+        <p class="lead" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-5a-cas.png') }}"
+                 class="article-image-half-size"
+                 alt="Løsning i CAS til oppgave 5a i del 2"/>
+        </p>
+        <p class="lead">
+            b) Vi tegner en hjelpefigur med sollyset vinklet slik at den akkurat treffer hjørnet mellom veggen og gulvet.
+            Vi er altså ute etter å finne hvilken $\angle v$ som oppfyller dette.
+        </p>
+        <p class="lead">
+            Av denne skissa ser vi at $\angle v$ oppe ved punkt A, er den samme som $\angle v$ nede i hjørnet av Pantheon.
+            Vi kan derfor bruke trekanten $\triangle ATH$ for å regne ut denne vinkelen. Se CAS-løsning med forklaring nedenfor.
+        </p>
+        <div class="row" style="text-align: center;">
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-5b-hjelpeskisse.png') }}"
+                 class="article-image-half-size float-left"
+                 alt="Skisse av sollys i Pantheon til oppgave 5b i del 2"/>
+            <img src="{{ asset('img/article/1t-eksamen-v20/2-5b-cas.png') }}"
+                 class="article-image-half-size float-right"
+                 alt="Løsning i CAS til oppgave 5b i del 2"/>
+        </div>
+        <p class="lead">
+            Linje 1: Innfører lengda PQ ved bruk av cosinus i den rettvinklede trekanten $\triangle APQ$.
+            <br>
+            Linje 2: Innfører TH som den fulle høyda av Pantheon. Merk at høyda av sylinderen er 21.65, oppgitt i teksten.
+            <br>
+            Linje 3: Innfører lengda fra gulvet rett under A, bort til hjørnet. Dette gir oss nå den rettvinklede
+            trekanten $\triangle ATH$ som vi bruker til å regne ut $\angle v$.
+            <br>
+            Linje 4: Regner ut vinkelen med tangens, siden vi kjenner lengda av katetene i trekanten.
+        </p>
+    </div>
+{% endblock %}
