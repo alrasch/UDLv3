@@ -1,0 +1,221 @@
+{% extends "article/base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}Andregradsformelen | UDL.no{% endblock %}
+{% block hero_text %}Andregradsformelen / ABC-formelen{% endblock %}
+{% block meta_description %}
+    Lær hva andregradsformelen er, og hvordan vi bruker den til å løse andregradslikninger. Med bevis og eksempler!
+{% endblock %}
+
+{% block article %}
+    <div class="lead center">
+        <h3>Eksempel</h3>
+    </div>
+    <p class="lead">
+        Noen ganger er det fint å starte med et eksempel, slik at vi ser målet og nytteverdien.
+    </p>
+    <p class="lead">
+        Si vi har ei likning som ser slik ut:
+
+        $$3x^2 + 6x - 24 = 0$$
+
+        Andregradsformelen gir oss en rett-frem formel for å løse denne likninga uten å måtte gjøre noe annet enn å
+        sette inn koeffisientene og konstant-leddet. Formelen sier at
+
+        $$ax^2 + bx + c = 0 \quad \Rightarrow \quad x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+        Det vi ser her er at $a$ er koeffisienten på andregradsleddet $x^2$, $b$ er koeffisienten til førstegradsleddet $x$,
+        og $c$ er konstantleddet. Og vi ser at kriteriet er at alt er flyttet over på den ene sida, slik at den andre sida bare
+        har 0.
+    </p>
+
+    <p class="lead">
+        Gitt vår likning
+
+        $$3x^2 + 6x - 24 = 0$$
+
+        så kan vi se at $a = 3, \ b = 6, \ c = -24$. Og når vi setter dette inn i formelen får vi
+
+        $$
+        \begin{align*}
+        x &= \frac{-6 \pm \sqrt{6^2 - 4 \cdot 3 \cdot (-24)}}{2 \cdot 3} \\ \\
+          &= \frac{-6 \pm \sqrt{36 + 288}}{6} \\ \\
+          &= \frac{-6 \pm \sqrt{324}}{6} \\ \\
+          &= \frac{-6 \pm 18}{6}
+        \end{align*}
+        $$
+
+        Tegnet $\pm$ betyr "pluss eller minus", og forteller oss at det finnes to løsninger her. En løsning dersom vi
+        erstatter tegnet med pluss, og en løsning dersom vi erstatter tegnet med minus. La oss kalle de to løsningene
+        $x_1$ og $x_2$.
+
+        $$x_1 = \frac{-6 + 18}{6} = \frac{12}{6} = 2$$
+
+        $$x_2 = \frac{-6 - 18}{6} = \frac{-24}{6} = -4$$
+
+        Med andre ord har vi løsningene $x=2$ og $x=(-4)$ til likninga $3x^2 + 6x - 24 = 0$. Vi setter prøve på det ene
+        svaret. La oss teste at $x=2$ faktisk løser likninga. Venstre side gjennomgår følgende utregning.
+
+        $$
+        \begin{align*}
+        3x^2 + 6x - 24 &= 3\cdot2^2 + 6\cdot2 - 24 \\
+        &= 12 + 12 - 24 \\
+        &= 24-24 \\ &= 0
+        \end{align*}
+        $$
+
+        Vi ser at venstre side ender opp som 0, som er det høyre side i likninga allerede var, og vi har bekreftet at
+        $x=2$ løser likninga. Prøv gjerne selv med $x=(-4)$.
+    </p>
+
+    <div class="lead center">
+        <h3>Bevis</h3>
+    </div>
+
+    <p class="lead">
+        Her skal vi gjennomgå et bevis for andregradsformelen. Jeg har tilfeldigvis også laget en video hvor beviset gjennomgås
+        hvis du foretrekker det. <a href="{{ path('video', {
+            'discipline_slug': '1t-matematikk',
+            'playlist_slug'  : 'kapittel-4-funksjoner-andregradsuttrykk',
+            'video_slug'     : '4.4-andregradsformel-2-bevis-768'
+        }) }}">Se videogjennomgang av beviset her.</a>
+        Om du foretrekker å se det skriftlig, så er det bare å fortsette å lese.
+    </p>
+
+    <p class="lead">
+        Så hvor kommer denne formelen fra, som så enkelt løser slike likninger? Det er noe man kan oppdage ved å starte
+        med den generelle formen for likningstypen man ønsker å løse, og deretter anvende algebra for å prøve å få $x$
+        alene på den ene siden av likhetstegnet. La oss se på hvordan det kan gjøres:
+
+        $$ax^2 + bx + c = 0$$
+
+        Hvis man prøver å isolere $x$ bare ved å addere/subtrahere/multiplisere/dividere, så vil man gjerne oppleve
+        problemer. Gi det gjerne et forsøk. Det er fint å kunne gjenkjenne hvorfor det er så vanskelig.
+    </p>
+
+    <p class="lead">
+        Fordi vi har både et andregradsledd, og et førstegradsledd, så blir det vanskelig å snu likninga på formen
+
+        $$x = \ldots$$
+
+        med bare en enkel $x$ på den ene sida. Men et fint verktøy vi kan bruke, er å fullføre kvadratet. Det vil gi
+        oss et uttrykk på formen
+
+        $$(x+k)^2 + m$$
+
+        der $k, m$ er vilkårlige konstanter. Og et slikt uttrykk kan enkelt konverteres til $x = \ldots$.
+    </p>
+
+    <p class="lead">
+        La oss starte der. Vi har
+
+        $$ax^2 + bx + c = 0$$
+
+        Det første vi trenger, er å bli kvitt $a$, som er koeffisienten på andregradsleddet. Eller med andre ord, vi
+        ønsker at den skal være 1. Så vi deler gjennom likninga med $a$, og får
+
+        $$x^2 + \frac ba x + \frac ca = 0$$
+
+        Herfra trekker vi fra $\frac ca$ på begge sider, slik at vi kun har ledd med $x$ igjen på venstre side.
+
+        $$x^2 + \frac ba x = - \frac ca$$
+
+        Når vi skal fullføre kvadratet, i tilfelle du ikke har vært gjennom det, eller har glemt det, så ser vi på
+        koeffisienten på førstegradsleddet. Det er $\frac ba$. Vi deler det på 2, og får $\frac b{2a}$. Deretter adderer
+        vi kvadratet av det på begge sider av likninga.
+
+        $$x^2 + \frac ba x + \left( \frac b{2a} \right)^2 = -\frac ca + \left( \frac b{2a} \right)^2$$
+
+        Nå kan vi se at venstre side er et perfekt kvadrat. For enkelhets skyld, la oss innføre $d = \frac{b}{2a}$ for å
+        se det lettere.
+
+        $$x^2 + 2dx + d^2$$
+
+        Ved første kvadratsetning ser vi at
+
+        $$x^2 + 2dx + d^2 = (x+d)^2$$
+
+        så vi kan skrive om venstre side av likninga.
+
+        $$
+        \begin{align*}
+        x^2 + \frac ba x + \left( \frac b{2a} \right)^2 &= -\frac ca + \left( \frac b{2a} \right)^2 \\
+        \left( x+\frac{b}{2a} \right)^2 &= -\frac ca + \left( \frac b{2a} \right)^2
+        \end{align*}
+        $$
+
+        $x$ oppstår bare som et førstegradsledd, og da skal vi kunne isolere det lettere.
+    </p>
+
+    <p class="lead">
+        Vi må nå "pakke ut" x'en, så vi starter med å ta kvadratrota på begge sider.
+
+        $$x + \frac{b}{2a} = \pm \sqrt{-\frac ca + \left( \frac b{2a} \right)^2}$$
+
+        Vi ønsker å få $x$ alene, så vi subtraherer $\frac{b}{2a}$ på begge sider.
+
+        $$x = -\frac{b}{2a} \pm \sqrt{-\frac ca + \left( \frac b{2a} \right)^2}$$
+
+        Dette er faktisk formelen! Vi ser at nå har vi et uttrykk som lar oss finne $x$, gitt at vi ved $a, b, c$. Men
+        uttrykket kan forenkles og gjøres litt penere. Vi tar kvadratrotuttrykket, og ganger det med $\frac{2a}{2a}$
+        slik at det blir en brøk med $2a$ i nevner, slik som det første leddet.
+
+        $$x = -\frac{b}{2a} \pm \frac{2a\sqrt{-\frac ca + \left( \frac b{2a} \right)^2}}{2a}$$
+
+        Og nå kan vi addere/subtrahere brøkene.
+
+        $$x = \frac{-b \pm \sqrt{(2a)^2\left(-\frac ca + \left( \frac b{2a} \right)^2 \right)}}{2a}$$
+
+        Vi forenkler uttrykket inni kvadratrota litt til.
+
+        $$
+        \begin{align*}
+        (2a)^2\left(-\frac ca + \left( \frac b{2a} \right)^2 \right)
+        &= -\frac ca \cdot (2a)^2 + \frac{b^2}{\cancel{(2a)^2}} \cdot \cancel{(2a)^2} \\ \\
+        &= -\frac ca \cdot 4a^2 + b^2 \\ \\
+        &= b^2 - 4ac
+        \end{align*}
+        $$
+
+        Vi setter dette tilbake inn i kvadratrota, og får følgelig
+
+        $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+        og vi kan nå bruke formelen med god samvittighet!
+    </p>
+
+    <div class="lead">
+        Dersom mellomregninga var vanskelig å henge med på, så finnes det hjelpemidler.
+
+        <ul>
+            <li>
+                <a href="{{ path('video', {
+                    'discipline_slug': '1t-matematikk',
+                    'playlist_slug'  : 'kapittel-4-funksjoner-andregradsuttrykk',
+                    'video_slug'     : '4.4-andregradsformel-2-bevis-768'
+                }) }}">Se videogjennomgang av beviset her</a>, der jeg forklarer hvert steg litt nærmere.
+            </li>
+            <li>
+                Pass på at du ikke har hull i algebra-kunnskapene. Videoene fra kapittel 2, 3 og 4 fra
+                <a href="{{ path('discipline', {
+                    'slug': '1t-matematikk'
+                }) }}">1T-spillelista</a>
+                går gjennom all algebraen som trengs for å henge med på dette beviset.
+            </li>
+            <li>
+                Dersom du har gjort de to punktene ovenfor kan du sende meg en epost på
+                <a href="mailto:aleksander@udl.no">
+                    aleksander@udl.no
+                </a>
+                og forklar så nøye som mulig hva det er som gjør at du står fast. Jeg hjelper deg gjerne.
+            </li>
+        </ul>
+    </div>
+
+    <p class="lead">
+        Alle disse punktene er selvfølgelig gratis.
+    </p>
+{% endblock %}

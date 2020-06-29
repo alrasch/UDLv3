@@ -1,6 +1,10 @@
 {% extends "base/base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
+{% endblock %}
 
-{% block title %}Artikler{% endblock %}
+{% block title %}Artikler | UDL.no{% endblock %}
 {% block hero_text %}Matematiske artikler, UDL.no{% endblock %}
 {% block subtext %}En samling av matematiske artikler skrevet av UDL.{% endblock %}
 {% block back_url %}{{ path('home') }}{% endblock %}
@@ -11,7 +15,7 @@
 {% block content %}
     <div class="row offset-xl-1 col-xl-10 d-flex justify-content-center">
         {% for discipline in disciplines %}
-            <div class="row col-12 d-flex justify-content-center">
+            <div class="row col-12 d-flex justify-content-center article-discipline">
                 <div class="row col-12 d-flex justify-content-center">
                     <h3>{{ discipline.name }}</h3>
                 </div>
