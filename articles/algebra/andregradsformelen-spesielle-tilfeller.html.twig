@@ -1,0 +1,163 @@
+{% extends "article/base.html.twig" %}
+
+{% block title %}Spesielle tilfeller av andregradsformelen | UDL.no{% endblock %}
+{% block hero_text %}Spesielle tilfeller av andregradsformelen{% endblock %}
+{% block meta_description %}
+    Guide til hvordan man takler andregradslikninger med bare én eller ingen løsning, og likninger med bare to ledd.
+{% endblock %}
+
+{% block article %}
+    <div class="lead article-subheading"><h3>Andregradslikninger uten konstantledd</h3></div>
+    <p class="lead">
+        Hva skjer hvis likninga er
+
+        $$x^2 + 2x = 0$$
+
+        Det finnes et par forskjellige måter vi kan takle dette på. Den ene er å bruke andregradsformelen som vanlig,
+        med $a=1, \ b=2, \ c=0$. Vi får
+
+        $$
+        \begin{align*}
+        x &= \frac{-2 \pm \sqrt{2^2 - 4\cdot1\cdot0}}{2} \\ \\
+          &= \frac{-2 \pm 2}{2} \\ \\
+          &= -1 \pm 1
+        \end{align*}
+        $$
+
+        som gir oss løsningene $x_1 = 0, \quad x_2 = -2$.
+    </p>
+
+    <p class="lead">
+        En alternativ, og raskere metode, vil være å bare faktorisere uttrykket. Vi kan forbigå andregradsformelen helt.
+
+        $$
+        \begin{align*}
+        x^2 + 2x &= 0 \\ \\
+        x(x+2) &= 0
+        \end{align*}
+        $$
+
+        Vi har en produktregel som sier at hvis et produkt er lik 0, så er en eller flere av faktorene i produktet lik
+        null. Med andre ord, dersom $x(x+2) = 0$, så må $x=0$ eller $x+2 = 0$. Sistnevnte har løsningen $x=-2$, og vi
+        ser da at vi har fått de samme svarene som vi fikk med andregradsformelen!
+    </p>
+
+    <div class="lead article-subheading"><h3>Andregradslikninger uten førstegradsledd</h3></div>
+
+    <p class="lead">
+        La oss si vi har likninga
+
+        $$4x^2 - 5 = 0$$
+
+        I dette tilfellet kan vi fremdeles bruke andregradsformelen med $a = 4, \ b=0, \ c=(-5)$, og få svarene som vanlig.
+        Men vi kan også bruke annen algebra. Vi kan skrive begge leddene som et kvadrat, og bruke tredje kvadratsetning,
+        også kjent som konjugatsetninga.
+
+        $$
+        \begin{align*}
+        4x^2 - 5 &= 0 \\ \\
+        (2x)^2 - \left( \sqrt5 \right)^2 &= 0 \\ \\
+        (2x-\sqrt5)(2x+\sqrt5) &= 0
+        \end{align*}
+        $$
+
+        Igjen kan vi bruke produktregelen, og får de to likningene $2x-\sqrt5=0$ og $2x+\sqrt5=0$ som har løsningene
+
+        $$x_1 = \frac{\sqrt5}2, \quad x_2 = -\frac{\sqrt5}2$$
+
+        Merk, dette ville ikke latt seg gjort dersom likninga var $$4x^2 + 5 = 0$$ fordi vi kan ikke bruke konjugatsetninga
+        når begge leddene er positive. Dette gjenspeiler seg også i det faktum at $4x^2 + 5$ ALLTID er større enn 0,
+        og likninga har ingen reell løsning. Dette skal vi se nærmere på nå!
+    </p>
+
+    <div class="lead article-subheading"><h3>Andregradslikninger uten løsning</h3></div>
+
+    <p class="lead">
+        I andregradsformelen har vi en kvadratrot, nemlig
+
+        $$\sqrt{b^2 - 4ac}$$
+
+        Et problem kan oppstå dersom uttrykket under kvadratrota blir negativt, fordi vi kan ikke ta kvadratrota av negative
+        tall. (*) Med andre ord, dersom
+
+        $$b^2 - 4ac < 0$$
+
+        så har likninga ingen reell løsning. Et eksempel kan være
+
+        $$4x^2 + x + 5 = 0$$
+
+        Vi setter $a=4, \ b=1, \ c=5$ inn i andregradsformelen, og får
+
+        $$
+        \begin{align*}
+        x &= \frac{-1 \pm \sqrt{1^2 - 4 \cdot 4 \cdot 5}}{2 \cdot 4} \\ \\
+          &= \frac{-1 \pm \sqrt{-79}}{8}
+        \end{align*}
+        $$
+
+        og her stopper det opp, fordi vi ikke enda har verktøyene for å regne med kvadratrota av et negativt tall.
+    </p>
+
+    <div class="lead article-subheading"><h3>Andregradslikninger med bare én løsning</h3></div>
+
+    <p class="lead">
+        Dersom uttrykket under kvadratrota ender opp med å være 0, så får vi ikke to forskjellige løsninger, fordi
+        $\pm 0$ gir ikke to forskjellige verdier. Eksempelvis, ta likninga
+
+        $$x^2 - 6x + 9 = 0$$
+
+        Vi bruker andregradsformelen med $a=1, \ b=(-6), \ c=9$ og får
+
+        $$
+        \begin{align*}
+        x &= \frac{6 \pm \sqrt{(-6)^2 - 4 \cdot 1 \cdot 9}}{2 \cdot 1} \\ \\
+          &= \frac{6 \pm \sqrt 0}{2} \\ \\
+          &= \frac{6 \pm 0}{2} \\ \\
+          &= \frac62 \\ \\
+          &= 3
+        \end{align*}
+        $$
+
+        Enten vi adderer eller subtraherer 0, så står vi uansett bare igjen med 3 som eneste løsning.
+    </p>
+
+    <div class="lead article-subheading"><h3>Se hvor mange løsninger likninga har, uten å regne dem ut</h3></div>
+
+    <div class="lead">
+        For å oppsummere, så ser vi at bare ved å betrakte uttrykket under kvadratrota, så kan vi avgjøre hvor mange
+        løsninger likninga har.
+        <ul>
+            <li>$b^2 - 4ac > 0$ betyr at vi har to løsninger</li>
+            <li>$b^2 - 4ac = 0$ betyr at vi har én løsning</li>
+            <li>$b^2 - 4ac < 0$ betyr at vi har ingen løsning</li>
+        </ul>
+    </div>
+
+    <div class="lead article-subheading"><h3>Mer informasjon</h3></div>
+
+    <p class="lead">
+        Jeg har laget mange videoer om likninger generelt, inkludert andregradslikninger, som du kan se som en del av
+        kurset i
+        <a href="{{ path('discipline', {'slug': '1t-matematikk'}) }}">1T Matematikk</a>. Se spesielt på kapitlene 2, 3 og 4.
+        Alt er naturligvis gratis der også.
+    </p>
+
+    <p class="lead">
+        (*) Når vi sier at en andregradslikninger ikke har noen løsning, så mener vi at den ikke har noen <b>reell</b> løsning.
+        Vi KAN ta kvadratrota av negative tall, men det tar oss ut på et emne som kalles "komplekse tall". Det er ikke
+        så komplisert som navnet tilsier, og du kan se videoene jeg har laga om slike tall
+        <a href="{{ path('playlist', {
+            'discipline_slug': 'matematikk-hoyskole-universitet',
+            'playlist_slug': 'komplekse-tall'
+        }) }}">her</a>.
+        Merk også at vi her kan lære å løse andregradslikningene som er beskrevet som "uten løsning" lengre opp i artikkelen.
+        Dette er fordi løsningene ligger i det som kalles "det komplekse planet", og er tall man ikke finner på den
+        reelle tallinja. Dette er høyskolepensum, men typisk første semester, så det er ikke stort vanskeligere enn VGS,
+        bare annerledes.
+    </p>
+
+    <p class="lead">
+        Dersom du har spørsmål eller kommentarer til artikkelen, så kan du ta kontakt ved å sende meg en epost på
+        <a href="mailto:aleksander@udl.no">aleksander@udl.no</a>.
+    </p>
+{% endblock %}
