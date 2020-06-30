@@ -14,7 +14,9 @@ div.exam-problem {
     border-bottom: white solid 1px;
 }
 
-div.center {
+div.article-subheading {
+    border-top: 2px solid grey;
+    padding-top: 10px;
     text-align: center;
 }
 

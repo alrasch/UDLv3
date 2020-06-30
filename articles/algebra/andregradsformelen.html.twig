@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block article %}
-    <div class="lead center">
+    <div class="lead article-subheading">
         <h3>Eksempel</h3>
     </div>
     <p class="lead">
@@ -71,7 +71,7 @@
         $x=2$ løser likninga. Prøv gjerne selv med $x=(-4)$.
     </p>
 
-    <div class="lead center">
+    <div class="lead article-subheading">
         <h3>Bevis</h3>
     </div>
 
@@ -185,6 +185,15 @@
         $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
         og vi kan nå bruke formelen med god samvittighet!
+    </p>
+
+    <div class="lead article-subheading"><h3>Mer informasjon</h3></div>
+
+    <p class="lead">
+        Les videre om noen <a href="{{ path('article', {
+            'discipline_slug': 'algebra',
+            'topic': 'andregradsformelen-spesielle-tilfeller'
+        }) }}">spesielle tilfeller av andregradslikninger</a>.
     </p>
 
     <div class="lead">
