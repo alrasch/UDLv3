@@ -20,6 +20,13 @@ div.article-subheading {
     text-align: center;
 }
 
+div.problem-text {
+    background-color: #303030;
+    padding: 20px;
+    margin-bottom: 5px;
+    border-radius: 25px;
+}
+
 td,th {
     text-align: center;
     vertical-align: middle;
