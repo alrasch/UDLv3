@@ -6,6 +6,7 @@ use App\Logic\Discipline\Mapper as DisciplineMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Entity\Discipline;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DisciplineController extends AbstractController
 {
@@ -28,7 +29,7 @@ class DisciplineController extends AbstractController
         $discipline = $this->getDoctrine()->getRepository(Discipline::class)->findOneBy($discipline_criteria);
 
         if ($discipline == null || empty($discipline)) {
-            return $this->redirectToRoute('home');
+            throw new NotFoundHttpException();
         }
 
         $playlists = $discipline->getPlaylists()->getValues();

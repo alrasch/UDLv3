@@ -1,0 +1,28 @@
+{% extends "base/base.html.twig" %}
+
+{% block hero_text %}UDL - Gratis mattevideoer og leksehjelp{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row offset-xl-1 col-xl-10">
+            <p class="lead">
+                Fant ikke ressursen du lette etter. Det kan være fordi ressursen er flyttet eller fjernet.
+            </p>
+
+            <p class="lead">
+                Hvis du har spørsmål eller trenger hjelp med å finne noe, så kan du ta kontakt på epost:
+                <a href="mailto:aleksander@udl.no">aleksander@udl.no</a>.
+            </p>
+
+            <p class="lead">
+                Eventuelt, <a href="{{ path('home') }}">gå tilbake til startsiden</a>, og bla i biblioteket manuelt.
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
+{% endblock %}

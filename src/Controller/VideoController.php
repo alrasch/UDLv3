@@ -7,6 +7,7 @@ use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Entity\Video;
 use App\Logic\Video\Resolver;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class VideoController extends AbstractController
 {
@@ -33,7 +34,7 @@ class VideoController extends AbstractController
         $video = $this->getDoctrine()->getRepository(Video::class)->findOneBy($video_criteria);
 
         if ($video === null || empty($video)) {
-            return $this->redirectToRoute('playlist', ['slug' => $playlist_slug]);
+            throw new NotFoundHttpException();
         }
 
         $true_discipline_slug = $video->getPlaylist()->getDiscipline()->getUrlSlug();
