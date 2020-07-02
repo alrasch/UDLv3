@@ -27,6 +27,20 @@ div.problem-text {
     border-radius: 25px;
 }
 
+img.article-image-half-size {
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+    position: relative;
+}
+
+img.article-image-wide {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    position: relative;
+}
+
 td,th {
     text-align: center;
     vertical-align: middle;
