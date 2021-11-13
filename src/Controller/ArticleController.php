@@ -29,21 +29,15 @@ class ArticleController extends AbstractController {
     }
 
     public function listAction() {
-        /** @var Article[] $articles */
-        $articles = $this->getDoctrine()->getRepository(Article::class)->findAll();
+        $json = file_get_contents(__DIR__ . "/../../articles/articles.json");
+        $articles = json_decode($json, true);
+
         /** @var Discipline[] $disciplines */
         $disciplines = $this->getDoctrine()->getRepository(Discipline::class)->findAll();
-
-        if ($articles === null || empty($articles)) {
-            return $this->redirectToRoute('home');
-        }
-
         $grouped = $this->grouper->groupByDisciplineId($articles, $disciplines);
-
         $data = [
             'disciplines' => $grouped
         ];
-
         return $this->render('article/list.html.twig', $data);
     }
 }

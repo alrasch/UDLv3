@@ -8,23 +8,6 @@ use App\Entity\Discipline;
 class Grouper
 {
     /**
-     * @param Article[] $articles
-     */
-    private function getUniqueDisciplineIds(array $articles)
-    {
-        $unique_discipline_ids = [];
-
-        foreach ($articles as $article) {
-            if (!in_array($article->getDisciplineId(), $unique_discipline_ids)) {
-                $unique_discipline_ids[] = $article->getDisciplineId();
-            }
-        }
-
-        return $unique_discipline_ids;
-    }
-
-    /**
-     * @param Article[] $articles
      * @param Discipline[] $disciplines
      */
     public function groupByDisciplineId(array $articles, array $disciplines)
@@ -38,12 +21,17 @@ class Grouper
             return [
                 'id' => $discipline->getId(),
                 'name' => $discipline->getName(),
-                'articles' => $discipline->getArticles()->getValues(),
+                'articles' => [],
                 'url_slug' => $discipline->getUrlSlug()
             ];
         };
 
         $grouped = array_map($callback, $indexed_disciplines);
+
+
+        foreach ($articles as $article) {
+            $grouped[$article["discipline_id"]]["articles"][] = $article;
+        }
 
         foreach ($grouped as $key => $discipline) {
             if (empty($discipline['articles'])) {
