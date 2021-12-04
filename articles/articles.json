@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "name": "Bevis - Forventning til funksjon av stokatisk variabel, $E[g(x)]$",
+    "name": "Bevis - Forventning til funksjon av stokatisk variabel, E[g(x)]",
     "short_description": "Bevis av formelen for forventningsverdien til en diskret stokastisk variabel.",
     "template": "bevis-forventning-funksjon",
     "discipline_id": 18,
