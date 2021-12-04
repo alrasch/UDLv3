@@ -22,7 +22,7 @@ class ArticleController extends AbstractController {
         $template_path = "@article/{$discipline_slug}/{$topic}.html.twig";
 
         if ($this->loader->exists($template_path)) {
-            return $this->render($template_path);
+            return $this->render($template_path, ['load_mathjax' => true]);
         } else {
             return $this->forward('App\Controller\HomeController::indexAction');
         }

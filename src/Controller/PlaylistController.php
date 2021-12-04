@@ -47,17 +47,20 @@ class PlaylistController extends AbstractController
         $discipline = $this->discipline_mapper->mapOne($discipline);
         $videos = $playlist->getVideos()->getValues();
 
-        $playlist = $this->playlist_mapper->mapOneWithRelations($playlist);
+        $mapped_playlist = $this->playlist_mapper->mapOneWithRelations($playlist);
         $videos = $this->video_mapper->mapVideos($videos);
 
         $video_count = count($videos);
         $videos = array_chunk($videos, ceil($video_count / 3));
 
+        $load_mathjax = str_contains($playlist->getName(), '$') || str_contains($playlist->getShortDescription(), '$');
+
         $data = [
             'discipline' => $discipline,
-            'playlist' => $playlist,
+            'playlist' => $mapped_playlist,
             'videos' => $videos,
-            'count' => $video_count
+            'count' => $video_count,
+            'load_mathjax' => $load_mathjax
         ];
 
         return $this->render(self::PLAYLIST_TEMPLATE, $data);

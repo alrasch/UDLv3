@@ -148,4 +148,10 @@ class Discipline
 
         return $this;
     }
+
+    public function getDescription(): string
+    {
+        return $this->getShortDescription();
+    }
+
 }

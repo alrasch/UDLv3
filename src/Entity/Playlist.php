@@ -169,4 +169,9 @@ class Playlist
 
         return $this;
     }
+
+    public function getDescription(): string
+    {
+        return $this->getShortDescription();
+    }
 }

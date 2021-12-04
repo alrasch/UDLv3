@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Logic\Common\FormattedMathResolver;
 use App\Logic\Video\Mapper as VideoMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Entity\Video;
@@ -20,11 +21,15 @@ class VideoController extends AbstractController
     /** @var Resolver $resolver */
     private $resolver;
 
-    public function __construct(VideoMapper $video_mapper, PlaylistMapper $playlist_mapper, Resolver $resolver)
+    /** @var FormattedMathResolver $math_resolver */
+    private $math_resolver;
+
+    public function __construct(VideoMapper $video_mapper, PlaylistMapper $playlist_mapper, Resolver $resolver, FormattedMathResolver $math_resolver)
     {
         $this->video_mapper = $video_mapper;
         $this->playlist_mapper = $playlist_mapper;
         $this->resolver = $resolver;
+        $this->math_resolver = $math_resolver;
     }
 
     public function indexAction($discipline_slug, $playlist_slug, $video_slug)
@@ -59,15 +64,17 @@ class VideoController extends AbstractController
         $playlist = $this->playlist_mapper->mapOne($video->getPlaylist());
 
         parse_str(parse_url($video->getYoutubeUrl(), PHP_URL_QUERY), $youtube_video_url);
-        $video = $this->video_mapper->mapOne($video);
+        $mapped_video = $this->video_mapper->mapOne($video);
+
 
         $data = [
-            'video' => $video,
+            'video' => $mapped_video,
             'playlist' => $playlist,
             'youtube_video_url' => $youtube_video_url['v'],
             'previous_video' => $previous_video,
             'next_video' => $next_video,
-            'discipline_slug' => $discipline_slug
+            'discipline_slug' => $discipline_slug,
+            'load_mathjax' => $this->math_resolver->hasFormattedMath($video),
         ];
 
         return $this->render('video/index.html.twig', $data);
