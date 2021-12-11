@@ -46,6 +46,11 @@ td,th {
     vertical-align: middle;
 }
 
+div.lead h2 {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
 /* Extra small devices */
 @media (max-width: 575px) {
     p.lead {

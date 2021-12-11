@@ -1,11 +1,12 @@
 {% extends "base/base.html.twig" %}
+
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %}
-    <div class="col-10 offset-1 col-xl-8 offset-xl-2">
-        {% block article %}{% endblock %}
+    <div class="col-10 offset-1 col-xl-8 offset-xl-2 lead">
+        <h3></h3>
     </div>
 {% endblock %}

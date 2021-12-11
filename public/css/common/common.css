@@ -25,7 +25,7 @@ h1.display-5 {
 /* Extra small devices */
 @media (max-width: 575px) {
     .footer-element {
-        padding-bottom: 20px;
+        padding-bottom: 2rem;
     }
 
     .hero-text {
@@ -36,6 +36,10 @@ h1.display-5 {
 
 /* Small devices (tablets) */
 @media (min-width: 576px) {
+    .footer-element {
+        padding-bottom: 2rem;
+    }
+
     .hero-text {
         padding-top: 10px;
         text-align: center;
@@ -44,6 +48,10 @@ h1.display-5 {
 
  /* Medium devices (tablets) */
 @media (min-width: 768px) {
+    .footer-element {
+        padding-bottom: 2rem;
+    }
+
     .hero-text {
         padding-top: 50px;
         padding-bottom: 10px;
@@ -248,4 +256,42 @@ p.description {
 
 .footer-element {
     text-align: center;
+    font-size: 1rem;
+}
+
+.btn-round {
+    display: inline-block;
+    text-decoration: none;
+    background: #599ed6;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    border: solid 1px rgba(255, 255, 255, 0.47);
+}
+
+.btn-grad {
+    background: linear-gradient(
+        -45deg,
+        #494B50 10%,
+        #738A90 50%,
+        #494B50 100%
+    )
+}
+.btn-grad {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    font-weight: bold;
+    line-height: 70px;
+    text-align: center;
+    text-transform: uppercase;
+    background-size: 100% auto;
+    color: #d2d2d2;
+    border-radius: 50%;
 }

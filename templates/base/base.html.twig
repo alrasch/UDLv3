@@ -61,7 +61,7 @@
 
         <footer class="text-muted card">
             <div class="container-fluid row">
-                <div class="col-12 col-sm-4 footer-element">
+                <div class="col-12 col-md-3 footer-element">
                     <h4>Besøk UDL på:</h4>
                     <a href="https://www.instagram.com/udl.no/" aria-label="UDL.no på Instagram">
                         <img src="{{ asset('img/instagram.ico') }}" alt="UDL.no på Instagram"/>
@@ -81,7 +81,14 @@
 {#                    </a>#}
                 </div>
 
-                <div class="col-12 col-sm-4 footer-element">
+                <div class="col-12 col-md-3 footer-element">
+                    <h4>Informasjon</h4>
+
+                    <a href="{{ path("about") }}" class="btn-grad" aria-label="Om UDL">Om UDL</a>
+                    <a href="{{ path("faq") }}" class="btn-grad" aria-label="FAQ">FAQ</a>
+                </div>
+
+                <div class="col-12 col-md-3 footer-element">
                     <h4>En donasjon?</h4>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                         <input type="hidden" name="cmd" value="_s-xclick" />
@@ -92,7 +99,7 @@
                     <p>En liten donasjon hjelper mye!</p>
                 </div>
 
-                <div class="col-12 col-sm-4 footer-element">
+                <div class="col-12 col-md-3 footer-element">
                     <h4>Artikler</h4>
                     <p>
                         <a href="{{ path('articles') }}"

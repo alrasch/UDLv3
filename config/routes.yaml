@@ -25,3 +25,11 @@ article:
 articles:
     path: /artikler
     controller: App\Controller\ArticleController::listAction
+
+about:
+    path: /about
+    controller: App\Controller\AboutController::aboutAction
+
+faq:
+    path: /faq
+    controller: App\Controller\AboutController::faqAction
