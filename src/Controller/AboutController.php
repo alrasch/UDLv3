@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 
 class AboutController extends AbstractController
 {
-    public function aboutAction() {
+    public function aboutAction(): Response
+    {
         return $this->render('about/about.html.twig');
     }
 

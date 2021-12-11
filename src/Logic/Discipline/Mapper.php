@@ -6,9 +6,6 @@ use App\Entity\Discipline;
 
 class Mapper
 {
-    /**
-     * @param array|Discipline[] $disciplines
-     */
     public function mapDisciplines(array $disciplines): array
     {
         $map = function (Discipline $discipline) {

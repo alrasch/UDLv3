@@ -5,20 +5,19 @@ namespace App\Controller;
 use App\Entity\Discipline;
 use App\Logic\Discipline\Mapper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends AbstractController
 {
     const INDEX_TEMPLATE = 'home/index.html.twig';
-
-    /** @var Mapper */
-    private $mapper;
+    private Mapper $mapper;
 
     public function __construct(Mapper $mapper)
     {
         $this->mapper = $mapper;
     }
 
-    public function indexAction()
+    public function indexAction(): Response
     {
         $disciplines = $this->getDoctrine()->getRepository(Discipline::class)->findBy([], ['sortWeight' => 'ASC']);
 

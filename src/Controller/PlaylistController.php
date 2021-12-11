@@ -7,6 +7,7 @@ use App\Logic\Discipline\Mapper as DisciplineMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Logic\Video\Mapper as VideoMapper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PlaylistController extends AbstractController
@@ -32,14 +33,14 @@ class PlaylistController extends AbstractController
         $this->video_mapper = $video_mapper;
     }
 
-    public function indexAction($discipline_slug, $playlist_slug)
+    public function indexAction($discipline_slug, $playlist_slug): Response
     {
         $playlist_criteria = ['urlSlug' => $playlist_slug];
 
         /** @var Playlist $playlist */
         $playlist = $this->getDoctrine()->getRepository(Playlist::class)->findOneBy($playlist_criteria);
 
-        if ($playlist == null || empty($playlist)) {
+        if (empty($playlist)) {
             throw new NotFoundHttpException();
         }
 
@@ -53,7 +54,8 @@ class PlaylistController extends AbstractController
         $video_count = count($videos);
         $videos = array_chunk($videos, ceil($video_count / 3));
 
-        $load_mathjax = str_contains($playlist->getName(), '$') || str_contains($playlist->getShortDescription(), '$');
+        $load_mathjax = str_contains($playlist->getName(), '$')
+                     || str_contains($playlist->getShortDescription(), '$');
 
         $data = [
             'discipline' => $discipline,

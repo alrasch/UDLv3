@@ -12,17 +12,10 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class VideoController extends AbstractController
 {
-    /** @var VideoMapper $video_mapper */
-    private $video_mapper;
-
-    /** @var PlaylistMapper $playlist_mapper */
-    private $playlist_mapper;
-
-    /** @var Resolver $resolver */
-    private $resolver;
-
-    /** @var FormattedMathResolver $math_resolver */
-    private $math_resolver;
+    private VideoMapper $video_mapper;
+    private PlaylistMapper $playlist_mapper;
+    private Resolver $resolver;
+    private FormattedMathResolver $math_resolver;
 
     public function __construct(VideoMapper $video_mapper, PlaylistMapper $playlist_mapper, Resolver $resolver, FormattedMathResolver $math_resolver)
     {
@@ -38,7 +31,7 @@ class VideoController extends AbstractController
         /** @var Video $video */
         $video = $this->getDoctrine()->getRepository(Video::class)->findOneBy($video_criteria);
 
-        if ($video === null || empty($video)) {
+        if (empty($video)) {
             throw new NotFoundHttpException();
         }
 

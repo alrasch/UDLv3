@@ -2,15 +2,11 @@
 
 namespace App\Logic\Article;
 
-use App\Entity\Article;
 use App\Entity\Discipline;
 
 class Grouper
 {
-    /**
-     * @param Discipline[] $disciplines
-     */
-    public function groupByDisciplineId(array $articles, array $disciplines)
+    public function groupByDisciplineId(array $articles, array $disciplines): array
     {
         $indexed_disciplines = [];
         foreach ($disciplines as $discipline) {

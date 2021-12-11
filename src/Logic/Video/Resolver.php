@@ -3,15 +3,13 @@
 namespace App\Logic\Video;
 
 use App\Entity\Video;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\NativeQuery;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 class Resolver
 {
-    /** @var EntityManager */
-    protected $entity_manager;
+    protected EntityManagerInterface $entity_manager;
 
     public function __construct(EntityManagerInterface $entity_manager)
     {
@@ -34,7 +32,6 @@ class Resolver
 
         $next_video = $this->runQuery($base_query, [$sort_weight, $playlist_id]);
         return $next_video;
-
     }
 
     private function runQuery(string $base_query, array $parameters): ?Video

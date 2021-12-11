@@ -7,33 +7,35 @@ use App\Logic\Discipline\Mapper as DisciplineMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Entity\Discipline;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DisciplineController extends AbstractController
 {
     const DISCIPLINE_TEMPLATE = 'discipline/index.html.twig';
 
-    private $discipline_mapper;
+    private DisciplineMapper $discipline_mapper;
+    private PlaylistMapper $playlist_mapper;
+    private FormattedMathResolver $math_resolver;
 
-    private $playlist_mapper;
-
-    /** @var FormattedMathResolver $math_resolver */
-    private $math_resolver;
-
-    public function __construct(DisciplineMapper $discipline_mapper, PlaylistMapper $playlist_mapper, FormattedMathResolver $math_resolver)
+    public function __construct(
+        DisciplineMapper $discipline_mapper,
+        PlaylistMapper $playlist_mapper,
+        FormattedMathResolver $math_resolver)
     {
         $this->discipline_mapper = $discipline_mapper;
         $this->playlist_mapper = $playlist_mapper;
         $this->math_resolver = $math_resolver;
     }
 
-    public function indexAction($slug)
+
+    public function indexAction($slug): Response
     {
         $discipline_criteria = ['urlSlug' => $slug];
         /** @var Discipline $discipline */
         $discipline = $this->getDoctrine()->getRepository(Discipline::class)->findOneBy($discipline_criteria);
 
-        if ($discipline == null || empty($discipline)) {
+        if (empty($discipline)) {
             throw new NotFoundHttpException();
         }
 

@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\Article;
 use App\Entity\Discipline;
 use App\Logic\Article\Grouper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 use Twig\Loader\LoaderInterface;
 
@@ -18,7 +18,8 @@ class ArticleController extends AbstractController {
         $this->grouper = $grouper;
     }
 
-    public function indexAction($discipline_slug, $topic) {
+    public function indexAction($discipline_slug, $topic): Response
+    {
         $template_path = "@article/{$discipline_slug}/{$topic}.html.twig";
 
         if ($this->loader->exists($template_path)) {
@@ -28,7 +29,8 @@ class ArticleController extends AbstractController {
         }
     }
 
-    public function listAction() {
+    public function listAction(): Response
+    {
         $json = file_get_contents(__DIR__ . "/../../articles/articles.json");
         $articles = json_decode($json, true);
 
