@@ -1,5 +1,3 @@
-@import url(\"https://fonts.googleapis.com/css?family=Lato:400,700,400italic\");
-
 :root {
     --blue: #375a7f;
     --indigo: #6610f2;
@@ -576,7 +574,7 @@ a.btn.disabled {
     display: inline-block;
     margin-left: 0.255em;
     vertical-align: 0.255em;
-    content: \"\";
+    content: "";
     border-top: 0.3em solid;
     border-right: 0.3em solid transparent;
     border-bottom: 0;
@@ -760,7 +758,7 @@ a.btn.disabled {
     width: 1.5em;
     height: 1.5em;
     vertical-align: middle;
-    content: \"\";
+    content: "";
     background: no-repeat center center;
     background-size: 100% 100%
 }
