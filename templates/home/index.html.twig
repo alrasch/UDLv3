@@ -12,7 +12,7 @@
                 {% for discipline in chunk %}
                     {% set route = path('discipline', { slug: discipline.url_slug}) %}
                     <a href="{{ route }}" aria-label="Gå til {{ discipline.name }}">
-                        <h5 class="card-header">{{ discipline.name }}</h5>
+                        <h5 class="card-header text-color-2">{{ discipline.name }}</h5>
                     </a>
                 {% endfor %}
                 </div>
