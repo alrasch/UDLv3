@@ -11,13 +11,13 @@
 {% endblock %}
 
 {% block article %}
-    <div class="lead article-subheading">
+    <div class="article-subheading">
         <h3>Eksempel</h3>
     </div>
-    <p class="lead">
+    <p>
         Noen ganger er det fint å starte med et eksempel, slik at vi ser målet og nytteverdien.
     </p>
-    <p class="lead">
+    <p>
         Si vi har ei likning som ser slik ut:
 
         $$3x^2 + 6x - 24 = 0$$
@@ -32,7 +32,7 @@
         har 0.
     </p>
 
-    <p class="lead">
+    <p>
         Gitt vår likning
 
         $$3x^2 + 6x - 24 = 0$$
@@ -71,11 +71,11 @@
         $x=2$ løser likninga. Prøv gjerne selv med $x=(-4)$.
     </p>
 
-    <div class="lead article-subheading">
+    <div class="article-subheading">
         <h3>Bevis</h3>
     </div>
 
-    <p class="lead">
+    <p>
         Her skal vi gjennomgå et bevis for andregradsformelen. Jeg har tilfeldigvis også laget en video hvor beviset gjennomgås
         hvis du foretrekker det. <a href="{{ path('video', {
             'discipline_slug': '1t-matematikk',
@@ -85,7 +85,7 @@
         Om du foretrekker å se det skriftlig, så er det bare å fortsette å lese.
     </p>
 
-    <p class="lead">
+    <p>
         Så hvor kommer denne formelen fra, som så enkelt løser slike likninger? Det er noe man kan oppdage ved å starte
         med den generelle formen for likningstypen man ønsker å løse, og deretter anvende algebra for å prøve å få $x$
         alene på den ene siden av likhetstegnet. La oss se på hvordan det kan gjøres:
@@ -96,7 +96,7 @@
         problemer. Gi det gjerne et forsøk. Det er fint å kunne gjenkjenne hvorfor det er så vanskelig.
     </p>
 
-    <p class="lead">
+    <p>
         Fordi vi har både et andregradsledd, og et førstegradsledd, så blir det vanskelig å snu likninga på formen
 
         $$x = \ldots$$
@@ -109,7 +109,7 @@
         der $k, m$ er vilkårlige konstanter. Og et slikt uttrykk kan enkelt konverteres til $x = \ldots$.
     </p>
 
-    <p class="lead">
+    <p>
         La oss starte der. Vi har
 
         $$ax^2 + bx + c = 0$$
@@ -150,7 +150,7 @@
         $x$ oppstår bare som et førstegradsledd, og da skal vi kunne isolere det lettere.
     </p>
 
-    <p class="lead">
+    <p>
         Vi må nå "pakke ut" x'en, så vi starter med å ta kvadratrota på begge sider.
 
         $$x + \frac{b}{2a} = \pm \sqrt{-\frac ca + \left( \frac b{2a} \right)^2}$$
@@ -187,16 +187,16 @@
         og vi kan nå bruke formelen med god samvittighet!
     </p>
 
-    <div class="lead article-subheading"><h3>Mer informasjon</h3></div>
+    <div class="article-subheading"><h3>Mer informasjon</h3></div>
 
-    <p class="lead">
+    <p>
         Les videre om noen <a href="{{ path('article', {
             'discipline_slug': 'algebra',
             'topic': 'andregradsformelen-spesielle-tilfeller'
         }) }}">spesielle tilfeller av andregradslikninger</a>.
     </p>
 
-    <div class="lead">
+    <div>
         Dersom mellomregninga var vanskelig å henge med på, så finnes det hjelpemidler.
 
         <ul>
@@ -224,7 +224,7 @@
         </ul>
     </div>
 
-    <p class="lead">
+    <p>
         Alle disse punktene er selvfølgelig gratis.
     </p>
 {% endblock %}

@@ -7,14 +7,14 @@
 
 {% block article %}
     <h2>Innledning</h2>
-    <p class="lead">
+    <p>
         Det finnes en regneregel i statistikken som har fått kjælenavnet LOTUS - Law Of The Unconscious Statistician.
         Den kalles dette fordi regelen anses for å være så "opplagt" at mange læreverk konkluderer med at "dette er åpenbart"
         og enten glemmer det, eller ikke innser at det er en regel som kan (og bør!) føres rigorøst.
     </p>
 
     <h2>Forkunnskap</h2>
-    <p class="lead">
+    <p>
         Før vi starter med beviset, så antas det å være kjent at formelen for forventning til en stokastisk variabel
         er $$\displaystyle E[X] = \sum\limits_{x}x\cdot P(X=x)$$
 
@@ -28,7 +28,7 @@
 
     <h2>Motivasjon</h2>
 
-    <p class="lead">
+    <p>
         Hvorfor er det nyttig å vite hvordan man regner ut forventningen til en funksjon av
         den stokastiske variablen?
 
@@ -38,70 +38,70 @@
         per stikkontakt du kopler opp mot sikringsskapet.
     </p>
 
-    <p class="lead">
+    <p>
         Men hva hvis det er forventet lønn du ønsker å kalkulere? Vel, så lenge lønna er en funksjon av arbeidsmengden,
         så kan vi kalkulere forventet lønn, så lenge vi har forventet arbeidsmengde.
     </p>
 
     <h2>Eksempel</h2>
 
-    <p class="lead">
+    <p>
         Du er en jordbærplukker, og får betalt per dag. Du får 250kr. for å dukke opp hver dag, i tillegg til 100kr. per
         kilo bær du plukker, avrundet til nærmeste heltall. Funksjonen for lønna blir $$L(x) = 250 + 100x$$
     </p>
 
-    <p class="lead">
+    <p>
         Du har ført statistikk over hvor mange kilo bær du plukker hver dag. La $X$ være den stokastiske variablen
         som representerer antall kilo bær du plukker på en dag, og la oss si at gjennomsnittlig antall kilo bær du
         plukker per dag er $E[X] = 6kg$. Hva er forventet lønn?
     </p>
 
-    <p class="lead">
+    <p>
         La lønna være gitt ved $L(X)$. Det er en funksjon av $X$ fordi lønna er regnet direkte ut fra antall kilo plukket.
         Hva er $E[L(X)]$? Med andre ord, hva er gjennomsnittlig daglig lønn?
     </p>
 
-    <p class="lead">
+    <p>
         Det kan være lett å godta at $$\displaystyle E[L(X)] = \sum\limits_{x}L(x)\cdot P(X=x)$$ og det vil også være riktig.
         $E[L(X)]$ er gjennomsnittlig $L$-verdi, på samme måte som at $E[X]$ er gjennomsnittlig $X$-verdi.
     </p>
 
-    <p class="lead">
+    <p>
         Det er faktisk så vanlig å bare godta dette som sant, at loven har fått navnet LOTUS - Law Of The Unconscious Statistician.
         Dette er et nikk til det faktum at de fleste læreverk for statistikk anser dette resultatet som så opplagt at de
         ikke bryr seg om å bevise det!
     </p>
 
-    <p class="lead">
+    <p>
         Beviset vi gjennomgår her er spesifikt for diskret stokastiske variabler. Det finnes et tilsvarende bevis
         når det gjelder kontinuerlige stokastiske variabler, og det kommer som en del av den aktuelle spillelista.
     </p>
 
     <h2>Bevis</h2>
 
-    <p class="lead">
+    <p>
         La $X$ være en diskret stokastisk variabel, og la $x \in \Omega_X$ være verdier i utfallsrommet.
     </p>
 
-    <p class="lead">
+    <p>
         La $Y$ være en funksjon av $X$, så $Y = g(X)$, og la $y \in \Omega_Y$ være verdier i utfallsrommet til $Y$.
     </p>
 
-    <p class="lead">
+    <p>
         Vi vet, fra definisjonen av forventing at $$\displaystyle E(Y) = \sum\limits_{y \in \Omega_Y} y\cdot P(Y=y)$$
     </p>
 
-    <p class="lead">
+    <p>
         Videre kan vi erstatte $P(Y=y)$ med summen av sannsynlighetene for at $X$ tar verdien som gjør at $Y=y$:
 
         $$\displaystyle P(Y=y) = \sum\limits_{x\in\Omega_X \ | \ g(x) = y} P(X=x)$$
     </p>
 
-    <p class="lead">
+    <p>
         Og til slutt erstatter vi $y$ med $g(x)$ slik at vi kun trenger å summere over $x\in \Omega_X$.
     </p>
 
-    <p class="lead">
+    <p>
         Beviset lyder altså:
 
         $$\displaystyle
@@ -115,7 +115,7 @@
 
     <h2>Konklusjon</h2>
 
-    <p class="lead">
+    <p>
         Vi ser herfra at hvis vi har en stokastisk variabel $X$ og en funksjon $Y = g(X)$ så kan vi finne forventninga
         til $Y$ ved å bare erstatte $x$ med $g(x)$ i formelen for $E(X)$. Det er som sagt veldig lett å akseptere et så "åpenbart" resultat
         uten å føre et stringent bevis for det, men jeg hadde lyst til å få med beviset i statistikk-kurset likevel,

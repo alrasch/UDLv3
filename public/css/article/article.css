@@ -25,6 +25,7 @@ div.problem-text {
     padding: 20px;
     margin-bottom: 5px;
     border-radius: 25px;
+    font-style: italic;
 }
 
 img.article-image-half-size {
@@ -53,11 +54,11 @@ div.lead h2 {
 
 /* Extra small devices */
 @media (max-width: 575px) {
-    p.lead {
+    p.lead-text {
         font-size: 1rem;
     }
 
-    div.lead {
+    div.lead-text {
         font-size: 1rem;
     }
 }
@@ -77,11 +78,16 @@ div.lead h2 {
 @media (min-width: 1200px) {  }
 
 @media (min-width: 1600px) {
-    p.lead {
-        font-size: 1.4rem;
+    p.lead-text {
+        font-size: 1rem;
     }
 
-    div.lead {
-        font-size: 1.4rem;
+    div.lead-text {
+        font-size: 1rem;
     }
+}
+
+div.lead-text h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
