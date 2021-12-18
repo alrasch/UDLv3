@@ -1,0 +1,75 @@
+{% extends "article/base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}Bevegelsesmengde, oppgave 1 | UDL.no{% endblock %}
+{% block hero_text %}Bevegelsesmengde, oppgave 1{% endblock %}
+{% block meta_description %}
+    Fysikkoppgave, bevegelsesmengde, vogn med sand.
+{% endblock %}
+
+{% block article %}
+    <div class="col-10 offset-1 col-xl-8 offset-xl-2">
+        <div class="problem-text">
+            <p>
+                En vogn med masse 100 kg beveger seg rettlinjet uten friksjon på en vannrett skinnegang.
+                Farten er 0,77 m/s. Mens vogna passerer under en sandsilo, blir den fylt med 40 kg sand.
+            </p>
+
+            <p>
+                a) Regn ut farten til vogna med sand.
+            </p>
+            <p>
+                b) Mens vogna har farten du fant i oppgave a, begynner sand å lekke ut gjennom bunnen. Hvor stor fart har vogna når den til slutt er tom for sand?
+            </p>
+        </div>
+
+        <h3>Oppgave a)</h3>
+
+        <p>
+            Bevegelsesmengde er bevart, som betyr at bevegelsesmengden er lik før og etter vogna og sanda sammenfaller.
+            Bevegelsesmengden til vogna før støtet er $$p = Mv_0 = 100kg \cdot 0.77 \frac ms = 77 \frac{kgm}{s}$$
+            der $M$ er massen til vogna, og $v_0$ er farta
+            før støtet.
+        </p>
+
+        <p>
+            Sanda har sin egen bevegelsesmengde, men siden den ikke har noen fart i horisontal retning, så har den
+            en bevegelsesmengde på 0. Den totale bevegelsesmengden til vogna og sanda kombinert er da bare
+            $77 \frac{kgm}{s}$.
+        </p>
+
+        <p>
+            Sanda lander på vogna, og får derfor like stor fart som vogna, men farta må bli mindre fordi
+            bevegelsesmengden bevares, men massen til vogna og sanda kombinert er større enn massen til bare vogna.
+            Den nye bevegelsesmengden vil være
+
+            $$p = (M+m)v_1$$
+
+            der $m$ er massen til sanda, og $v_1$ er den nye farta.
+            Men dette uttrykket må være likt bevegelsesmengden vi starta med.
+            Siden den nye farta, $v_1$ er det vi ønsker å finne, snur vi likninga ved å dele på $(M+m)$, og får
+
+            $$v_1 = \frac{p}{(M+m)} = \frac{77 \frac{kgm}{s}}{100kg + 40kg} = \underline{\underline{ 0.55 \frac{m}{s}}}$$
+        </p>
+
+        <h3>Oppgave b)</h3>
+
+        <p>
+            Sanda forlater vogna med like stor fart som vogna har, så vogna opplever ikke noe "støt" i det sanda dumpes.
+            Dette betyr at vogna fortsetter med samme fart på $0.55 \frac ms$.
+        </p>
+
+        <p>
+            Dette kan virke noe uintuitivt. Forventer vi at vogna øker farta når sanda dumpes?
+        </p>
+
+        <p>
+            Nei. Bevegelsesmengden skal bevares fremdeles, og siden sanda har farta $0.55 \frac ms$ når den dumpes, så
+            er det tilfredsstilt. Sanda stopper naturligvis når det treffer bakken, men det er ikke noe som påvirker vogna
+            siden sanda allerede har forlatt vogna.
+        </p>
+    </div>
+{% endblock %}

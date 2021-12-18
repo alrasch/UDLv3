@@ -46,5 +46,13 @@
     "template": "bevis-forventning-funksjon",
     "discipline_id": 18,
     "sort_weight": 100
+  },
+  {
+    "id": 7,
+    "name": "Fysikk - Bevegelsesmengde - Oppgave 1",
+    "short_description": "",
+    "template": "bevegelsesmengde-oppgave-1",
+    "discipline_id": 15,
+    "sort_weight": 100
   }
 ]
