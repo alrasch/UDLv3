@@ -35,7 +35,7 @@ class ArticleController extends AbstractController {
         $articles = json_decode($json, true);
 
         /** @var Discipline[] $disciplines */
-        $disciplines = $this->getDoctrine()->getRepository(Discipline::class)->findAll();
+        $disciplines = $this->getDoctrine()->getRepository(Discipline::class)->findBy([], ['sortWeight' => 'ASC']);
         $grouped = $this->grouper->groupByDisciplineId($articles, $disciplines);
         $data = [
             'disciplines' => $grouped

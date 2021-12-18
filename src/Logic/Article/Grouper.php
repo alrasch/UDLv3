@@ -17,6 +17,7 @@ class Grouper
             return [
                 'id' => $discipline->getId(),
                 'name' => $discipline->getName(),
+                'sort_weight' => $discipline->getSortWeight(),
                 'articles' => [],
                 'url_slug' => $discipline->getUrlSlug()
             ];
