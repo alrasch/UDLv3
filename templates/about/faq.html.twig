@@ -1,13 +1,18 @@
-{% extends "base/base.html.twig" %}
+{% extends "article/base.html.twig" %}
 
 {% block stylesheets %}
     {{ parent() }}
     <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
 {% endblock %}
 
+{% block hero_text %}
+    Ofte stilte spørsmål
+{% endblock %}
+
+
 {% block content %}
     <div class="col-10 offset-1 col-xl-8 offset-xl-2 lead">
-        <h2>Kan du lage videoer til faget jeg skal ta neste semester?</h2>
+        <h3>Kan du lage videoer til faget jeg skal ta neste semester?</h3>
         <p>
             Det er fullt mulig. De fleste ting som blir forespurt er ting jeg allerede har lyst til å lage
             videoer om. Men jeg kan aldri si når jeg blir å starte på det, og heller ikke når det blir ferdig.
@@ -21,7 +26,7 @@
             verdifull informasjon når jeg skal velge neste prosjekt.
         </p>
 
-        <h2>Kan du lage en video om (...)?</h2>
+        <h3>Kan du lage en video om (...)?</h3>
         <p>
             Hvis det er en spesiell regneteknikk du sliter med, eller et konsept som ikke helt sitter, så er det
             mulig jeg kan hjelpe til med det. Ofte hender det seg at jeg kan vise til en eller flere videoer jeg
@@ -29,14 +34,14 @@
             og spør.
         </p>
 
-        <h2>Kan du løse en oppgave for meg?</h2>
+        <h3>Kan du løse en oppgave for meg?</h3>
         <p>
             Hvis du trenger hjelp med en oppgave så kan du også hoppe innom
             <a href="https://discord.gg/QpHbVD5qav" aria-label="UDL.no's discord-server">Discord-serveren</a>.
             Jeg henger ofte der selv, men det finnes også andre som gjerne hjelper til med oppgaver.
         </p>
 
-        <h2>Jeg har et annet spørsmål</h2>
+        <h3>Jeg har et annet spørsmål</h3>
         <p>
             Som nevnt over, så er
             <a href="https://discord.gg/QpHbVD5qav" aria-label="UDL.no's discord-server">Discord</a>

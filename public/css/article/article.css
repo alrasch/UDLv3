@@ -47,7 +47,7 @@ td,th {
     vertical-align: middle;
 }
 
-div.lead h2 {
+div.lead h2,h3 {
     padding-top: 2rem;
     padding-bottom: 1rem;
 }
