@@ -13,6 +13,6 @@ class AboutController extends AbstractController
     }
 
     public function faqAction() {
-        //TODO
+        return $this->render('about/faq.html.twig');
     }
 }
