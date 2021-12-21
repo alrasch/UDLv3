@@ -33,3 +33,7 @@ about:
 faq:
     path: /faq
     controller: App\Controller\AboutController::faqAction
+
+contact:
+    path: /kontakt
+    controller: App\Controller\AboutController::contactAction

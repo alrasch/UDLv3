@@ -15,4 +15,8 @@ class AboutController extends AbstractController
     public function faqAction() {
         return $this->render('about/faq.html.twig');
     }
+
+    public function contactAction() {
+        return $this->render('about/contact.html.twig');
+    }
 }
