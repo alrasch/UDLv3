@@ -28,7 +28,6 @@ class DisciplineController extends AbstractController
         $this->math_resolver = $math_resolver;
     }
 
-
     public function indexAction($slug): Response
     {
         $discipline_criteria = ['urlSlug' => $slug];

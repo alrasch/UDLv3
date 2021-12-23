@@ -21,8 +21,7 @@ class Resolver
         $base_query =
             'SELECT * FROM video v WHERE sort_weight < %s AND v.playlist_id = %s ORDER BY v.sort_weight DESC LIMIT 1';
 
-        $previous_video = $this->runQuery($base_query, [$sort_weight, $playlist_id]);
-        return $previous_video;
+        return $this->runQuery($base_query, [$sort_weight, $playlist_id]);
     }
 
     public function getNextVideo(int $playlist_id, int $sort_weight): ?Video
@@ -30,8 +29,7 @@ class Resolver
         $base_query =
             'SELECT * FROM video v WHERE sort_weight > %s AND v.playlist_id = %s ORDER BY v.sort_weight ASC LIMIT 1';
 
-        $next_video = $this->runQuery($base_query, [$sort_weight, $playlist_id]);
-        return $next_video;
+        return $this->runQuery($base_query, [$sort_weight, $playlist_id]);
     }
 
     private function runQuery(string $base_query, array $parameters): ?Video

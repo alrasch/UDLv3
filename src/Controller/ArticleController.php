@@ -20,7 +20,7 @@ class ArticleController extends AbstractController {
 
     public function indexAction($discipline_slug, $topic): Response
     {
-        $template_path = "@article/{$discipline_slug}/{$topic}.html.twig";
+        $template_path = "@article/$discipline_slug/$topic.html.twig";
 
         if ($this->loader->exists($template_path)) {
             return $this->render($template_path, ['load_mathjax' => true]);

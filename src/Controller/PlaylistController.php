@@ -14,14 +14,9 @@ class PlaylistController extends AbstractController
 {
     const PLAYLIST_TEMPLATE = 'playlist/index.html.twig';
 
-    /** @var DisciplineMapper $discipline_mapper */
-    private $discipline_mapper;
-
-    /** @var PlaylistMapper $playlist_mapper */
-    private $playlist_mapper;
-
-    /** @var VideoMapper $video_mapper */
-    private $video_mapper;
+    private DisciplineMapper $discipline_mapper;
+    private PlaylistMapper $playlist_mapper;
+    private VideoMapper $video_mapper;
 
     public function __construct(
         DisciplineMapper $discipline_mapper,
