@@ -54,5 +54,13 @@
     "template": "bevegelsesmengde-oppgave-1",
     "discipline_id": 15,
     "sort_weight": 100
+  },
+  {
+    "id": 8,
+    "name": "Ettpunktsformelen",
+    "short_description": "",
+    "template": "ettpunktsformelen",
+    "discipline_id": 16,
+    "sort_weight": 50
   }
 ]

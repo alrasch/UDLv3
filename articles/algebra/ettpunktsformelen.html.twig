@@ -1,0 +1,85 @@
+{% extends "article/base.html.twig" %}
+{% block title %}Ettpunktsformelen | UDL.no{% endblock %}
+{% block hero_text %}Ettpunktsformelen{% endblock %}
+{% block meta_description %}
+    Hvordan vi bruker ettpunktsformelen for å finne en funksjon når vi vet et punkt og stigningstallet.
+{% endblock %}
+
+{% block article %}
+    <h3>Eksempel</h3>
+    <p>
+        Vi starter med et eksempel, så tar vi alt det teoretiske etterpå.
+    </p>
+
+    <p>
+        Oppgave: Finn likninga til den rette linja som går gjennom punktet $(2, 7)$ og har stigningstall $a = 3$.
+    </p>
+
+    <p>
+        Løsning: Vi bruker ettpunktsformelen $$y-y_1 = a(x - x_1)$$ der $x_1=2$ og $y_1 = 7$ fra punktet $(2, 7)$
+        gitt i oppgaven.
+
+        $$\displaystyle \begin{align} y - 7 &= 3(x-2) \\ y-7 &= 3x - 6 \\ y &= 3x + 1 \end{align}$$
+
+        Så likninga er $\underline{\underline{y = 3x+1}}$.
+    </p>
+
+    <p>
+        <img src="{{ asset('img/article/algebra/ettpunktsformel/graph.png') }}"
+             class="article-image-half-size"
+             alt="Graf til linja y=3x+1"/>
+    </p>
+
+    <h3>Hvorfor skal vi lære om ettpunktsformelen?</h3>
+    <p>
+        Først og fremst, la oss huske at likninga for ei rett linje er $$y = ax + b$$
+        der $a$ er stigningstallet til linja (med andre ord hvor bratt den er, og om den går oppover eller nedover),
+        og $b$ er høyda den har når den skjærer y-aksen.
+    </p>
+    <p>
+        Det finnes flere måter vi kan finne likninga for ei rett linje. For eksempel hvis vi har oppgitt to
+        eller flere punkter på linja, så kan vi blant annet sette opp et likningssett med to likninger, og
+        to ukjente, $a$ og $b$.
+    </p>
+    <p>
+        Et annet tilfelle er der du har fått oppgitt kun ett punkt på linja, men du har i tillegg fått oppgitt
+        stigningstallet, og det er her vi kan bruke ettpunktsformelen
+    </p>
+
+    <h3>Hvor kommer formelen fra?</h3>
+    <p>
+        Vi starter med den generelle formelen for ei rett linje; $y = ax + b$.
+    </p>
+
+    <p>
+        Vi har i tillegg oppgitt et kjent punkt på linja, $(x_1, \ y_1)$. Det gir den spesifikke likninga
+        $$\begin{align}
+            y_1 &= ax_1 + b \\
+            b &= y_1 - ax_1
+        \end{align}$$
+    </p>
+
+    <p>
+        Vi setter dette uttrykket for $b$ inn i den generelle likninga og får
+
+        $$\begin{align}
+
+            y &= ax + \overbrace{(y_1 - ax_1)}^b \\
+            y &= ax + y_1 - ax_1 \\
+            y - y_1 &= a(x-x_1)
+        \end{align}$$
+
+        Og der har vi ettpunktsformelen.
+    </p>
+
+    <h3>Videoer</h3>
+
+    <p>
+        Har du lyst til å se noen videoer med forklaring og eksempler? Du kan i så fall starte
+        <a href="{{ path("video", {
+            discipline_slug: "algebra",
+            playlist_slug: "likninger",
+            video_slug: "ettpunktsformel-1-378"
+        }) }}">her</a>.
+    </p>
+{% endblock %}

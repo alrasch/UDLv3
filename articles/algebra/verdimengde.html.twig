@@ -1,4 +1,8 @@
 {% extends "article/base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
+{% endblock %}
 {% block title %}Verdimengde | UDL.no{% endblock %}
 {% block hero_text %}Verdimengde{% endblock %}
 {% block meta_description %}

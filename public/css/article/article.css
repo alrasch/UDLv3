@@ -28,12 +28,6 @@ div.problem-text {
     font-style: italic;
 }
 
-img.article-image-half-size {
-    width: 50%;
-    max-width: 500px;
-    height: auto;
-    position: relative;
-}
 
 img.article-image-wide {
     width: 100%;
@@ -61,10 +55,30 @@ div.lead h2,h3 {
     div.lead-text {
         font-size: 1rem;
     }
+
+    img.article-image-half-size {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
 }
 
 /* Small devices (tablets) */
 @media (min-width: 576px) {
+    p.lead-text {
+        font-size: 1.25rem;
+    }
+
+    div.lead-text {
+        font-size: 1.25rem;
+    }
+
+    img.article-image-half-size {
+        width: 75%;
+        max-width: 750px;
+        height: auto;
+        position: center;
+    }
 }
 
 /* Medium devices (tablets) */
@@ -78,16 +92,10 @@ div.lead h2,h3 {
 @media (min-width: 1200px) {  }
 
 @media (min-width: 1600px) {
-    p.lead-text {
-        font-size: 1rem;
-    }
 
-    div.lead-text {
-        font-size: 1rem;
-    }
 }
 
 div.lead-text h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 1rem;
 }
