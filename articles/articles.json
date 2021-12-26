@@ -1,66 +1,76 @@
-[
-  {
-    "id": 1,
-    "name": "Definisjonsmengden til en funksjon",
-    "short_description": "En kort introduksjon til definisjonsmengden til en funksjon, med eksempler.",
-    "template": "definisjonsmengde",
-    "discipline_id": 16,
-    "sort_weight": 100
+{
+  "6": {
+    "discipline": "1t-matematikk",
+    "articles": [
+      {
+        "id": 3,
+        "name": "1T Eksamen, Vår 2020, Løsning",
+        "template": "1t-eksamen-v-20",
+        "sort_weight": 1
+      }
+    ]
   },
-  {
-    "id": 2,
-    "name": "Verdimengden til en funksjon",
-    "short_description": "En kort introduksjon til verdimengden til en funksjon, med eksempler.",
-    "template": "verdimengde",
-    "discipline_id": 16,
-    "sort_weight": 101
+  "15": {
+    "discipline": "fysikk",
+    "articles": [
+      {
+        "id": 7,
+        "name": "Fysikk - Bevegelsesmengde - Oppgave 1",
+        "template": "bevegelsesmengde-oppgave-1",
+        "sort_weight": 100
+      }
+    ]
   },
-  {
-    "id": 3,
-    "name": "1T Eksamen, Vår 2020, Løsning",
-    "short_description": "Løsningsforslag til 1T eksamen, gitt våren 2020",
-    "template": "1t-eksamen-v-20",
-    "discipline_id": 6,
-    "sort_weight": 1
+  "16": {
+    "discipline": "algebra",
+    "articles": [
+      {
+        "id": 1,
+        "name": "Definisjonsmengden til en funksjon",
+        "template": "definisjonsmengde",
+        "sort_weight": 100
+      },
+      {
+        "id": 4,
+        "name": "Andregradsformelen",
+        "template": "andregradsformelen",
+        "sort_weight": 1
+      },
+      {
+        "id": 5,
+        "name": "Andregradsformelen - Spesielle tilfeller",
+        "template": "andregradsformelen-spesielle-tilfeller",
+        "sort_weight": 2
+      },
+      {
+        "id": 2,
+        "name": "Verdimengden til en funksjon",
+        "template": "verdimengde",
+        "sort_weight": 102
+      },
+      {
+        "id": 8,
+        "name": "Ettpunktsformelen",
+        "template": "ettpunktsformelen",
+        "sort_weight": 50
+      },
+      {
+        "id": 9,
+        "name": "Hvordan finne definisjonsmengde",
+        "template": "hvordan-finne-definisjonsmengde",
+        "sort_weight": 101
+      }
+    ]
   },
-  {
-    "id": 4,
-    "name": "Andregradsformelen",
-    "short_description": "En gjennomgang av andregradsformelen, med bevis og eksempel.",
-    "template": "andregradsformelen",
-    "discipline_id": 16,
-    "sort_weight": 1
-  },
-  {
-    "id": 5,
-    "name": "Andregradsformelen - Spesielle tilfeller",
-    "short_description": "Guide til hvordan man takler andregradslikninger med bare én eller ingen løsning, og likninger med bare to ledd.",
-    "template": "andregradsformelen-spesielle-tilfeller",
-    "discipline_id": 16,
-    "sort_weight": 2
-  },
-  {
-    "id": 6,
-    "name": "Bevis - Forventning til funksjon av stokatisk variabel, E[g(x)]",
-    "short_description": "Bevis av formelen for forventningsverdien til en diskret stokastisk variabel.",
-    "template": "bevis-forventning-funksjon",
-    "discipline_id": 18,
-    "sort_weight": 100
-  },
-  {
-    "id": 7,
-    "name": "Fysikk - Bevegelsesmengde - Oppgave 1",
-    "short_description": "",
-    "template": "bevegelsesmengde-oppgave-1",
-    "discipline_id": 15,
-    "sort_weight": 100
-  },
-  {
-    "id": 8,
-    "name": "Ettpunktsformelen",
-    "short_description": "",
-    "template": "ettpunktsformelen",
-    "discipline_id": 16,
-    "sort_weight": 50
+  "18": {
+    "discipline": "statistikk",
+    "articles": [
+      {
+        "id": 6,
+        "name": "Bevis - Forventning til funksjon av stokatisk variabel, E[g(x)]",
+        "template": "bevis-forventning-funksjon",
+        "sort_weight": 100
+      }
+    ]
   }
-]
+}

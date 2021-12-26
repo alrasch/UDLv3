@@ -25,8 +25,8 @@ class Grouper
 
         $grouped = array_map($callback, $indexed_disciplines);
 
-        foreach ($articles as $article) {
-            $grouped[$article["discipline_id"]]["articles"][] = $article;
+        foreach ($articles as $discipline_id => $combo) {
+            $grouped[$discipline_id]["articles"] = $combo["articles"];
         }
 
         foreach ($grouped as $key => $discipline) {
