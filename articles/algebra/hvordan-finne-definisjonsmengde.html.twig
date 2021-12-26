@@ -1,0 +1,156 @@
+{% extends "article/base.html.twig" %}
+{% block title %}Hvordan finne definisjonsmengde | UDL.no{% endblock %}
+{% block hero_text %}Hvordan finne definisjonsmengde{% endblock %}
+{% block meta_description %}
+    Hvordan vi finner definisjonsmengden til diverse funksjoner
+{% endblock %}
+
+{% block article %}
+    <h3>Når funksjoner har ubegrenset definisjonsmengde</h3>
+    <p>
+        En ting som gjør slike oppgaver forholdsvis lette, er når funksjonen er, for eksempel
+        $$f(x) = x^2$$
+        Det som gjør dette lettere enn andre funksjoner, er at vi kan la $x$ være et hvilket som helst
+        reelt tall, og funksjonen fungerer. Da kan vi si at $D_f = \mathbb R$.
+    </p>
+
+    <p>
+        En vanlig strategi for å verifisere dette kan ofte være å dele opp den potensielle definisjonsmengden
+        i positive tall, negative tall, og null.
+    </p>
+
+    <p>
+        For eksempel: Hvis $f(x) = x^2$, så kan du verifisere at positive $x$-verdier gir en ny positiv verdi
+        for $f(x)$. Tilsvarende for negative $x$-verdier, så får du også en ny positiv $f(x)$-verdi. Og hvis
+        $x = 0$ så vil $f(x) = 0$.
+    </p>
+
+    <p>
+        Det finnes selvfølgelig unntak til dette, der vi bruker funksjonen til å modellere noe i det virkelige
+        liv, og det ikke gir mening å tenke på $x<0$. For eksempel hvis $x$ er tida som går og $x = 0$ er starten
+        på observasjonene. Da gir det kun mening å tenke på $x \geq 0$ og vi innfører $D_f = [0, \ \infty)$
+        selv.
+    </p>
+
+    <p>
+        Andre ganger må definisjonsmengden begrenses fordi vi bruker funksjoner som gir udefinerte verdier
+        for enkelte $x$-verdier. Vi tar noen eksempler.
+    </p>
+
+    <h3>Brøker med $x$ i nevner</h3>
+    <p>
+        Et veldig vanlig eksempel er brøker der vi har en variabel i nevneren. La oss først se på
+
+        $$\displaystyle f(x) = \frac 1x$$
+
+        Som vi vet, så kan vi ikke dele på 0. Det vil si at dersom $x=0$ her, så vil ikke funksjonen gi en
+        entydig, definert verdi. Derfor må vi ekskludere $x=0$ fra definisjonsmengden. Både positive og negative
+        $x$-verdier fungerer fint, og vi får derfor
+
+        $$D_f = \mathbb R \setminus \{ 0 \}$$
+
+        Dette leses "definisjonsmengden til $f$ er alle reelle tall, bortsett fra 0".
+    </p>
+
+    <h3>Andre funksjoner som kan ha 0 i nevner</h3>
+    <p>
+        La
+
+        $$g(x) = \frac{5}{x^2 - 4}$$
+
+        Her må vi igjen ta høyde for at det finnes $x$-verdier som gjør at vi får 0 i nevner. Hvilke
+        $x$-verdier er det?
+
+        $$
+        \begin{align}
+        x^2 - 4 &= 0 \\
+        (x-2)(x+2) &= 0 \\
+        \boxed{x=2 \vee x=-2}
+        \end{align}
+        $$
+
+        Så dersom x er 2 eller -2, så får vi 0 i nevner, og disse verdiene kan derfor ikke være i
+        definisjonsmengden til $g$. Alle andre reelle verdier fungerer fint, så vi får
+
+        $$D_g = \mathbb R \setminus \{ -2, 2 \}$$
+    </p>
+
+    <h3>Kvadratrøtter</h3>
+    <p>
+        Som du sikkert vet, så er det "ikke lov" å ta kvadratrota av negative tall. Det betyr at hvis
+        vi har funksjonen $$h(x) = \sqrt x$$ så kan ikke x være et negativt tall. Vi må begrense definisjonsmengden
+        til de positive tallene, samt 0, og får $$D_h = [0, \ \infty)$$
+    </p>
+
+    <p>
+        Grunnen til at jeg setter "ikke lov" i hermetegn er fordi det ER lov. Men kvadratrota av negative tall
+        er et konsept som vanligvis ikke utforskes før på høyskole/universitet. Vi kaller disse "komplekse tall".
+    </p>
+
+    <p>
+        Komplekse tall er en egen kategori av tall som for det meste ligger utenfor de reelle tallene,
+        så vi skal ikke bruke så mye tid på det her. Men hvis du er spesielt nysgjerrig, så kan du
+        se noen videoer jeg har laga om dem
+        <a href="{{ path("playlist", {
+            discipline_slug: "matematikk-hoyskole-universitet",
+            playlist_slug: "komplekse-tall"
+        }) }}">her</a>.
+    </p>
+
+    <h3>Logaritmer</h3>
+    <p>
+        Det er ikke bare brøker med 0 i nevner som er udefinert.
+        Logaritmer er spesielle fordi $\log(0)$ også er udefinert. Det gjelder både $\ln(0), \ \lg(0)$
+        og logaritmer med alle grunntall (bortsett fra 0, men det gir sjeldent mening å snakke om $\log_0(x)$).
+    </p>
+
+    <p>
+        Logaritmen av et negativt tall er også et spesielt tilfelle, fordi hvis vi prøver å betrakte
+        for eksempel $\ln(-5)$ så vil resultatet være et komplekst tall.
+    </p>
+
+    <p>
+        Som et eksempel, la oss si vi har funksjonen $$f(x) = x^2 \ln(3x+1)$$
+
+        Et litt sammensatt uttrykk, men det er fort gjort å finne definisjonsmengden. Selve logaritmeuttrykket
+        må vi passe på er slik at det som står inni logaritmen er større enn null.
+
+        $$\displaystyle
+        \begin{align}
+        3x+1 &> 0 \\
+        3x &> -1 \\
+        x &> -\frac13
+        \end{align}
+        $$
+
+        Så definisjonsmengden til $\ln(3x+1)$ er $(-\frac13, \ \infty)$
+    </p>
+
+    <p>
+        Men hva med $x^2$ som er multiplisert på? Vel, den faktoren utgjør ingen forskjell. Den tar
+        alle de reelle tallene, så logaritmeuttrykket er den eneste begrensninga.
+    </p>
+
+    <p>
+        Med andre ord, hvis $f(x) = x^2 \ln(3x+1)$, så er $D_f = (-\frac13, \ \infty)$.
+    </p>
+
+    <h3>Ekstra oppgaver</h3>
+    <p>
+        Som en oppgave for å se om du har forstått det, avgjør definisjonsmengden til følgende funksjoner.
+
+        $$\displaystyle
+        \begin{align}
+            f(x) &= \frac{1}{\sin(x)} \\ \\
+            g(x) &= \ln(\sqrt x) \\ \\
+            h(x) &= \sqrt{\ln x}
+        \end{align}
+        $$
+    </p>
+
+    <p>
+        Ta gjerne
+        <a href="{{ path("contact") }}">kontakt</a>
+        hvis du har spørsmål eller innspill.
+    </p>
+{% endblock %}
