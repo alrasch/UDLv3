@@ -31,6 +31,18 @@
         "sort_weight": 100
       },
       {
+        "id": 9,
+        "name": "Hvordan finne definisjonsmengde",
+        "template": "hvordan-finne-definisjonsmengde",
+        "sort_weight": 101
+      },
+      {
+        "id": 2,
+        "name": "Verdimengden til en funksjon",
+        "template": "verdimengde",
+        "sort_weight": 102
+      },
+      {
         "id": 4,
         "name": "Andregradsformelen",
         "template": "andregradsformelen",
@@ -43,22 +55,10 @@
         "sort_weight": 2
       },
       {
-        "id": 2,
-        "name": "Verdimengden til en funksjon",
-        "template": "verdimengde",
-        "sort_weight": 102
-      },
-      {
         "id": 8,
         "name": "Ettpunktsformelen",
         "template": "ettpunktsformelen",
         "sort_weight": 50
-      },
-      {
-        "id": 9,
-        "name": "Hvordan finne definisjonsmengde",
-        "template": "hvordan-finne-definisjonsmengde",
-        "sort_weight": 101
       }
     ]
   },
