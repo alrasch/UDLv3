@@ -6,7 +6,6 @@
         "id": 3,
         "name": "1T Eksamen, Vår 2020, Løsning",
         "template": "1t-eksamen-v-20",
-        "sort_weight": 1
       }
     ]
   },
@@ -17,7 +16,6 @@
         "id": 7,
         "name": "Fysikk - Bevegelsesmengde - Oppgave 1",
         "template": "bevegelsesmengde-oppgave-1",
-        "sort_weight": 100
       }
     ]
   },
@@ -28,37 +26,31 @@
         "id": 1,
         "name": "Definisjonsmengden til en funksjon",
         "template": "definisjonsmengde",
-        "sort_weight": 100
       },
       {
         "id": 9,
         "name": "Hvordan finne definisjonsmengde",
         "template": "hvordan-finne-definisjonsmengde",
-        "sort_weight": 101
       },
       {
         "id": 2,
         "name": "Verdimengden til en funksjon",
         "template": "verdimengde",
-        "sort_weight": 102
       },
       {
         "id": 4,
         "name": "Andregradsformelen",
         "template": "andregradsformelen",
-        "sort_weight": 1
       },
       {
         "id": 5,
         "name": "Andregradsformelen - Spesielle tilfeller",
         "template": "andregradsformelen-spesielle-tilfeller",
-        "sort_weight": 2
       },
       {
         "id": 8,
         "name": "Ettpunktsformelen",
         "template": "ettpunktsformelen",
-        "sort_weight": 50
       }
     ]
   },
@@ -69,7 +61,6 @@
         "id": 6,
         "name": "Bevis - Forventning til funksjon av stokatisk variabel, E[g(x)]",
         "template": "bevis-forventning-funksjon",
-        "sort_weight": 100
       }
     ]
   }
