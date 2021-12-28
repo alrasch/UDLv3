@@ -3,9 +3,8 @@
     "discipline": "1t-matematikk",
     "articles": [
       {
-        "id": 3,
         "name": "1T Eksamen, Vår 2020, Løsning",
-        "template": "1t-eksamen-v-20",
+        "template": "1t-eksamen-v-20"
       }
     ]
   },
@@ -13,9 +12,8 @@
     "discipline": "fysikk",
     "articles": [
       {
-        "id": 7,
         "name": "Fysikk - Bevegelsesmengde - Oppgave 1",
-        "template": "bevegelsesmengde-oppgave-1",
+        "template": "bevegelsesmengde-oppgave-1"
       }
     ]
   },
@@ -23,34 +21,28 @@
     "discipline": "algebra",
     "articles": [
       {
-        "id": 1,
         "name": "Definisjonsmengden til en funksjon",
-        "template": "definisjonsmengde",
+        "template": "definisjonsmengde"
       },
       {
-        "id": 9,
         "name": "Hvordan finne definisjonsmengde",
-        "template": "hvordan-finne-definisjonsmengde",
+        "template": "hvordan-finne-definisjonsmengde"
       },
       {
-        "id": 2,
         "name": "Verdimengden til en funksjon",
-        "template": "verdimengde",
+        "template": "verdimengde"
       },
       {
-        "id": 4,
         "name": "Andregradsformelen",
-        "template": "andregradsformelen",
+        "template": "andregradsformelen"
       },
       {
-        "id": 5,
         "name": "Andregradsformelen - Spesielle tilfeller",
-        "template": "andregradsformelen-spesielle-tilfeller",
+        "template": "andregradsformelen-spesielle-tilfeller"
       },
       {
-        "id": 8,
         "name": "Ettpunktsformelen",
-        "template": "ettpunktsformelen",
+        "template": "ettpunktsformelen"
       }
     ]
   },
@@ -58,9 +50,8 @@
     "discipline": "statistikk",
     "articles": [
       {
-        "id": 6,
         "name": "Bevis - Forventning til funksjon av stokatisk variabel, E[g(x)]",
-        "template": "bevis-forventning-funksjon",
+        "template": "bevis-forventning-funksjon"
       }
     ]
   }
