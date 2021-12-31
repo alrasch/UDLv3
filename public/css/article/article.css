@@ -96,7 +96,7 @@ div.lead h2,h3 {
 
 div.lead-text h3 {
     font-size: 2rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     border: 1px solid rgba(200, 200, 200, 0.125);
     background-color: #323232;
     border-radius: 1rem;
@@ -106,10 +106,11 @@ div.lead-text h3 {
 
 div.udl-card {
     background-clip: border-box;
-    background-color: #323232;
+    background-color: #604C5D;
     padding-left: 1rem;
     padding-right: 1rem;
     border: 1px solid rgba(200, 200, 200, 0.125);
-    border-radius: 1rem;
+    border-radius: 5rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }

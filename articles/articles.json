@@ -46,6 +46,15 @@
       }
     ]
   },
+  "17": {
+    "discipline": "analyse-kalkulus",
+    "articles": [
+      {
+        "name": "Delvis integrasjon",
+        "template": "delvis-integrasjon"
+      }
+    ]
+  },
   "18": {
     "discipline": "statistikk",
     "articles": [

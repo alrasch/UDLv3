@@ -1,0 +1,184 @@
+{% extends "article/base.html.twig" %}
+{% block title %}Delvis integrasjon | UDL.no{% endblock %}
+{% block hero_text %}Delvis integrasjon{% endblock %}
+{% block meta_description %}
+    Lær hvordan vi bruker delvis integrasjon, med eksempler.
+{% endblock %}
+
+{% block article %}
+    <h3>Formelen</h3>
+    <div class="udl-card">
+        $$\displaystyle \int u(x) \cdot v'(x) \mathrm dx = u(x)\cdot v(x) - \int u'(x)\cdot v(x)\mathrm dx$$
+    </div>
+    <p>
+        Innledningsvis så ser dette ut som en formel som kan være vanskelig å bruke, men hovedsaken er at det er
+        et verktøy vi ofte prøver når vi skal integrere et produkt. På samme måte som at vi har produktregelen for
+        derivasjon, så er dette en produktregel for integrasjon. Men integrasjon er ikke like rett frem som derivasjon.
+    </p>
+
+    <h3>Når skal vi bruke delvis integrasjon?</h3>
+    <p>
+        Integrasjon er slik at det ikke finnes klare regler som sier når noe kommer til å fungere. Hvis du er vant til
+        å regne derivasjoner, så vil integrasjon være helt annerledes på den måten. Derivasjon er mye "klarere på
+        reglene".
+    </p>
+
+    <p>
+        Med det sagt så har vi en produktregel for derivasjon som du sikkert er kjent med. Og delvis integrasjon er
+        en slags produktregel for integraler, men som har litt annerledes regneteknikk, og som har en god sjanse for å
+        likevel ikke fungere.
+    </p>
+
+    <h3>Eksempel</h3>
+    <p>
+        Vi skal utføre integrasjonen
+
+        $$\int x \ln x \mathrm dx$$
+
+        Vi må nå velge hvilken faktor som skal være $u(x)$ og hvilken som skal være $v'(x)$.
+    </p>
+    <p>
+        Vi ser at for å bruke formelen, så må vi derivere den ene faktoren, og antiderivere den andre. Dette fordi
+        vi skal velge en $u(x)$, men i formelen må vi også vite $u'(x)$. Samtidig skal vi velge en $v'(x)$, men
+        formelen krever at vi da vet $v(x)$.
+    </p>
+
+    <p>
+        Vi kan velge $u(x) = \ln x$ som gir $u'(x) = \frac 1x$.
+    </p>
+    <p>
+        Da får vi $v'(x) = x$ som gir $v(x) = \frac12 x^2$.
+    </p>
+
+    <p>
+        For oversiktens del så liker jeg personlig å sette dem opp i en tabell.
+
+        $$
+        \require{color}
+        \begin{array}{|c|c|}
+        \hline
+        \color{yellow}{u(x) = \ln x} & u'(x) = \frac1x \\
+        \hline
+        v(x) = \frac12x^2 & \color{yellow}{v'(x) = x} \\
+        \hline
+        \end{array}
+        $$
+
+        De verdiene vi valgte fra integralet er markert i gult. De verdiene vi måtte regne ut er i hvitt.
+    </p>
+
+    <p>
+        Vi setter dette inn i formelen og får
+        $$\displaystyle
+        \begin{align}
+        \int \overbrace{x}^{v'(x)} \overbrace{\ln x}^{u(x)} \mathrm dx &= \overbrace{\ln x}^{u(x)} \cdot \overbrace{\frac12 x^2}^{v(x)} - \int \overbrace{\frac1x}^{u'(x)} \overbrace{\frac12 x^2}^{v(x)}\mathrm dx \\ \\
+        &= \frac12 x^2 \ln x - \frac12 \int x \mathrm dx \\ \\
+        &= \frac12 x^2 \ln x - \frac12 \cdot \frac12 x^2 + C \\ \\
+        &= \frac12 x^2 \ln x - \frac14 x^2 + C \\ \\
+        &\underline{\underline{= \frac14 x^2 (2 \ln x - 1) + C}}
+        \end{align}
+        $$
+
+        Hvor mye forenkling vi gjør er ikke så viktig akkurat nå, men vi har hvertfall integrert et produkt!
+    </p>
+
+    <p>
+        En ting som er viktig å merke her, er at hvis du bytter om på hva du anser som $u(x)$ og $v'(x)$, så får du
+        helt forskjellige mellomregninger. Noen ganger er det bare ett av valgene som fører frem. Andre ganger fører
+        begge frem. Og i noen tilfeller vil "feil" valg møte en murvegg. Så selv om du møter en murvegg i regninga di,
+        husk at du kan gå tilbake og bytte om på $u$ og $v'$ for å se om det blir bedre.
+    </p>
+
+    <p>
+        Vi skal i neste omgang gå gjennom et bevis for formelen, og deretter skal vi ta flere eksempler.
+    </p>
+
+    <h3>Bevis for formelen for delvis integrasjon</h3>
+    <p>
+        Produktregelen for derivasjon forteller oss at
+
+        $$\displaystyle [u(x)\cdot v(x)]' = u(x) \cdot v'(x) + u'(x) \cdot v(x)$$
+
+        Vi integrerer mhp. x på begge sider av likhetstegnet og får
+
+        $$\displaystyle \int [u(x)\cdot v(x)]' \mathrm dx = \int \left[u(x) \cdot v'(x) + u'(x) \cdot v(x)\right] \mathrm dx$$
+
+        Siden derivasjon og integrasjon er inverse operasjoner, vil vi på venstre side oppleve at integralet og derivasjonen
+        opphever hverandre. På høyre side kan vi integrere hvert ledd for seg.
+
+        $$\displaystyle u(x) \cdot v(x) = \int u(x) \cdot v'(x) \mathrm dx + \int u'(x) \cdot v(x) \mathrm dx$$
+
+        Vi "flytter og bytter" leddene, og får
+    </p>
+    <div class="udl-card">
+        $$\displaystyle \int u(x) \cdot v'(x) \mathrm dx = u(x)\cdot v(x) - \int u'(x)\cdot v(x)\mathrm dx$$
+    </div>
+
+    <p>
+        Vi ser at dette blir en slags produktregel for integrasjon, selv om vi ikke ofte kaller det "produktregelen".
+    </p>
+
+    <h3>Tips til valg av $u$ og $v'$</h3>
+    <p>
+        Se på formelen igjen. Legg merke til at etter vi har valgt $u$ og $v'$, så ser vi at når vi skal regne videre
+        så skal vi jobbe videre med $u, \ u', \ v$. Vi skal ikke lengre bearbeide den $v'$ vi valgte.
+    </p>
+
+    <p>
+        Derfor er det lurt å tenke at vi velger en $u$ som blir forenklet etter derivasjon. I eksempelet på starten
+        så valgte jeg $u = \ln x$ fordi $u' = \frac1x$ og andre potenser av x er lett å både derivere og integrere.
+    </p>
+
+    <p>
+        Når vi velger $v' = x$ i eksempelet over, så vil $v = \frac12x^2$ som er et litt verre uttrykk enn bare x,
+        men fremdeles lett å arbeide videre med. Alle polynomfunksjoner anses for å være lette å derivere og integrere,
+        og $\frac12x^2$ er akkurat det; et polynom.
+    </p>
+
+    <p>
+        Med det sagt, så er det aldri krise å velge feil. Det er alltid bare to mulige valg, og hvis den ene ikke fører
+        frem, så kan du alltids bare starte på nytt og teste den andre.
+    </p>
+
+    <h3>Mer eksempel</h3>
+    <p>
+        $$\int (3x+7) \sin x$$
+
+        Når vi nå skal velge $u$ og $v'$, legg merke til følgende; $\sin x$ blir en cosinus-funksjon enten vi deriverer
+        eller integrerer det. $3x+7$ lar seg forenkle ved å derivere det, så vi lar $u(x) = 3x+7$ og $v'(x) = \sin x$.
+
+        $$
+        \require{color}
+        \begin{array}{|c|c|}
+        \hline
+        \color{yellow}{u(x) = 3x+7} & u'(x) = 3 \\
+        \hline
+        v(x) = -\cos x & \color{yellow}{v'(x) = \sin x} \\
+        \hline
+        \end{array}
+        $$
+
+        Vi setter dette inn i formelen for delvis integrasjon.
+
+        $$
+        \displaystyle
+        \begin{align}
+        \int u(x) v'(x) \mathrm dx &= u(x)v(x) - \int u'(x)v(x) \mathrm dx \\ \\
+        \int (3x+7) \cdot \sin x \mathrm dx &= (3x+7) \cdot (-\cos x) - \int 3(-\cos x) \mathrm dx \\ \\
+        &= -(3x+7)\cos x + 3\int \cos x \mathrm dx \\ \\
+        &= \underline{\underline{-(3x+7)\cos x + 3 \sin x + C}}
+        \end{align}
+        $$
+    </p>
+
+    <h3>Mer om delvis integrasjon</h3>
+    <p>
+        Jeg har laga en del videoer med flere eksempler og triks i delvis som du kan se
+        <a href="TODO">her</a>.
+    </p>
+    <p>
+        Du kan også
+        <a href="{{ path("contact") }}" aria-label="Ta kontakt">ta kontakt</a>
+        hvis du har spørsmål eller innspill til artikkelen.
+    </p>
+{% endblock %}
