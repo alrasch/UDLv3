@@ -97,6 +97,7 @@ div.lead h2,h3 {
 div.lead-text h3 {
     font-size: 2rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     border: 1px solid rgba(200, 200, 200, 0.125);
     background-color: #323232;
     border-radius: 1rem;

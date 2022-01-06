@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block article %}
-    <p>Vi ser først på hva definisjonsmengde er.</p>
+    <h3>Vi ser først på hva definisjonsmengde er</h3>
     <p>
         Definisjonsmengden til en funksjon er, kort fortalt, mengden av alle verdier du kan
         sette inn i funksjonen, og få et resultat ut. Hvis du har en funksjon $f(x)$, så er definisjonsmengden
@@ -16,30 +16,21 @@
         La $f(x) = x^2$. Det vi vet om denne funksjonen, er at den er definert for alle reelle tall, både negative,
         positive, og 0. Vi kan se eksempler på dette ved å sette noen prøveverdier i en tabell.
     </p>
-    <div class="row justify-content-center lead">
-            <table class="table table-striped table-bordered table-sm" style="width:50%">
-                <thead>
-                    <tr>
-                        <th style="width: 50%;">$x$</th>
-                        <th style="width: 50%;">$f(x)$</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>$-2$</td>
-                        <td>$4$</td>
-                    </tr>
-                    <tr>
-                        <td>$0$</td>
-                        <td>$0$</td>
-                    </tr>
-                    <tr>
-                        <td>$4$</td>
-                        <td>$16$</td>
-                    </tr>
-                </tbody>
-            </table>
-    </div>
+    <p>
+        $$
+        \begin{array}{|c|c|}
+        \hline
+        x & f(x) \\
+        \hline
+        -2 & 4 \\
+        \hline
+        0 & 0 \\
+        \hline
+        4 & 16 \\
+        \hline
+        \end{array}
+        $$
+    </p>
 
     <p>
         Hvordan skriver vi det matematisk at funksjonen er definert for alle reelle tall? $$D_f = \mathbb R$$
@@ -65,6 +56,8 @@
         i norske pensumbøker å bruke $\langle$ slike vinkelklammer $\rangle$, men internasjonalt
         er det veldig vanlig å bruke $($ parenteser $)$ i stedet, så vær oppmerksom på dette.
     </p>
+
+    <h3>Mer informasjon</h3>
 
     <p>
         <a href="{{ path('article', {'discipline_slug': 'algebra', 'topic':'verdimengde'}) }}">Klikk her</a>
