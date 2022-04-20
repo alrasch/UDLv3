@@ -4,9 +4,10 @@
     "license": "MIT",
     "description": "A skeleton to start a new Symfony website",
     "require": {
-        "php": "7.4.*",
+        "php": "8.1.*",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-json": "*",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.1",
         "doctrine/doctrine-migrations-bundle": "^2.1",
@@ -15,18 +16,18 @@
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "*",
-        "symfony/console": "*",
+        "symfony/console": "5.4.*",
         "symfony/dotenv": "*",
         "symfony/expression-language": "*",
-        "symfony/flex": "1.*",
+        "symfony/flex": "*",
         "symfony/form": "*",
         "symfony/framework-bundle": "*",
         "symfony/monolog-bundle": "^3.1",
         "symfony/process": "*",
-        "symfony/property-access": "4.4.*",
-        "symfony/property-info": "4.4.*",
+        "symfony/property-access": "*",
+        "symfony/property-info": "*",
         "symfony/security-bundle": "*",
-        "symfony/serializer": "4.4.*",
+        "symfony/serializer": "*",
         "symfony/swiftmailer-bundle": "^3.1",
         "symfony/translation": "*",
         "symfony/twig-bundle": "*",
@@ -34,25 +35,26 @@
         "symfony/web-link": "*",
         "symfony/yaml": "*",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0",
-        "ext-json": "*"
+        "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-        "symfony/browser-kit": "4.4.*",
-        "symfony/css-selector": "4.4.*",
-        "symfony/debug-bundle": "4.4.*",
+        "symfony/browser-kit": "*",
+        "symfony/css-selector": "*",
+        "symfony/debug-bundle": "*",
         "symfony/maker-bundle": "^1.11",
         "symfony/phpunit-bridge": "^5.0",
-        "symfony/stopwatch": "4.4.*",
-        "symfony/var-dumper": "4.4.*",
-        "symfony/web-profiler-bundle": "4.4.*",
-        "symfony/web-server-bundle": "4.2.*"
+        "symfony/stopwatch": "*",
+        "symfony/var-dumper": "*",
+        "symfony/web-profiler-bundle": "*"
     },
     "config": {
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
@@ -90,7 +92,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "4.4.*"
+            "require": "5.4.*"
         }
     }
 }
