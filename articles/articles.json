@@ -33,6 +33,10 @@
         "template": "verdimengde"
       },
       {
+        "name": "ABC-formelen",
+        "template": "abc-formelen"
+      },
+      {
         "name": "Andregradsformelen",
         "template": "andregradsformelen"
       },
