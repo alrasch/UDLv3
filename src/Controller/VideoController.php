@@ -7,6 +7,7 @@ use App\Logic\Video\Mapper as VideoMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Entity\Video;
 use App\Logic\Video\Resolver;
+use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -35,8 +36,12 @@ class VideoController extends AbstractController
             throw new NotFoundHttpException();
         }
 
-        $true_discipline_slug = $video->getPlaylist()->getDiscipline()->getUrlSlug();
-        $true_playlist_slug = $video->getPlaylist()->getUrlSlug();
+        try {
+            $true_discipline_slug = $video->getPlaylist()->getDiscipline()->getUrlSlug();
+            $true_playlist_slug = $video->getPlaylist()->getUrlSlug();
+        } catch (EntityNotFoundException $e) {
+            throw new NotFoundHttpException();
+        }
 
         $parameters = [
             'discipline_slug' => $true_discipline_slug,
