@@ -94,6 +94,10 @@ div.lead h2,h3 {
 
 }
 
+div.article-item {
+    margin-bottom: 0.5rem;
+}
+
 div.lead-text h3 {
     font-size: 2rem;
     margin-top: 2rem;
@@ -108,8 +112,7 @@ div.lead-text h3 {
 div.udl-card {
     background-clip: border-box;
     background-color: #604C5D;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1.2rem;
     border: 1px solid rgba(200, 200, 200, 0.125);
     border-radius: 5rem;
     margin-top: 1rem;
