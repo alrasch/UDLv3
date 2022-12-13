@@ -1,0 +1,157 @@
+{% extends "article/base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/article/article.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}Polynomdivisjon | UDL.no{% endblock %}
+{% block hero_text %}Polynomdivisjon{% endblock %}
+{% block meta_description %}
+    Lær om polynomdivisjon med forklaring og eksempler.
+{% endblock %}
+
+{% block article %}
+    <h3>Når bruker vi polynomdivisjon?</h3>
+    <p>
+        Polynomdivisjon er et matematisk verktøy vi bruker når vi har en brøk med et polynom i teller og i nevner, og
+        de enten har samme grad, eller teller-polynomet har høyere grad. Dette er noe som er nyttig blant annet når vi
+        <ul>
+            <li>vet ett eller flere nullpunkter i et polynom, og ønsker å finne flere</li>
+            <li>ønsker å skrive uttrykket uten brøk</li>
+        </ul>
+        Sistnevnte er spesielt nyttig hvis vi skal derivere og/eller integrere uttrykket.
+    </p>
+
+    <h3>Eksempel</h3>
+    <div class="udl-card">
+        <em>Polynomet $P(x) = x^2 + 3x - 8$ har to nullpunkter. Det ene er $x=1$. Finn det andre uten å bruke ABC-formelen.</em>
+    </div>
+
+    <p>
+        Polynom på formen $x^2 + bx + c$ kan faktoriseres til $(x-x_0)(x-x_1)$ der $x_0, x_1$ er nullpunktene til
+        polynomet.
+    </p>
+    <p>
+        Da vet vi at $x^2 + 3x - 8 = (x-x_0)(x-x_1)$.
+    </p>
+    <p>
+        Vi har fått vite at ett av nullpunktene til $P$ er $\color{yellow}{x=1}$. Da må det være slik at
+
+        $$x^2 + 3x - 8 = (x-x_0)(x-\color{yellow}1)$$
+
+        Dette er fordi at hvis $x=1$ så vil $(x-1) = 0$, som gjør hele høyre side lik null. Og siden høyre og venstre
+        side er lik, så gjør det også venstre side lik null.
+    </p>
+    <p>
+        Hvis vi deler på $(x-1)$ på begge sider av denne likninga får vi
+
+        $$\frac{x^2 + 3x - 8}{x-1} = x-x_0$$
+
+        og det er her polynomdivisjon blir nyttig. Brøken $\displaystyle \frac{x^2 + 3x - 8}{x-1}$ kan skrives som delestykket
+
+        $$(x^2 + 3x - 8) : (x-1) = \ \ldots$$
+
+        og svaret vil gi oss den andre faktoren, og dermed det andre nullpunktet.
+    </p>
+    <h3>Utregning</h3>
+    <p>
+
+        $$
+        \begin{matrix}
+        &(x^2 & + & 3x & - & 8) &: &(x - 1) & =  \\
+
+        \end{matrix}
+        $$
+
+        Vi deler det første leddet i dividenden ($x^2$) på det første leddet i divisoren ($x$). Altså $x^2 / x = x$, så
+        $\color{yellow}x$ blir det første leddet i svaret.
+
+        $$
+        \begin{matrix}
+        &(x^2 & + & 3x & - & 8) &: &(x - 1) & = \color{yellow}x \\
+
+        \end{matrix}
+        $$
+
+        Deretter tar vi denne $\color{yellow}x$'en og ganger den med divisoren $(x-1)$, får $x^2 - x$, og trekker
+        det fra dividenden. Merk, dette er samme prosedyre som vanlig divisjon med tall.
+
+        $$
+        \begin{matrix}
+            &(x^2 & + & 3x & - & 8) &: &(x - 1) & = x \\
+            -&\color{yellow}{(x^2} & \color{yellow}- & \color{yellow}x) \\
+            & & & \color{yellow}{4x} & \color{yellow}- & \color{yellow}8 \\
+        \end{matrix}
+        $$
+
+        Herfra gjør vi akkurat det samme, men nå er det $4x-8$ som skal deles på $x-1$. Vi deler $4x$ på $x$ og får
+        $\color{yellow}4$.
+
+        $$
+        \begin{matrix}
+            &(x^2 & + & 3x & - & 8) &: &(x - 1) & = x & \color{yellow}+ & \color{yellow}4 \\
+            -&(x^2 & - & x) \\
+            & & & 4x & - & 8 \\
+        \end{matrix}
+        $$
+
+        Som i sted, så tar vi dette resultatet $4$, ganger det med divisoren $x-1$, som blir $\color{yellow}{4x-4}$, og
+        subtraherer det fra resten vi har så langt.
+
+        $$
+        \begin{matrix}
+        &(x^2 & + & 3x & - & 8) &: &(x - 1) & = \underline{\underline{x + 4}} \\
+        -&(x^2 & - & x) \\
+        & & & 4x & - & 8 \\
+        -& & & \color{yellow}{(4x} & \color{yellow}- & \color{yellow}{8)} \\
+        & & & & 0 \\
+        \end{matrix}
+        $$
+    </p>
+    <h3>Konkludering fra svaret</h3>
+    <p>
+        Vi har konkludert at $$\frac{x^2+3x-8}{x-1} = x+4$$
+
+        Hvis vi ganger med $x-1$ på begge sider får vi at $$x^2 + 3x-8 = (x-1)(x+4)$$ som betyr at polynomet har
+        nullpunktene $x=1$ og $x=-4$.
+    </p>
+    <p>
+        OBS! Merk at $1$ og $-4$ er leddene fra de to parentesuttrykkene men med motsatt fortegn. Dette er fordi faktoriseringa
+        av polynom er $(x{\color{red}-}x_0)(x{\color{red}-}x_1)$, altså med minustegn.
+    </p>
+
+    <h3>Mer informasjon</h3>
+
+    <p>
+        Jeg har mange videoer om polynomdivisjon med flere eksempler og mer fordypning.
+    </p>
+    <ul>
+        <li>
+            <a href="{{ path('playlist', {
+                'discipline_slug': 'algebra',
+                'playlist_slug'  : 'polynomdivisjon',
+            }) }}">spilleliste med alle videoene om polynomdivisjon (teori og eksempler)</a>
+        </li>
+        <li>
+            <a href="{{ path('video', {
+                'discipline_slug': 'r1-matematikk',
+                'playlist_slug'  : 'r1-eksamen-host-2013',
+                'video_slug'     : 'del-1-2a-sjekk-om-polynomdivisjon-gar-opp-1174'
+            }) }}">undersøker om polynomdivisjonen går opp (eksamensoppgave fra 2013)</a>
+        </li>
+        <li>
+            <a href="{{ path('video', {
+                'discipline_slug': 'r1-matematikk',
+                'playlist_slug'  : 'r1-eksamen-host-2013',
+                'video_slug'     : 'del-1-2b-polynomdivisjon-tredjegrads-ulikhet-1175'
+            }) }}">løser en tredjegrads ulikhet med polynomdivisjon (eksamensoppgave fra 2013)</a>
+        </li>
+        <li>
+            <a href="{{ path('video', {
+                'discipline_slug': 'r1-matematikk',
+                'playlist_slug'  : 'r1-eksamen-var-2020',
+                'video_slug'     : 'polynomdivisjon-faktorisering-1633'
+            }) }}">faktorisering av tredjegradsuttrykk (eksamensoppgave fra 2013)</a>
+        </li>
+    </ul>
+{% endblock %}

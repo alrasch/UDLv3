@@ -47,6 +47,10 @@
       {
         "name": "Ettpunktsformelen",
         "template": "ettpunktsformelen"
+      },
+      {
+        "name": "Polynomdivisjon",
+        "template": "polynomdivisjon"
       }
     ]
   },
