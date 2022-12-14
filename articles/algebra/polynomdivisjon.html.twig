@@ -19,7 +19,7 @@
 
     <h3>Eksempel</h3>
     <div class="udl-card">
-        <em>Polynomet $P(x) = x^2 + 3x - 8$ har to nullpunkter. Det ene er $x=1$. Finn det andre uten å bruke ABC-formelen.</em>
+        <em>Polynomet $P(x) = x^2 + 3x - 4$ har to nullpunkter. Det ene er $x=1$. Finn det andre uten å bruke ABC-formelen.</em>
     </div>
 
     <p>
@@ -27,12 +27,12 @@
         polynomet.
     </p>
     <p>
-        Da vet vi at $x^2 + 3x - 8 = (x-x_0)(x-x_1)$.
+        Da vet vi at $x^2 + 3x - 4 = (x-x_0)(x-x_1)$.
     </p>
     <p>
         Vi har fått vite at ett av nullpunktene til $P$ er $\color{yellow}{x=1}$. Da må det være slik at
 
-        $$x^2 + 3x - 8 = (x-x_0)(x-\color{yellow}1)$$
+        $$x^2 + 3x - 4 = (x-x_0)(x-\color{yellow}1)$$
 
         Dette er fordi at hvis $x=1$ så vil $(x-1) = 0$, som gjør hele høyre side lik null. Og siden høyre og venstre
         side er lik, så gjør det også venstre side lik null.
@@ -40,11 +40,11 @@
     <p>
         Hvis vi deler på $(x-1)$ på begge sider av denne likninga får vi
 
-        $$\frac{x^2 + 3x - 8}{x-1} = x-x_0$$
+        $$\frac{x^2 + 3x - 4}{x-1} = x-x_0$$
 
-        og det er her polynomdivisjon blir nyttig. Brøken $\displaystyle \frac{x^2 + 3x - 8}{x-1}$ kan skrives som delestykket
+        og det er her polynomdivisjon blir nyttig. Brøken $\displaystyle \frac{x^2 + 3x - 4}{x-1}$ kan skrives som delestykket
 
-        $$(x^2 + 3x - 8) : (x-1) = \ \ldots$$
+        $$(x^2 + 3x - 4) : (x-1) = \ \ldots$$
 
         og svaret vil gi oss den andre faktoren, og dermed det andre nullpunktet.
     </p>
@@ -53,7 +53,7 @@
 
         $$
         \begin{matrix}
-        &(x^2 & + & 3x & - & 8) &: &(x - 1) & =  \\
+        &(x^2 & + & 3x & - & 4) &: &(x - 1) & =  \\
 
         \end{matrix}
         $$
@@ -63,7 +63,7 @@
 
         $$
         \begin{matrix}
-        &(x^2 & + & 3x & - & 8) &: &(x - 1) & = \color{yellow}x \\
+        &(x^2 & + & 3x & - & 4) &: &(x - 1) & = \color{yellow}x \\
 
         \end{matrix}
         $$
@@ -73,20 +73,20 @@
 
         $$
         \begin{matrix}
-            &(x^2 & + & 3x & - & 8) &: &(x - 1) & = x \\
+            &(x^2 & + & 3x & - & 4) &: &(x - 1) & = x \\
             -&\color{yellow}{(x^2} & \color{yellow}- & \color{yellow}x) \\
-            & & & \color{yellow}{4x} & \color{yellow}- & \color{yellow}8 \\
+            & & & \color{yellow}{4x} & \color{yellow}- & \color{yellow}4 \\
         \end{matrix}
         $$
 
-        Herfra gjør vi akkurat det samme, men nå er det $4x-8$ som skal deles på $x-1$. Vi deler $4x$ på $x$ og får
+        Herfra gjør vi akkurat det samme, men nå er det $4x-4$ som skal deles på $x-1$. Vi deler $4x$ på $x$ og får
         $\color{yellow}4$.
 
         $$
         \begin{matrix}
-            &(x^2 & + & 3x & - & 8) &: &(x - 1) & = x & \color{yellow}+ & \color{yellow}4 \\
+            &(x^2 & + & 3x & - & 4) &: &(x - 1) & = x & \color{yellow}+ & \color{yellow}4 \\
             -&(x^2 & - & x) \\
-            & & & 4x & - & 8 \\
+            & & & 4x & - & 4 \\
         \end{matrix}
         $$
 
@@ -95,19 +95,19 @@
 
         $$
         \begin{matrix}
-        &(x^2 & + & 3x & - & 8) &: &(x - 1) & = \underline{\underline{x + 4}} \\
+        &(x^2 & + & 3x & - & 4) &: &(x - 1) & = \underline{\underline{x + 4}} \\
         -&(x^2 & - & x) \\
-        & & & 4x & - & 8 \\
-        -& & & \color{yellow}{(4x} & \color{yellow}- & \color{yellow}{8)} \\
+        & & & 4x & - & 4 \\
+        -& & & \color{yellow}{(4x} & \color{yellow}- & \color{yellow}{4)} \\
         & & & & 0 \\
         \end{matrix}
         $$
     </p>
     <h3>Konkludering fra svaret</h3>
     <p>
-        Vi har konkludert at $$\frac{x^2+3x-8}{x-1} = x+4$$
+        Vi har konkludert at $$\frac{x^2+3x-4}{x-1} = x+4$$
 
-        Hvis vi ganger med $x-1$ på begge sider får vi at $$x^2 + 3x-8 = (x-1)(x+4)$$ som betyr at polynomet har
+        Hvis vi ganger med $x-1$ på begge sider får vi at $$x^2 + 3x-4 = (x-1)(x+4)$$ som betyr at polynomet har
         nullpunktene $x=1$ og $x=-4$.
     </p>
     <p>
