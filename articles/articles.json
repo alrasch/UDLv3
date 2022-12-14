@@ -45,6 +45,10 @@
         "template": "andregradsformelen-spesielle-tilfeller"
       },
       {
+        "name": "Heltallsmetoden",
+        "template": "heltallsmetoden"
+      },
+      {
         "name": "Ettpunktsformelen",
         "template": "ettpunktsformelen"
       },

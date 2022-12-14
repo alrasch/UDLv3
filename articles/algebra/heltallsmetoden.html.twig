@@ -1,0 +1,177 @@
+{% extends "article/base.html.twig" %}
+{% block title %}Heltallsmetoden | UDL.no{% endblock %}
+{% block hero_text %}Heltallsmetoden{% endblock %}
+{% block meta_description %}
+    Lær om heltallsmetoden for å finne nullpunkter til andregradsfunksjoner uten ABC-formelen
+{% endblock %}
+
+{% block article %}
+    <p>
+        Før du lærer om heltallsmetoden er det viktig at du er kjent med, og kan å bruke
+        <a href="{{ path('article', {
+            'discipline_slug': 'algebra',
+            'topic': 'abc-formelen'
+        }) }}">ABC-formelen</a>. Det høres kanskje rart ut, men heltallsmetoden er en teknikk der
+        vi gjør det ABC-formelen gjør, uten å bruke ABC-formelen!
+    </p>
+
+    <h3>Hva er heltallsmetoden?</h3>
+
+    <p>
+        Heltallsmetoden er en måte å faktorisere "enkle" andregradspolynomer på formen $x^2 + bx + c$ uten
+        å behøve å bruke andregradsformelen. Det gjør det en del raskere å regne, som er nyttig for de oppgavene der
+        man må faktorisere et andregradspolynom som en del av en større oppgave.
+    </p>
+
+    <h3>Teorien, kort fortalt</h3>
+
+    <p>
+        Si vi har uttrykket $(x+m)(x+n)$ der $m$ og $n$ er reelle tall. Hvis vi ganger ut denne parentesen får vi
+    </p>
+    <p>
+        $$
+        \begin{align*}
+        (x+m)(x+n) &= x^2 + mx + nx + mn \\
+        &= \boxed{x^2 + (m+n)x + mn}
+        \end{align*}
+        $$
+    </p>
+    <p>
+        Dette er et andregradsuttrykk på formen $x^2 + bx + c$ der $b = m+n$ og $c = m\cdot n$.
+    </p>
+
+    <p>
+        Hvis vi tenker på dette "baklengs", så kan vi si at hvis vi har uttrykket $x^2 + bx + c$ så kan vi faktorisere
+        det til $(x+m)(x+n)$ ved å finne tallene $m, n$ slik at summen av dem blir lik $b$, og produktet lik $c$.
+    </p>
+
+    <p>
+        Vi får samtidig et annet viktig hint: c-leddet må være delelig på både m og n. Så for eksempel, hvis $c=8$, så
+        må m og n kunne finnes blant tallene 1, 2, 4 og 8 (eller deres negative motparter), fordi det er disse tallene
+        som deler 8.
+    </p>
+
+    <h3>Eksempel 1 - Små, positive heltall</h3>
+
+    <div class="udl-card"><em>Faktoriser $x^2 + 5x + 6$ uten å bruke ABC-formelen.</em></div>
+
+    <p>
+        Vi er ute etter to tall som er slik at summen av dem er 5, og produktet av dem er 6.
+    </p>
+
+    <p>
+        Konstantleddet c her er 6. Hvilke tall er det som deler 6? Jo, det er 1, 2, 3, 6. Hvilke to tall herfra er det
+        som summes til 5, og ganges til 6?
+    </p>
+
+    <p>
+        Vel, 2 og 3 kan jo funke. Vi vet at 2+3 = 5, og 2*3 = 6. Vi setter dem inn og tester:
+
+        $$(x+2)(x+3) = x^2 + 2x + 3x + 2\cdot3 = \boxed{x^2 + 5x + 6}$$
+
+        Det stemmer! Vi har faktorisert $x^2 + 5x + 6$ til $(x+2)(x+3)$ uten å bruke ABC-formelen.
+    </p>
+
+    <p>
+        Ikke bare det, men nå er det også lett å se at nullpunktene til dette polynomet er $x=-2$ og $x=-3$, som bare
+        er de to tallene vi fant, men med motsatt fortegn.
+    </p>
+
+    <p>
+        Ja, dette er litt annerledes enn å bruke en formel, fordi denne metoden krever at man prøver og feiler litt.
+        Dersom man har gjort mange slike oppgaver så er det mange polynomer man husker faktoriseringa på. Og i andre
+        tilfeller der man har "lette" koeffisienter som 5 og 6 her, så kan man tenke seg frem til det.
+    </p>
+
+    <p>
+        I verste fall så finner vi ikke tallene vi leter etter. Men da er det alltids bare å bruke ABC-formelen i
+        stedet.
+    </p>
+
+    <p>
+        Det fine er at dette er noe man kan øve på. Vi skal se på noen litt vanskeligere eksempler, og jeg skal gi deg
+        flere triks som gjør dette lettere.
+    </p>
+
+    <h3>Eksempel 2 - Negativ c-verdi</h3>
+    <div class="udl-card"><em>Faktoriser $x^2 + 2x - 8$ uten å bruke ABC-formelen.</em></div>
+
+    <p>
+        Det er her det blir interessant. Vi har $c=-8$, så vi kan finne tallene vi ser etter blant 1, 2, 4, 8.
+    </p>
+
+    <p>
+        Når vi har en negativ c-verdi (her er den -8), så må en av de to tallene være negativ, og den andre positiv.
+        Dette er fordi det er kun positiv * negativ som blir negativt.
+    </p>
+
+    <p>
+        Men vi har noe her som gjør at vi kan stramme inn søket enda mer.
+    </p>
+
+    <p>
+        Siden summen av tallene skal være 2, og de skal ha motsatt fortegn, så må de to tallene ha en "avstand" på 2.
+    </p>
+
+    <p>
+        Blant 1, 2, 4, 8 så er det paret 2 og 4 som har en "avstand" på 2. Og jeg setter "avstand" i hermetegn fordi
+        den ene skal være positiv og den andre negativ, så den faktiske differansen mellom dem vil være 6. Så med "avstand"
+        så mener jeg her avstanden mellom de positive verdiene 2 og 4.
+    </p>
+
+    <p>
+        Ok, vi har fastslått at det er 2 og 4 vi er ute etter, men hvilken skal være positiv og hvilken skal være negativ?
+    </p>
+
+    <p>
+        Vel, $(x {\color{red}{+2}} )(x {\color{red}{-4}} )$ funker ikke, fordi da får vi $x^2 {\color{red}{- 2}}x - 8$, fordi b-leddet
+        blir $\color{red}{+2-4} = -2$. Så det vi er ute etter er
+        $(x{\color{yellow}{-2}})(x{\color{yellow}{+4}}) = \boxed{x^2 {\color{yellow}{+ 2}}x - 8}$.
+    </p>
+
+    <p>
+        Med litt erfaring så ser man kjapt at det er -2+4 og ikke +2-4 som gir positiv sum og negativt produkt.
+    </p>
+
+    <h3>Eksempel 3 - Negativ b, positiv c</h3>
+    <div class="udl-card"><em>Faktoriser $x^2 -9x + 20$ uten å bruke ABC-formelen.</em></div>
+
+    <p>
+        Denne blir litt annerledes, fordi vi kan ikke bruke b som "avstand". Men vi har et annet viktig hint.
+    </p>
+
+    <p>
+        Siden summen er negativ, og produktet er positivt, så er vi ute etter to negative tall.
+    </p>
+
+    <p>
+        Først og fremst, hvilke tall er 20 delelig på? Det blir 1, 2, 4, 5, 10, 20.
+    </p>
+
+    <p>
+        Det er kjapt gjort å se at det er paret 4 og 5 som gir et produkt på 20. Vi kan også sjekke kjapt at summen blir 9.
+    </p>
+
+    <p>
+        Men som sagt, her må de begge være negative, så vi får at
+    </p>
+
+    <p>
+        $$\begin{align*}
+        (x-4)(x-5) &= x^2 - 4x - 5x + (-4)(-5) \\
+                   &= x^2 -9x + 20
+        \end{align*}$$
+    </p>
+
+    <h3>Prøv selv</h3>
+
+    <p>Prøv å faktoriser disse selv.</p>
+
+    <ul>
+        <li>$x^2 + 4x + 4$</li>
+        <li>$x^2 + 2x + 1$</li>
+        <li>$x^2 - 2x - 35$</li>
+        <li>$x^2 + 2x - 35$</li>
+        <li>$x^2 + x + \frac14$</li>
+    </ul>
+{% endblock %}
