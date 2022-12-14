@@ -94,6 +94,10 @@ div.lead h2,h3 {
 
 }
 
+p {
+    margin-bottom: 2em;
+}
+
 div.article-item {
     margin-bottom: 0.5rem;
 }
