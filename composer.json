@@ -13,7 +13,7 @@
         "doctrine/doctrine-migrations-bundle": "*",
         "doctrine/orm": "^2.11.0",
         "phpdocumentor/reflection-docblock": "^5.1",
-        "symfony/apache-pack": "^1.0",
+        "symfony/apache-pack": "*",
         "symfony/asset": "*",
         "symfony/console": "5.4.*",
         "symfony/dotenv": "*",
@@ -25,7 +25,6 @@
         "symfony/process": "*",
         "symfony/property-access": "*",
         "symfony/property-info": "*",
-        "symfony/security-bundle": "*",
         "symfony/serializer": "*",
         "symfony/mailer": "*",
         "symfony/translation": "*",
@@ -33,15 +32,15 @@
         "symfony/validator": "*",
         "symfony/web-link": "*",
         "symfony/yaml": "*",
-        "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/extra-bundle": "*",
+        "twig/twig": "*"
     },
     "require-dev": {
         "symfony/browser-kit": "*",
         "symfony/css-selector": "*",
         "symfony/debug-bundle": "*",
-        "symfony/maker-bundle": "^1.11",
-        "symfony/phpunit-bridge": "^5.0",
+        "symfony/maker-bundle": "*",
+        "symfony/phpunit-bridge": "*",
         "symfony/stopwatch": "*",
         "symfony/var-dumper": "*",
         "symfony/web-profiler-bundle": "*"
