@@ -64,6 +64,10 @@
       {
         "name": "Delvis integrasjon",
         "template": "delvis-integrasjon"
+      },
+      {
+        "name": "Implisitt derivasjon",
+        "template": "implisitt-derivasjon"
       }
     ]
   },

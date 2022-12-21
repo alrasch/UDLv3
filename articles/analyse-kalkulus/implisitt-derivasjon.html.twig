@@ -1,0 +1,163 @@
+{% extends "article/base.html.twig" %}
+{% block title %}Implisitt derivasjon | UDL.no{% endblock %}
+{% block hero_text %}Implisitt derivasjon{% endblock %}
+{% block meta_description %}
+    En introduksjon til implisitt derivasjon, med teori og eksempler.
+{% endblock %}
+
+{% block article %}
+    <p>
+        Før vi begynner med implisitt derivasjon, må vi forstå hva en implisitt funksjon er.
+    </p>
+
+    <h3>Hva er en implisitt funksjon?</h3>
+    <p>
+        Vanligvis når vi deriverer funksjoner, så har vi "veldefinerte" funksjoner på formen $y = f(x)$. For eksempel
+    </p>
+    <ul>
+        <li>$y = x^2$</li>
+        <li>$y = 3e^x$</li>
+        <li>$y = \sin(x)$</li>
+    </ul>
+    <p>
+        Det som gjør disse "enkle" er at vi har $y$ på én side, og en eller annen funksjon av $x$ på den andre siden.
+        Men det de gjør er å definere en kurve i planet som vi kan bruke derivasjon for å drøfte stigningen av.
+    </p>
+
+    <p>
+        Det kunne like godt tenke seg at man fikk kurven på formen $\displaystyle\frac y3 = e^x$, men selv da kan vi
+        "løse"
+        likninga for $y$ og få $y = 3e^x$.
+    </p>
+
+    <p>
+        Men hva om vi får en kurve som ikke lar seg beskrive slik at $y$ er en funksjon av $x$? For eksempel
+    </p>
+
+    <p>
+        $$x^2 + y^2 = 25$$
+    </p>
+
+    <p>
+        Vi kan godt isolere $y$ og få $y = \pm\sqrt{25-x^2}$ men det er to problemer her:
+    </p>
+
+    <p class="image-paragraph">
+        <img src="{{ asset('img/article/analyse-kalkulus/implisitt-derivasjon/001.png') }}"
+             class="article-image-half-size"
+             alt="Sirkelen definert ved x^2 + y^2 = 25"/>
+    </p>
+    <ul>
+        <li>
+            dette er ikke strengt tatt en "funksjon", siden det finnes x-verdier som gir to forskjellige y-verdier,
+            for eksempel $y(4)$ gir både $3$ og $-3$. Per definisjon så må det kun finnes EN y-verdi
+            for hver x-verdi i definisjonsmengden
+        </li>
+        <li>
+            vi har også to forskjellige stigningstall for mesteparten av x-verdiene i definisjonsmengden
+        </li>
+    </ul>
+
+    <p>
+        Hvis vi lar x=4, så får vi disse to punktene.
+    </p>
+
+    <p class="image-paragraph">
+        <img src="{{ asset('img/article/analyse-kalkulus/implisitt-derivasjon/002.png') }}"
+             class="article-image-half-size"
+             alt="Sirkelen definert ved x^2 + y^2 = 25"/>
+    </p>
+
+    <p>
+        Og disse to punktene har naturligvis forskjellige stigningstall; et for $y>0$ og et for $y<0$.
+    </p>
+
+    <p>
+        Og dette bunner ut i at vi ikke kan si at y er en "funksjon" av x, siden forholdet mellom x og y her ikke
+        tillater det med tanke på definisjonen av en funksjon. Men vi tillater oss likevel å si at vi kan anse y for å
+        være en "implisitt funksjon" av x. Ellers kan vi alltids bare kalle en spade for en spade, og si at det vi
+        betrakter her er "kurven som defineres av likninga $x^2 + y^2 = 25$".
+    </p>
+
+    <p>
+        Så hvordan deriverer vi dette?
+    </p>
+
+    <h3>Implisitt derivasjon</h3>
+
+    <p>
+        Gitt denne kurven $x^2 + y^2 = 25$, la oss gjøre det vi gjør med likninger, som er å <em>alltid gjøre det samme
+        på begge sider av likhetstegnet!</em> Og det vi skal gjøre her er å derivere begge sider mhp.
+        variabelen x.
+    </p>
+
+    <p>
+        $$x^2 + y^2 = 25$$
+    </p>
+
+    <p>
+        På venstre side deriverer vi ledd for ledd (som vi alltid gjør).
+    </p>
+    <ul>
+        <li>
+            Den deriverte av $x^2$ med hensyn på $x$ er $2x$
+        </li>
+
+        <li>
+            Den deriverte av $y^2$ med hensyn på $x$ blir (ved hjelp av kjerneregelen), $2y\cdot y'$
+        </li>
+
+        <li>
+            På høyre side deriverer vi en konstant og får 0
+        </li>
+    </ul>
+
+    <p>
+        $$2x + 2y\cdot y' = 0$$
+    </p>
+
+    <p>
+        Merk nå at vi har $y'$. Dette er det vi er ute etter. Kall det gjerne $y'$ eller $y'(x)$ eller
+        $\frac{\mathrm dy}{\mathrm dx}$, det går for det samme. Det er funksjonen som gir oss stigningstallet til
+        punktene på denne kurven.
+    </p>
+
+    <p>
+        Så vi løser nå denne likninga for $y'$, og får
+    </p>
+
+    <p>
+        $$y' = -\frac{2x}{2y}$$
+    </p>
+
+    <p>
+        Og hva betyr dette? Vel, vi kan nå sette inn punkter $(x, y)$ i denne funksjonen og får stigningstallet i dette
+        punktet på kurven. Ta for eksempel punktene der $x=4$. Vi har sett at dette gir to forskjellige punkter på
+        kurven; altså $(4, 3)$ og $(4, -3)$.
+    </p>
+
+    <p>
+        Punktet $(4, 3)$ gir $$\displaystyle y' = -\frac{2x}{2y} = -\frac{8}{6} = -\frac43$$ så stigningstallet i dette punktet er
+        negativt. Dette ser vi også visuelt.
+    </p>
+
+    <p class="image-paragraph">
+        <img src="{{ asset('img/article/analyse-kalkulus/implisitt-derivasjon/003.png') }}"
+             class="article-image-half-size"
+             alt="Punktet (4, 3) på kurven x^2 + y^2 = 25 er negativt"/>
+    </p>
+
+    <p>
+        Samme utregning for det andre punktet, $(4, -3)$ gir positivt stigningstall.
+    </p>
+
+    <p>
+        $$\displaystyle y' = -\frac{2x}{2y} = -\frac{8}{-6} = \frac43$$
+    </p>
+
+    <p class="image-paragraph">
+        <img src="{{ asset('img/article/analyse-kalkulus/implisitt-derivasjon/004.png') }}"
+             class="article-image-half-size"
+             alt="Punktet (4, 3) på kurven x^2 + y^2 = 25 er positivt"/>
+    </p>
+{% endblock %}

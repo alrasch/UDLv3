@@ -73,7 +73,7 @@ div.lead h2,h3 {
     }
 
     img.article-image-half-size {
-        width: 75%;
+        width: 100%;
         max-width: 750px;
         height: auto;
         position: center;
@@ -96,6 +96,10 @@ div.lead h2,h3 {
 
 p {
     margin-bottom: 2em;
+}
+
+p.image-paragraph {
+    text-align: center;
 }
 
 div.article-item {
