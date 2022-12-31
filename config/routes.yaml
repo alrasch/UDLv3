@@ -37,3 +37,7 @@ faq:
 contact:
     path: /kontakt
     controller: App\Controller\AboutController::contactAction
+
+donate:
+    path: /donere
+    controller: App\Controller\AboutController::donateAction
