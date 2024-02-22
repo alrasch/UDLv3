@@ -4,70 +4,58 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Comment
- *
- * @ORM\Table(name="comment")
- * @ORM\Entity
- */
+#[ORM\Table(name: 'comment')]
+#[ORM\Entity]
 class Comment
 {
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    #[ORM\Column(name: 'id', type: 'integer', nullable: false, options: ['unsigned' => true])]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     private $id;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="user_id", type="integer", nullable=false, options={"unsigned"=true})
      */
+    #[ORM\Column(name: 'user_id', type: 'integer', nullable: false, options: ['unsigned' => true])]
     private $userId;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="node_id", type="integer", nullable=false, options={"unsigned"=true})
      */
+    #[ORM\Column(name: 'node_id', type: 'integer', nullable: false, options: ['unsigned' => true])]
     private $nodeId;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="comment", type="text", length=65535, nullable=false)
      */
+    #[ORM\Column(name: 'comment', type: 'text', length: 65535, nullable: false)]
     private $comment;
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name="ip_address", type="string", length=20, nullable=true)
      */
+    #[ORM\Column(name: 'ip_address', type: 'string', length: 20, nullable: true)]
     private $ipAddress;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="timestamp", type="datetime", nullable=false)
      */
+    #[ORM\Column(name: 'timestamp', type: 'datetime', nullable: false)]
     private $timestamp;
 
     /**
      * @var bool|null
-     *
-     * @ORM\Column(name="published", type="boolean", nullable=true)
      */
+    #[ORM\Column(name: 'published', type: 'boolean', nullable: true)]
     private $published;
 
     /**
      * @var int|null
-     *
-     * @ORM\Column(name="reply_to", type="integer", nullable=true, options={"unsigned"=true})
      */
+    #[ORM\Column(name: 'reply_to', type: 'integer', nullable: true, options: ['unsigned' => true])]
     private $replyTo;
 
     public function getId(): ?int

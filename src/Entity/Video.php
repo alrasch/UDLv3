@@ -5,69 +5,58 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne;
 
-/**
- * Video
- *
- * @ORM\Table(name="video")
- * @ORM\Entity
- */
+#[ORM\Table(name: 'video')]
+#[ORM\Entity]
 class Video
 {
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    #[ORM\Column(name: 'id', type: 'integer', nullable: false)]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
+    #[ORM\Column(name: 'name', type: 'string', length: 255, nullable: false)]
     private $name;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="description", type="text", length=65535, nullable=false)
      */
+    #[ORM\Column(name: 'description', type: 'text', length: 65535, nullable: false)]
     private $description;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="url_slug", type="string", length=255, nullable=false)
      */
+    #[ORM\Column(name: 'url_slug', type: 'string', length: 255, nullable: false)]
     private $urlSlug;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="playlist_id", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'playlist_id', type: 'integer', nullable: false)]
     private $playlistId;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="sort_weight", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'sort_weight', type: 'integer', nullable: false)]
     private $sortWeight;
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name="youtube_url", type="string", length=255, nullable=true)
      */
+    #[ORM\Column(name: 'youtube_url', type: 'string', length: 255, nullable: true)]
     private $youtubeUrl;
 
     /**
      * Many videos can belong to one playlist.
-     * @ManyToOne(targetEntity="Playlist", inversedBy="videos")
      */
+    #[ManyToOne(targetEntity: \Playlist::class, inversedBy: 'videos')]
     private $playlist;
 
     /**

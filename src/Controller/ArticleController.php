@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Discipline;
 use App\Logic\Article\Grouper;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
@@ -12,10 +13,16 @@ use Twig\Loader\LoaderInterface;
 class ArticleController extends AbstractController {
     private LoaderInterface $loader;
     private Grouper $grouper;
+    private EntityManagerInterface $em;
 
-    public function __construct(Environment $twig, Grouper $grouper) {
+    public function __construct(
+        Environment $twig,
+        Grouper $grouper,
+        EntityManagerInterface $em
+    ) {
         $this->loader = $twig->getLoader();
         $this->grouper = $grouper;
+        $this->em = $em;
     }
 
     public function indexAction($discipline_slug, $topic): Response
@@ -35,7 +42,7 @@ class ArticleController extends AbstractController {
         $articles = json_decode($json, true);
 
         /** @var Discipline[] $disciplines */
-        $disciplines = $this->getDoctrine()->getRepository(Discipline::class)->findBy([], ['sortWeight' => 'ASC']);
+        $disciplines = $this->em->getRepository(Discipline::class)->findBy([], ['sortWeight' => 'ASC']);
         $grouped = $this->grouper->groupByDisciplineId($articles, $disciplines);
         $data = [
             'disciplines' => $grouped

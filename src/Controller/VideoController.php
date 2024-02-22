@@ -7,6 +7,7 @@ use App\Logic\Video\Mapper as VideoMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Entity\Video;
 use App\Logic\Video\Resolver;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -17,20 +18,27 @@ class VideoController extends AbstractController
     private PlaylistMapper $playlist_mapper;
     private Resolver $resolver;
     private FormattedMathResolver $math_resolver;
+    private EntityManagerInterface $em;
 
-    public function __construct(VideoMapper $video_mapper, PlaylistMapper $playlist_mapper, Resolver $resolver, FormattedMathResolver $math_resolver)
-    {
+    public function __construct(
+        VideoMapper $video_mapper,
+        PlaylistMapper $playlist_mapper,
+        Resolver $resolver,
+        FormattedMathResolver $math_resolver,
+        EntityManagerInterface $em
+    ) {
         $this->video_mapper = $video_mapper;
         $this->playlist_mapper = $playlist_mapper;
         $this->resolver = $resolver;
         $this->math_resolver = $math_resolver;
+        $this->em = $em;
     }
 
     public function indexAction($discipline_slug, $playlist_slug, $video_slug)
     {
         $video_criteria = ['urlSlug' => $video_slug];
         /** @var Video $video */
-        $video = $this->getDoctrine()->getRepository(Video::class)->findOneBy($video_criteria);
+        $video = $this->em->getRepository(Video::class)->findOneBy($video_criteria);
 
         if (empty($video)) {
             throw new NotFoundHttpException();

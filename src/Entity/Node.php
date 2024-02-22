@@ -4,112 +4,105 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Node
- *
- * @ORM\Table(name="node", uniqueConstraints={@ORM\UniqueConstraint(name="vid", columns={"vid"})}, indexes={@ORM\Index(name="node_changed", columns={"changed"}), @ORM\Index(name="uid", columns={"uid"}), @ORM\Index(name="node_frontpage", columns={"promote", "status", "sticky", "created"}), @ORM\Index(name="translate", columns={"translate"}), @ORM\Index(name="node_status_type", columns={"status", "type", "nid"}), @ORM\Index(name="node_title_type", columns={"title", "type"}), @ORM\Index(name="node_type", columns={"type"}), @ORM\Index(name="node_created", columns={"created"}), @ORM\Index(name="tnid", columns={"tnid"}), @ORM\Index(name="language", columns={"language"})})
- * @ORM\Entity
- */
+#[ORM\Table(name: 'node')]
+#[ORM\Index(name: 'node_changed', columns: ['changed'])]
+#[ORM\Index(name: 'uid', columns: ['uid'])]
+#[ORM\Index(name: 'node_frontpage', columns: ['promote', 'status', 'sticky', 'created'])]
+#[ORM\Index(name: 'translate', columns: ['translate'])]
+#[ORM\Index(name: 'node_status_type', columns: ['status', 'type', 'nid'])]
+#[ORM\Index(name: 'node_title_type', columns: ['title', 'type'])]
+#[ORM\Index(name: 'node_type', columns: ['type'])]
+#[ORM\Index(name: 'node_created', columns: ['created'])]
+#[ORM\Index(name: 'tnid', columns: ['tnid'])]
+#[ORM\Index(name: 'language', columns: ['language'])]
+#[ORM\UniqueConstraint(name: 'vid', columns: ['vid'])]
+#[ORM\Entity]
 class Node
 {
     /**
      * @var int
-     *
-     * @ORM\Column(name="nid", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    #[ORM\Column(name: 'nid', type: 'integer', nullable: false)]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     private $nid;
 
     /**
      * @var int|null
-     *
-     * @ORM\Column(name="vid", type="integer", nullable=true)
      */
+    #[ORM\Column(name: 'vid', type: 'integer', nullable: true)]
     private $vid;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=32, nullable=false)
      */
+    #[ORM\Column(name: 'type', type: 'string', length: 32, nullable: false)]
     private $type;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="language", type="string", length=12, nullable=false)
      */
+    #[ORM\Column(name: 'language', type: 'string', length: 12, nullable: false)]
     private $language;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
+    #[ORM\Column(name: 'title', type: 'string', length: 255, nullable: false)]
     private $title;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="uid", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'uid', type: 'integer', nullable: false)]
     private $uid;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="status", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'status', type: 'integer', nullable: false)]
     private $status;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="created", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'created', type: 'integer', nullable: false)]
     private $created;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="changed", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'changed', type: 'integer', nullable: false)]
     private $changed;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="comment", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'comment', type: 'integer', nullable: false)]
     private $comment;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="promote", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'promote', type: 'integer', nullable: false)]
     private $promote;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="sticky", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'sticky', type: 'integer', nullable: false)]
     private $sticky;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="tnid", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'tnid', type: 'integer', nullable: false)]
     private $tnid;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="translate", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'translate', type: 'integer', nullable: false)]
     private $translate;
 
     public function getNid(): ?int

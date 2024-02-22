@@ -6,6 +6,7 @@ use App\Entity\Playlist;
 use App\Logic\Discipline\Mapper as DisciplineMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Logic\Video\Mapper as VideoMapper;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -17,15 +18,18 @@ class PlaylistController extends AbstractController
     private DisciplineMapper $discipline_mapper;
     private PlaylistMapper $playlist_mapper;
     private VideoMapper $video_mapper;
+    private EntityManagerInterface $em;
 
     public function __construct(
         DisciplineMapper $discipline_mapper,
         PlaylistMapper $playlist_mapper,
-        VideoMapper $video_mapper
+        VideoMapper $video_mapper,
+        EntityManagerInterface $em
     ) {
         $this->discipline_mapper = $discipline_mapper;
         $this->playlist_mapper = $playlist_mapper;
         $this->video_mapper = $video_mapper;
+        $this->em = $em;
     }
 
     public function indexAction($discipline_slug, $playlist_slug): Response
@@ -33,7 +37,7 @@ class PlaylistController extends AbstractController
         $playlist_criteria = ['urlSlug' => $playlist_slug];
 
         /** @var Playlist $playlist */
-        $playlist = $this->getDoctrine()->getRepository(Playlist::class)->findOneBy($playlist_criteria);
+        $playlist = $this->em->getRepository(Playlist::class)->findOneBy($playlist_criteria);
 
         if (empty($playlist)) {
             throw new NotFoundHttpException();

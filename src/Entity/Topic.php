@@ -4,35 +4,28 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Topic
- *
- * @ORM\Table(name="topic")
- * @ORM\Entity
- */
+#[ORM\Table(name: 'topic')]
+#[ORM\Entity]
 class Topic
 {
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    #[ORM\Column(name: 'id', type: 'integer', nullable: false, options: ['unsigned' => true])]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
+    #[ORM\Column(name: 'name', type: 'string', length: 255, nullable: false)]
     private $name;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="display_name", type="string", length=255, nullable=false)
      */
+    #[ORM\Column(name: 'display_name', type: 'string', length: 255, nullable: false)]
     private $displayName;
 
     public function getId(): ?int

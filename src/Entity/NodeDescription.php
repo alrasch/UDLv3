@@ -4,35 +4,28 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * NodeDescription
- *
- * @ORM\Table(name="node_description")
- * @ORM\Entity
- */
+#[ORM\Table(name: 'node_description')]
+#[ORM\Entity]
 class NodeDescription
 {
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    #[ORM\Column(name: 'id', type: 'integer', nullable: false)]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     private $id;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="node", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'node', type: 'integer', nullable: false)]
     private $node;
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name="full_description", type="text", length=65535, nullable=true)
      */
+    #[ORM\Column(name: 'full_description', type: 'text', length: 65535, nullable: true)]
     private $fullDescription;
 
     public function getId(): ?int

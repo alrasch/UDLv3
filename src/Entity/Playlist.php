@@ -8,69 +8,59 @@ use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\OrderBy;
 
-/**
- * Playlist
- *
- * @ORM\Table(name="playlist")
- * @ORM\Entity
- */
+#[ORM\Table(name: 'playlist')]
+#[ORM\Entity]
 class Playlist
 {
     /**
      * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    #[ORM\Column(name: 'id', type: 'integer', nullable: false, options: ['unsigned' => true])]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     private $id;
 
     /**
      * @var int|null
-     *
-     * @ORM\Column(name="discipline_id", type="integer", nullable=true)
      */
+    #[ORM\Column(name: 'discipline_id', type: 'integer', nullable: true)]
     private $disciplineId;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="sort_weight", type="integer", nullable=false)
      */
+    #[ORM\Column(name: 'sort_weight', type: 'integer', nullable: false)]
     private $sortWeight;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
+    #[ORM\Column(name: 'name', type: 'string', length: 255, nullable: false)]
     private $name;
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name="short_description", type="text", length=65535, nullable=true)
      */
+    #[ORM\Column(name: 'short_description', type: 'text', length: 65535, nullable: true)]
     private $shortDescription;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="url_slug", type="string", length=100, nullable=false)
      */
+    #[ORM\Column(name: 'url_slug', type: 'string', length: 100, nullable: false)]
     private $urlSlug;
 
     /**
      * Many playlists can belong to one discipline.
-     * @ManyToOne(targetEntity="Discipline", inversedBy="playlists")
      */
+    #[ManyToOne(targetEntity: \Discipline::class, inversedBy: 'playlists')]
     private $discipline;
 
     /**
      * One playlist has many videos.
-     * @OneToMany(targetEntity="Video", mappedBy="playlist")
-     * @OrderBy({"sortWeight" = "ASC"})
      */
+    #[OneToMany(targetEntity: \Video::class, mappedBy: 'playlist')]
+    #[OrderBy(['sortWeight' => 'ASC'])]
     private $videos;
 
     /**

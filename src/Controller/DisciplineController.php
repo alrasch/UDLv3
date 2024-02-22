@@ -6,6 +6,7 @@ use App\Logic\Common\FormattedMathResolver;
 use App\Logic\Discipline\Mapper as DisciplineMapper;
 use App\Logic\Playlist\Mapper as PlaylistMapper;
 use App\Entity\Discipline;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -17,22 +18,25 @@ class DisciplineController extends AbstractController
     private DisciplineMapper $discipline_mapper;
     private PlaylistMapper $playlist_mapper;
     private FormattedMathResolver $math_resolver;
+    private EntityManagerInterface $em;
 
     public function __construct(
         DisciplineMapper $discipline_mapper,
         PlaylistMapper $playlist_mapper,
-        FormattedMathResolver $math_resolver)
-    {
+        FormattedMathResolver $math_resolver,
+        EntityManagerInterface $em,
+    ) {
         $this->discipline_mapper = $discipline_mapper;
         $this->playlist_mapper = $playlist_mapper;
         $this->math_resolver = $math_resolver;
+        $this->em = $em;
     }
 
     public function indexAction($slug): Response
     {
         $discipline_criteria = ['urlSlug' => $slug];
         /** @var Discipline $discipline */
-        $discipline = $this->getDoctrine()->getRepository(Discipline::class)->findOneBy($discipline_criteria);
+        $discipline = $this->em->getRepository(Discipline::class)->findOneBy($discipline_criteria);
 
         if (empty($discipline)) {
             throw new NotFoundHttpException();
