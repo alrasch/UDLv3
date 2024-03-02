@@ -41,3 +41,7 @@ contact:
 donate:
     path: /donere
     controller: App\Controller\AboutController::donateAction
+
+tutoring:
+    path: /privat-undervisning
+    controller: App\Controller\AboutController::tutoringAction

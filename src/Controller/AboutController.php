@@ -23,4 +23,8 @@ class AboutController extends AbstractController
     public function donateAction() {
         return $this->render('about/donate.html.twig');
     }
+
+    public function tutoringAction() {
+        return $this->render('about/tutoring.html.twig');
+    }
 }
