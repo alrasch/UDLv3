@@ -22,12 +22,13 @@ h1.display-5 {
     line-height: 1.2;
 }
 
+footer.footer {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+}
+
 /* Extra small devices */
 @media (max-width: 575px) {
-    .footer-element {
-        padding-bottom: 2rem;
-    }
-
     .hero-text {
         padding-top: 10px;
         text-align: center;
@@ -36,10 +37,6 @@ h1.display-5 {
 
 /* Small devices (tablets) */
 @media (min-width: 576px) {
-    .footer-element {
-        padding-bottom: 2rem;
-    }
-
     .hero-text {
         padding-top: 10px;
         text-align: center;
@@ -48,10 +45,6 @@ h1.display-5 {
 
  /* Medium devices (tablets) */
 @media (min-width: 768px) {
-    .footer-element {
-        padding-bottom: 2rem;
-    }
-
     .hero-text {
         padding-top: 50px;
         padding-bottom: 10px;
@@ -291,9 +284,6 @@ p.description {
     color: #C8FCEA;
 }
 
-.footer-element p a {
-    color: #8083FF;
-}
 .footer-element {
     text-align: center;
     font-size: 1rem;

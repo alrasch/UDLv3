@@ -59,7 +59,18 @@
             {% block content %}{% endblock %}
         </main>
 
-        <footer class="text-muted card">
+        <footer class="footer text-muted card">
+            <div class="container-fluid row">
+                <div class="col-12 footer-element">
+                    <h4>
+                        Vil du ha personlig undervisning eller leksehjelp?
+                        <a href="{{ path("tutoring") }}">Info</a>
+                    </h4>
+                </div>
+            </div>
+        </footer>
+
+        <footer class="footer text-muted card">
             <div class="container-fluid row">
                 <div class="col-12 col-md-3 footer-element">
                     <h4>Besøk UDL på:</h4>
@@ -70,15 +81,6 @@
                     <a href="https://discord.gg/QpHbVD5qav" aria-label="UDL.no's discord-server">
                         <img src="{{ asset('img/discord.png') }}" alt="UDL's discord-server"/>
                     </a>
-
-                    {# Facebook and Twitter accounts are passive, but keeping them commented in case I revive them #}
-{#                    <a href="https://www.facebook.com/UDLno" aria-label="UDL.no på Facebook">#}
-{#                        <img src="{{ asset('img/facebook.png') }}" alt="UDL.no på Facebook"/>#}
-{#                    </a>#}
-
-{#                    <a href="https://www.twitter.com/UDLno" aria-label="UDL.no på Twitter">#}
-{#                        <img src="{{ asset('img/twitter.png') }}" alt="UDL.no på Twitter"/>#}
-{#                    </a>#}
                 </div>
 
                 <div class="col-12 col-md-3 footer-element">
