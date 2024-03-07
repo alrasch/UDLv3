@@ -609,7 +609,8 @@ INSERT INTO `discipline` VALUES
                              (17,'Analyse / Kalkulus','Kalkulus er studien rundt kontinuerlig endring. Det vil si at vi fokuserer på hvordan et større system endrer seg dersom vi gjor bittesmå endringer i en eller flere variabler.',22,'analyse-kalkulus',0),
                              (18,'Statistikk','Statistikk er kunsten å samle, organisere, analysere, tolke og presentere informasjon. I dette kurset skal vi lære hvordan statistikk brukes, både teoretisk og i praksis.\r\n\r\nViktigheten av statistikk er enorm. Det er en anvendelse og utvidelse av sannsynlighetsregning som gjør at vi kan ta bedre beslutninger, og alltid ha best mulig sjans for suksess i alt vi gjør.',23,'statistikk',0),
                              (19,'Python-programmering','Dette er et kurs i programmering med Python for nybegynnere og viderekomne. Det inkluderer et krasjkurs for de som aldri har programmert før, samt gjennomgang av oppgaver og øvinger.',50,'python-programmering',0),
-                             (20,'Diskret matematikk','Diskret matematikk er studien av strukturer som heltall, grafer, logiske utsagn, m.m. Det er et felt som er veldig relevant for datamaskiner, programvare, kunstig intelligens, sannsynlighet, statistikk, og mange andre felter.',26,'diskret-matematikk',0);
+                             (20,'Diskret matematikk','Diskret matematikk er studien av strukturer som heltall, grafer, logiske utsagn, m.m. Det er et felt som er veldig relevant for datamaskiner, programvare, kunstig intelligens, sannsynlighet, statistikk, og mange andre felter.',26,'diskret-matematikk',0),
+                             (21,'Empty discipline','Empty discipline for testing purposes',27,'empty-disc',0);
 /*!40000 ALTER TABLE `discipline` ENABLE KEYS */;
 UNLOCK TABLES;
 

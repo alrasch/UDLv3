@@ -23,12 +23,15 @@ class HomeController extends AbstractController
     public function indexAction(): Response
     {
         $disciplines = $this->em->getRepository(Discipline::class)->findBy([], ['sortWeight' => 'ASC']);
-
         $items = $this->mapper->mapDisciplines($disciplines);
+
+        $has_playlists = function(array $discipline) {
+            return !$discipline["playlists"]->isEmpty();
+        };
+
+        $items = array_filter($items, $has_playlists);
         $count = count($items);
-
         $items = array_chunk($items, ceil($count / 3));
-
         $data = [
             'disciplines' => $items,
             'count' => $count,

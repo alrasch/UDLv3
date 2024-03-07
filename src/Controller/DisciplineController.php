@@ -48,7 +48,11 @@ class DisciplineController extends AbstractController
         $playlists = $this->playlist_mapper->mapPlaylists($playlists);
 
         $playlist_count = count($playlists);
-        $playlists = array_chunk($playlists, ceil($playlist_count / 3));
+        if ($playlist_count === 0) {
+            $playlists = [$playlists];
+        } else {
+            $playlists = array_chunk($playlists, ceil($playlist_count / 3));
+        }
 
         $data = [
             'discipline' => $mapped_discipline,

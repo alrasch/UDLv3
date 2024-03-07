@@ -20,6 +20,7 @@ class Mapper
         return [
             'name' => $discipline->getName(),
             'url_slug' => $discipline->getUrlSlug(),
+            'playlists' => $discipline->getPlaylists()
         ];
     }
 
